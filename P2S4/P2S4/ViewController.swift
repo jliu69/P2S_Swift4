@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     
@@ -74,16 +74,11 @@ class ViewController: UIViewController {
     //MARK: - IB action
     
     @IBAction func showSettings(sender: AnyObject) {
-        //
         
-        if isShowing {
-            self.hidePage()
-            isShowing = false
-        }
-        else {
-            self.showPage()
-            isShowing = true
-        }
+        let settingStoryboard: UIStoryboard = UIStoryboard(name: "p2sSettings", bundle: nil)
+        let settingVC = settingStoryboard.instantiateViewControllerWithIdentifier("settings") as! p2sSettingsViewController
+        settingVC.delegate = self
+        self.navigationController!.pushViewController(settingVC, animated: true)
         
     }
     
@@ -110,6 +105,12 @@ class ViewController: UIViewController {
     @IBAction func searchPlayersAction(sender: AnyObject) {
         //
         print("-> search players")
+    }
+    
+    //MARK: - settings delegate
+    
+    func didLogout() {
+        //
     }
     
     //MARK: - local methods

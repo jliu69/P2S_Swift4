@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eq4-Fu-JUW">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--2s Settings View Controller-->
+        <scene sceneID="RNH-7p-bAn">
+            <objects>
+                <viewController storyboardIdentifier="settings" id="Eq4-Fu-JUW" customClass="p2sSettingsViewController" customModule="P2S4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZmS-sm-t0k"/>
+                        <viewControllerLayoutGuide type="bottom" id="vKD-Xe-1NZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tVE-FS-cYN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bg Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWb-M9-6ig">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="NYg-WI-2e5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MWB-BS-tlj">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HE7-jS-vou"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem enabled="NO" systemItem="stop" id="Zor-gz-tWg">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YZw-nk-jhM"/>
+                                    <barButtonItem id="D6r-oF-1eM">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="yZ5-A0-WYZ"/>
+                                    <barButtonItem systemItem="stop" id="zxo-F1-kir">
+                                        <connections>
+                                            <action selector="close:" destination="Eq4-Fu-JUW" id="bC5-71-Sub"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="xns-Wr-uHw">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eq4-Fu-JUW" id="Zhw-wz-hJD"/>
+                                    <outlet property="delegate" destination="Eq4-Fu-JUW" id="Cwf-nv-bpq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xns-Wr-uHw" secondAttribute="trailing" constant="-20" id="JK8-nQ-zui"/>
+                            <constraint firstItem="xns-Wr-uHw" firstAttribute="leading" secondItem="tVE-FS-cYN" secondAttribute="leadingMargin" constant="-20" id="U2p-cz-2vv"/>
+                            <constraint firstItem="xns-Wr-uHw" firstAttribute="top" secondItem="MWB-BS-tlj" secondAttribute="bottom" id="V2r-sy-eyP"/>
+                            <constraint firstItem="vKD-Xe-1NZ" firstAttribute="top" secondItem="xns-Wr-uHw" secondAttribute="bottom" id="Vd7-9I-APu"/>
+                            <constraint firstItem="MWB-BS-tlj" firstAttribute="top" secondItem="ZmS-sm-t0k" secondAttribute="bottom" id="Vdj-l5-Hjk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MWB-BS-tlj" secondAttribute="trailing" constant="-20" id="WfS-Bt-SG6"/>
+                            <constraint firstItem="MWB-BS-tlj" firstAttribute="leading" secondItem="tVE-FS-cYN" secondAttribute="leadingMargin" constant="-20" id="ZPv-Gp-RuN"/>
+                            <constraint firstItem="oWb-M9-6ig" firstAttribute="top" secondItem="tVE-FS-cYN" secondAttribute="topMargin" id="b89-as-K8o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oWb-M9-6ig" secondAttribute="trailing" constant="-20" id="kdS-YC-Uzh"/>
+                            <constraint firstItem="oWb-M9-6ig" firstAttribute="leading" secondItem="tVE-FS-cYN" secondAttribute="leadingMargin" constant="-20" id="qh5-Gc-nN0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="xns-Wr-uHw" id="cxG-Fc-lcm"/>
+                        <outlet property="titleBarItem" destination="D6r-oF-1eM" id="oZx-qk-HXj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nSx-d1-vsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="627" y="460"/>
+        </scene>
+    </scenes>
+</document>

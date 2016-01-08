@@ -23,6 +23,11 @@
 		9DD1C1A31C3E0A2900389567 /* thumbs_up_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD1C1991C3E0A2900389567 /* thumbs_up_icon.png */; settings = {ASSET_TAGS = (); }; };
 		9DD1C1A41C3E0A2900389567 /* upAndDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD1C19A1C3E0A2900389567 /* upAndDown.png */; settings = {ASSET_TAGS = (); }; };
 		9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C1A51C3E15CC00389567 /* ColorsHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		9DD390B81C3F5A890052DE2D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD390B71C3F5A890052DE2D /* MessageUI.framework */; };
+		9DD390BB1C3F5A980052DE2D /* p2sSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD390B91C3F5A980052DE2D /* p2sSettings.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DD390BC1C3F5A980052DE2D /* p2sSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD390BA1C3F5A980052DE2D /* p2sSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD390BD1C3F5B5F0052DE2D /* AlertsHelper.swift */; settings = {ASSET_TAGS = (); }; };
+		9DD390C01C3F5B5F0052DE2D /* EmailsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD390BE1C3F5B5F0052DE2D /* EmailsHelper.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		9DD1C1991C3E0A2900389567 /* thumbs_up_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumbs_up_icon.png; path = Images/thumbs_up_icon.png; sourceTree = "<group>"; };
 		9DD1C19A1C3E0A2900389567 /* upAndDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upAndDown.png; path = Images/upAndDown.png; sourceTree = "<group>"; };
 		9DD1C1A51C3E15CC00389567 /* ColorsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsHelper.swift; path = Helpers/ColorsHelper.swift; sourceTree = "<group>"; };
+		9DD390B71C3F5A890052DE2D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9DD390B91C3F5A980052DE2D /* p2sSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sSettings.storyboard; path = Controllers/p2sSettings.storyboard; sourceTree = "<group>"; };
+		9DD390BA1C3F5A980052DE2D /* p2sSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sSettingsViewController.swift; path = Controllers/p2sSettingsViewController.swift; sourceTree = "<group>"; };
+		9DD390BD1C3F5B5F0052DE2D /* AlertsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertsHelper.swift; path = Helpers/AlertsHelper.swift; sourceTree = "<group>"; };
+		9DD390BE1C3F5B5F0052DE2D /* EmailsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailsHelper.swift; path = Helpers/EmailsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD390B81C3F5A890052DE2D /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +71,7 @@
 		9DD1C16E1C3E088700389567 = {
 			isa = PBXGroup;
 			children = (
+				9DD390B71C3F5A890052DE2D /* MessageUI.framework */,
 				9DD1C1791C3E088700389567 /* P2S4 */,
 				9DD1C1781C3E088700389567 /* Products */,
 			);
@@ -111,6 +123,8 @@
 		9DD1C18D1C3E09EB00389567 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9DD390BA1C3F5A980052DE2D /* p2sSettingsViewController.swift */,
+				9DD390B91C3F5A980052DE2D /* p2sSettings.storyboard */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -132,6 +146,8 @@
 		9DD1C1901C3E09FE00389567 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9DD390BD1C3F5B5F0052DE2D /* AlertsHelper.swift */,
+				9DD390BE1C3F5B5F0052DE2D /* EmailsHelper.swift */,
 				9DD1C1A51C3E15CC00389567 /* ColorsHelper.swift */,
 			);
 			name = Helpers;
@@ -205,6 +221,7 @@
 				9DD1C19C1C3E0A2900389567 /* home_page_launch_image.png in Resources */,
 				9DD1C1A31C3E0A2900389567 /* thumbs_up_icon.png in Resources */,
 				9DD1C19D1C3E0A2900389567 /* p2s_action_bar_logo_small.png in Resources */,
+				9DD390BB1C3F5A980052DE2D /* p2sSettings.storyboard in Resources */,
 				9DD1C1801C3E088700389567 /* Main.storyboard in Resources */,
 				9DD1C19E1C3E0A2900389567 /* p2s_action_bar_logo.png in Resources */,
 			);
@@ -217,9 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DD390C01C3F5B5F0052DE2D /* EmailsHelper.swift in Sources */,
+				9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */,
 				9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */,
 				9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */,
 				9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */,
+				9DD390BC1C3F5A980052DE2D /* p2sSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +389,7 @@
 				9DD1C18B1C3E088700389567 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
