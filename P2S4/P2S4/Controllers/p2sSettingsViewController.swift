@@ -24,16 +24,19 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
     var delegate: p2sSettingsViewControllerDelegate! = nil
     
     let titles: Array<String> = ["Version", "Year", "Bugs Report", "Logout"]
-    let emails: Array<String> = ["johnsonliu69@outlook.com"]
-    
     var descs: Array<String> = []
+    
+    //var loginPage: p2sLoginViewController? = p2sLoginViewController()
     
     //MARK: - init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //-- add in code for Logo Image View
+        //-- logo
+        let imageObject: LogoImageObject? = LogoImageObject()
+        let logoView: UIImageView = imageObject!.logoView()
+        self.titleBarItem!.customView = logoView
         
         self.descs = ["1.0", "2015", "", ""]
     }
@@ -81,12 +84,12 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
         
         if indexPath.row == 2 {
             
-            //-- show bug report
+            print("... to bug report ...")
             self.bugReportEmail()
         }
         else if indexPath.row == 3 {
             
-            //-- logout
+            print("... to logout ...")
             delegate?.didLogout?()
             self.closePage()
         }
@@ -123,7 +126,7 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
         let mailVC = MFMailComposeViewController()
         mailVC.mailComposeDelegate = self
         
-        mailVC.setToRecipients(self.emails)
+        mailVC.setToRecipients(["liu_johnson@yahoo.com", "johnsonliu69@gmail.com"])
         mailVC.setSubject("Bug Report")
         mailVC.setMessageBody("Bug report testing email, for P2S.", isHTML: false)
         

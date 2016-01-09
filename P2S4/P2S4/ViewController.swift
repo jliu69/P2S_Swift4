@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
+class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sLoginViewControllerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     
@@ -24,6 +24,8 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     let enableColor = UIColor.blackColor()
     let disableColor = UIColor.grayColor()
     
+    var login: p2sLoginViewController? = p2sLoginViewController()
+    
     //-- testing
     var isShowing: Bool = false
     
@@ -33,14 +35,13 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //-- show login
+        self.showLogin()
+        
         //-- logo
-        let logoImage = UIImage(named: "p2s_action_bar_logo_small.png")
-        let logoImageView = UIImageView(image: logoImage!)
-        logoImageView.frame = CGRect(x: 0, y: 0, width: 109, height: 44)
-        logoImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        
-        self.titleBarItem.customView = logoImageView
-        
+        let imageObject: LogoImageObject? = LogoImageObject()
+        let logoView: UIImageView = imageObject!.logoView()
+        self.titleBarItem.customView = logoView
         
         //-- button corners
         self.selectSportButton.layer.cornerRadius = 5
@@ -58,15 +59,11 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
         self.searchPlayersButton.layer.cornerRadius = 5
         self.searchPlayersButton.clipsToBounds = true
         
-        
         //-- clear data
         isShowing = false
         self.hidePage()
-        
-        //self.showPage()
-        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -110,9 +107,29 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     //MARK: - settings delegate
     
     func didLogout() {
-        //
+        self.showLogin()
     }
     
+    //MARK: - login delegates
+    
+    func didCloseLogin() {
+        self.closeLogin()
+    }
+    
+    //MARK: - login methods
+    
+    func showLogin() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sLogin", bundle: nil)
+        self.login = storyBoard.instantiateViewControllerWithIdentifier("login") as? p2sLoginViewController
+        self.login?.delegate = self
+        self.presentViewController(self.login!, animated: true, completion: nil)
+    }
+    
+    func closeLogin() {
+        self.login!.dismissViewControllerAnimated(true, completion: nil)
+        self.login = nil
+    }
+
     //MARK: - local methods
     
     func hidePage() {
