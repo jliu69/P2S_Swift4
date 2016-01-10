@@ -9,7 +9,7 @@
         <!--2s Settings View Controller-->
         <scene sceneID="RNH-7p-bAn">
             <objects>
-                <viewController storyboardIdentifier="settings" id="Eq4-Fu-JUW" customClass="p2sSettingsViewController" customModule="Test7" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settings" id="Eq4-Fu-JUW" customClass="p2sSettingsViewController" customModule="P2S4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZmS-sm-t0k"/>
                         <viewControllerLayoutGuide type="bottom" id="vKD-Xe-1NZ"/>

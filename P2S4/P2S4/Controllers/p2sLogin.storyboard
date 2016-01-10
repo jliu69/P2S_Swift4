@@ -9,7 +9,7 @@
         <!--2s Login View Controller-->
         <scene sceneID="j8R-7n-8uP">
             <objects>
-                <viewController storyboardIdentifier="login" id="bhG-dH-a19" customClass="p2sLoginViewController" customModule="Test7" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="bhG-dH-a19" customClass="p2sLoginViewController" customModule="P2S4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ITW-rv-e94"/>
                         <viewControllerLayoutGuide type="bottom" id="TQT-YC-ePZ"/>

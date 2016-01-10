@@ -40,6 +40,7 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.fanLoginButton.layer.cornerRadius = 5
         self.fanLoginButton.clipsToBounds = true
         
@@ -57,6 +58,7 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         
+        
         self.originalYCenter = self.view.frame.origin.y
         
         if screenHeight == self.iPhone4Height {
@@ -70,44 +72,45 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    
     //MARK: - IB actions
     
     @IBAction func fanLoginAction(sender: AnyObject) {
         
+        //-- fan logn
         self.clearKeyboard()
         self.moveDown()
-        delegate?.didCloseLogin?()
         
-        print("... fan Login ...")
+        delegate?.didCloseLogin?()
     }
     
     @IBAction func fanSignUpAction(sender: AnyObject) {
         
+        //-- fan sign up
         self.clearKeyboard()
         self.moveDown()
         
-        print("... fan Sign Up ...")
+        self.showRegisterPage()
     }
     
     @IBAction func playerSignUpAction(sender: AnyObject) {
         
+        //-- player sign up
         self.clearKeyboard()
         self.moveDown()
-        
-        print("... player Sign Up ...")
     }
     
     @IBAction func resetPwdAction(sender: AnyObject) {
         
+        //-- reset password
         self.clearKeyboard()
         self.moveDown()
-        
-        print("... reset Password ...")
     }
     
     @IBAction func changeSwitchAction(sender: AnyObject) {
         //
     }
+    
     
     //MARK: - text field delegate
     
@@ -115,6 +118,7 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
         self.clearKeyboard()
         return true
     }
+    
     
     //MARK: - notification
     
@@ -125,6 +129,28 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
     func keyboardWillHide(notification: NSNotification) {
         self.moveDown()
     }
+    
+    
+    //MARK: - register page
+    
+    func showRegisterPage() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegister3", bundle: nil)
+        let reg3Page: p2sRegister3ViewController? = storyBoard.instantiateViewControllerWithIdentifier("register3") as? p2sRegister3ViewController
+        self.presentViewController(reg3Page!, animated: true, completion: nil)
+    }
+    
+    
+    //MARK: - register delegate
+    
+    func didCloseRegister() {
+        //
+    }
+    
+    func didShowRegisterSave() {
+        //
+    }
+    
     
     //MARK: - move up/dowm
     
@@ -157,6 +183,7 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
             self.view.frame.origin.y += self.movingSpace
         }
     }
+    
     
     //MARK: - local methods
     
