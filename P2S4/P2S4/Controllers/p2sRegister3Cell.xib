@@ -9,10 +9,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="p2sRegister3Cell" customModule="P2S4" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="550"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="560"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="549"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="559"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="p2s_login_page_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Odo-DD-RID">
@@ -38,6 +38,7 @@
                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zx5-v8-fcC">
                         <rect key="frame" x="35" y="158" width="250" height="30"/>
                         <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="250" id="ClD-Qg-J4j"/>
                             <constraint firstAttribute="height" constant="30" id="y38-cJ-QXQ"/>
@@ -63,6 +64,7 @@
                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UvU-ht-ZSP">
                         <rect key="frame" x="35" y="223" width="250" height="30"/>
                         <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="dVN-VI-ltJ"/>
                             <constraint firstAttribute="width" constant="250" id="yUL-ja-QeH"/>
@@ -88,6 +90,7 @@
                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="re-enter password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mxs-jx-rSj">
                         <rect key="frame" x="35" y="288" width="250" height="30"/>
                         <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="250" id="03G-fS-9xe"/>
                             <constraint firstAttribute="height" constant="30" id="5C2-41-jzr"/>
@@ -99,7 +102,7 @@
                         </connections>
                     </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-Sx-7DN">
-                        <rect key="frame" x="35" y="348" width="100" height="30"/>
+                        <rect key="frame" x="35" y="338" width="100" height="30"/>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,7 +117,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-KW-kfe">
-                        <rect key="frame" x="185" y="348" width="100" height="30"/>
+                        <rect key="frame" x="185" y="338" width="100" height="30"/>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -133,7 +136,7 @@
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="Odo-DD-RID" secondAttribute="trailing" constant="-8" id="1Lg-5G-sQM"/>
                     <constraint firstItem="EwC-jF-4Do" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="1tG-jN-jvX"/>
-                    <constraint firstItem="Bmk-KW-kfe" firstAttribute="top" secondItem="mxs-jx-rSj" secondAttribute="bottom" constant="30" id="2NN-2r-EqL"/>
+                    <constraint firstItem="Bmk-KW-kfe" firstAttribute="top" secondItem="mxs-jx-rSj" secondAttribute="bottom" constant="20" id="2NN-2r-EqL"/>
                     <constraint firstItem="Odo-DD-RID" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="87c-O7-qId"/>
                     <constraint firstItem="zx5-v8-fcC" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Dsi-8N-RTa"/>
                     <constraint firstItem="zx5-v8-fcC" firstAttribute="top" secondItem="X1U-Zg-v6V" secondAttribute="bottom" constant="5" id="K78-xN-jau"/>
@@ -142,7 +145,7 @@
                     <constraint firstItem="X1U-Zg-v6V" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="TFl-6R-84Z"/>
                     <constraint firstItem="ooK-xS-JBd" firstAttribute="top" secondItem="UvU-ht-ZSP" secondAttribute="bottom" constant="15" id="TFz-LF-5rk"/>
                     <constraint firstItem="EwC-jF-4Do" firstAttribute="top" secondItem="zx5-v8-fcC" secondAttribute="bottom" constant="15" id="TXP-xj-0P1"/>
-                    <constraint firstItem="1yD-Sx-7DN" firstAttribute="top" secondItem="mxs-jx-rSj" secondAttribute="bottom" constant="30" id="Uah-gx-NN9"/>
+                    <constraint firstItem="1yD-Sx-7DN" firstAttribute="top" secondItem="mxs-jx-rSj" secondAttribute="bottom" constant="20" id="Uah-gx-NN9"/>
                     <constraint firstItem="X1U-Zg-v6V" firstAttribute="top" secondItem="Odo-DD-RID" secondAttribute="bottom" constant="10" id="Uix-FL-qEu"/>
                     <constraint firstItem="mxs-jx-rSj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ymk-ey-DTs"/>
                     <constraint firstItem="ooK-xS-JBd" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="cdx-kf-dQS"/>

@@ -1,5 +1,5 @@
 //
-//  p2sRegister3ViewController.swift
+//  p2sRegSaveViewController.swift
 //  P2S4
 //
 //  Created by Johnson Liu on 1/9/16.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class p2sRegister3ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegister3CellDelegate {
+class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegSaveCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     let screenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
-    let movingSpace: CGFloat = 85.0
     let iPhone4Height: CGFloat = 480.0
     
     var isSmallScreen: Bool = false
@@ -24,16 +23,17 @@ class p2sRegister3ViewController: UIViewController, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.registerNib(UINib(nibName: "p2sRegSaveCell", bundle: nil), forCellReuseIdentifier: "CellId")
+        
         if screenHeight == self.iPhone4Height {
             self.isSmallScreen = true
         }
-        
-        self.tableView.registerNib(UINib(nibName: "p2sRegister3Cell", bundle: nil), forCellReuseIdentifier: "CellId")
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     //MARK: - table view source
     
@@ -47,8 +47,9 @@ class p2sRegister3ViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:p2sRegister3Cell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as! p2sRegister3Cell
+        let cell:p2sRegSaveCell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as! p2sRegSaveCell
         cell.delegate = self
+        cell.checkForSmallScreenSize(self.isSmallScreen)
         
         cell.accessoryType = UITableViewCellAccessoryType.None
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -56,48 +57,26 @@ class p2sRegister3ViewController: UIViewController, UITableViewDataSource, UITab
         return cell
     }
     
+    
     //MARK: - table view delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    
     //MARK: - cell delegate
     
-    func didCancelRegister() {
+    func didGoback() {
+        //
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func didGotoNextPage() {
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegSave", bundle: nil)
-        let regSave: p2sRegSaveViewController? = storyBoard.instantiateViewControllerWithIdentifier("regSave") as? p2sRegSaveViewController
-        self.presentViewController(regSave!, animated: true, completion: nil)
+    func didCompleteReigster() {
+        //
     }
     
-    func moveCellUp() {
-        
-        if isSmallScreen {
-            UIView.animateWithDuration(0.2, animations: {
-                self.tableView.contentOffset = CGPoint(x: 0, y: self.movingSpace)
-            }, completion: {
-                    (value: Bool) in
-                    //
-            })
-        }
-    }
     
-    func moveCellDown() {
-        
-        if isSmallScreen {
-            UIView.animateWithDuration(0.2, animations: {
-                self.tableView.contentOffset = CGPoint(x: 0, y: 0)
-            }, completion: {
-                    (value: Bool) in
-                    //
-            })
-        }
-    }
     
 }
 

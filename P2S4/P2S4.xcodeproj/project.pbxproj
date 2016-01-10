@@ -11,6 +11,10 @@
 		9D1F97A11C41D41F00A83C6E /* p2sRegister3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F979D1C41D41F00A83C6E /* p2sRegister3Cell.swift */; settings = {ASSET_TAGS = (); }; };
 		9D1F97A21C41D41F00A83C6E /* p2sRegister3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F979E1C41D41F00A83C6E /* p2sRegister3Cell.xib */; settings = {ASSET_TAGS = (); }; };
 		9D1F97A31C41D41F00A83C6E /* p2sRegister3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F979F1C41D41F00A83C6E /* p2sRegister3ViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9D1F97AD1C42075100A83C6E /* p2sRegSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F97AC1C42075100A83C6E /* p2sRegSaveViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9D1F97B01C42077300A83C6E /* p2sRegSaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F97AE1C42077300A83C6E /* p2sRegSaveCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9D1F97B11C42077300A83C6E /* p2sRegSaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F97AF1C42077300A83C6E /* p2sRegSaveCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9D1F97B31C42079F00A83C6E /* p2sRegSave.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F97B21C42079F00A83C6E /* p2sRegSave.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17A1C3E088700389567 /* AppDelegate.swift */; };
 		9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17C1C3E088700389567 /* ViewController.swift */; };
 		9DD1C1801C3E088700389567 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD1C17E1C3E088700389567 /* Main.storyboard */; };
@@ -46,6 +50,10 @@
 		9D1F979D1C41D41F00A83C6E /* p2sRegister3Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegister3Cell.swift; path = Controllers/p2sRegister3Cell.swift; sourceTree = "<group>"; };
 		9D1F979E1C41D41F00A83C6E /* p2sRegister3Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sRegister3Cell.xib; path = Controllers/p2sRegister3Cell.xib; sourceTree = "<group>"; };
 		9D1F979F1C41D41F00A83C6E /* p2sRegister3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegister3ViewController.swift; path = Controllers/p2sRegister3ViewController.swift; sourceTree = "<group>"; };
+		9D1F97AC1C42075100A83C6E /* p2sRegSaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegSaveViewController.swift; path = Controllers/p2sRegSaveViewController.swift; sourceTree = "<group>"; };
+		9D1F97AE1C42077300A83C6E /* p2sRegSaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegSaveCell.swift; path = Controllers/p2sRegSaveCell.swift; sourceTree = "<group>"; };
+		9D1F97AF1C42077300A83C6E /* p2sRegSaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sRegSaveCell.xib; path = Controllers/p2sRegSaveCell.xib; sourceTree = "<group>"; };
+		9D1F97B21C42079F00A83C6E /* p2sRegSave.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sRegSave.storyboard; path = Controllers/p2sRegSave.storyboard; sourceTree = "<group>"; };
 		9DD1C1771C3E088700389567 /* P2S4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2S4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD1C17A1C3E088700389567 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD1C17C1C3E088700389567 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +161,10 @@
 				9D1F979C1C41D41F00A83C6E /* p2sRegister3.storyboard */,
 				9D1F979D1C41D41F00A83C6E /* p2sRegister3Cell.swift */,
 				9D1F979E1C41D41F00A83C6E /* p2sRegister3Cell.xib */,
+				9D1F97AC1C42075100A83C6E /* p2sRegSaveViewController.swift */,
+				9D1F97B21C42079F00A83C6E /* p2sRegSave.storyboard */,
+				9D1F97AE1C42077300A83C6E /* p2sRegSaveCell.swift */,
+				9D1F97AF1C42077300A83C6E /* p2sRegSaveCell.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -254,6 +266,8 @@
 				9DD1C19F1C3E0A2900389567 /* p2s_login_page_logo.png in Resources */,
 				9DD1C19C1C3E0A2900389567 /* home_page_launch_image.png in Resources */,
 				9DD1C1A31C3E0A2900389567 /* thumbs_up_icon.png in Resources */,
+				9D1F97B11C42077300A83C6E /* p2sRegSaveCell.xib in Resources */,
+				9D1F97B31C42079F00A83C6E /* p2sRegSave.storyboard in Resources */,
 				9D1F97A01C41D41F00A83C6E /* p2sRegister3.storyboard in Resources */,
 				9DD1C19D1C3E0A2900389567 /* p2s_action_bar_logo_small.png in Resources */,
 				9DD390BB1C3F5A980052DE2D /* p2sSettings.storyboard in Resources */,
@@ -271,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD390C01C3F5B5F0052DE2D /* EmailsHelper.swift in Sources */,
+				9D1F97B01C42077300A83C6E /* p2sRegSaveCell.swift in Sources */,
 				9DD484671C4086D2003EB57A /* CurrentUserObject.swift in Sources */,
 				9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */,
 				9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */,
@@ -278,6 +293,7 @@
 				9DD4846A1C4086D2003EB57A /* StaticData.swift in Sources */,
 				9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */,
 				9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */,
+				9D1F97AD1C42075100A83C6E /* p2sRegSaveViewController.swift in Sources */,
 				9D1F97A31C41D41F00A83C6E /* p2sRegister3ViewController.swift in Sources */,
 				9DD484681C4086D2003EB57A /* JsonLinks.swift in Sources */,
 				9DD390BC1C3F5A980052DE2D /* p2sSettingsViewController.swift in Sources */,
