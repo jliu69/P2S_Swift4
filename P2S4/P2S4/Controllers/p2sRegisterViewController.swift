@@ -8,7 +8,7 @@
 
 import UIKit
 
-class p2sRegister3ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegister3CellDelegate {
+class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegisterCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,7 +28,7 @@ class p2sRegister3ViewController: UIViewController, UITableViewDataSource, UITab
             self.isSmallScreen = true
         }
         
-        self.tableView.registerNib(UINib(nibName: "p2sRegister3Cell", bundle: nil), forCellReuseIdentifier: "CellId")
+        self.tableView.registerNib(UINib(nibName: "p2sRegisterCell", bundle: nil), forCellReuseIdentifier: "CellId")
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,7 +47,7 @@ class p2sRegister3ViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:p2sRegister3Cell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as! p2sRegister3Cell
+        let cell:p2sRegisterCell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as! p2sRegisterCell
         cell.delegate = self
         
         cell.accessoryType = UITableViewCellAccessoryType.None

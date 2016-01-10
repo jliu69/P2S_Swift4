@@ -9,7 +9,7 @@
 import UIKit
 
 
-@objc protocol p2sRegister3CellDelegate {
+@objc protocol p2sRegisterCellDelegate {
     
     optional func didCancelRegister()
     optional func didGotoNextPage()
@@ -19,7 +19,7 @@ import UIKit
 }
 
 
-class p2sRegister3Cell: UITableViewCell, UITextFieldDelegate {
+class p2sRegisterCell: UITableViewCell, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,7 +28,7 @@ class p2sRegister3Cell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
-    var delegate: p2sRegister3CellDelegate! = nil
+    var delegate: p2sRegisterCellDelegate! = nil
     
     //MARK: - init
     

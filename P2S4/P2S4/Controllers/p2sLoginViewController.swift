@@ -135,8 +135,8 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
     
     func showRegisterPage() {
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegister3", bundle: nil)
-        let reg3Page: p2sRegister3ViewController? = storyBoard.instantiateViewControllerWithIdentifier("register3") as? p2sRegister3ViewController
+        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegister", bundle: nil)
+        let reg3Page: p2sRegisterViewController? = storyBoard.instantiateViewControllerWithIdentifier("register") as? p2sRegisterViewController
         self.presentViewController(reg3Page!, animated: true, completion: nil)
     }
     
