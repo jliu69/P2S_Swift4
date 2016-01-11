@@ -9,30 +9,16 @@
 import UIKit
 
 
-@objc protocol p2sLoginViewControllerDelegate {
+class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sLoginCellDelegate {
     
-    optional func didCloseLogin()
-}
-
-
-class p2sLoginViewController: UIViewController, UITextFieldDelegate {
-    
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var savePwdSwitch: UISwitch!
-    @IBOutlet weak var fanLoginButton: UIButton!
-    @IBOutlet weak var fanSignUpButton: UIButton!
-    @IBOutlet weak var playerSignUpButon: UIButton!
-    @IBOutlet weak var resetPwdButton: UIButton!
-    
-    var delegate: p2sLoginViewControllerDelegate! = nil
+    @IBOutlet weak var tableView: UITableView!
     
     let screenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
-    let movingSpace: CGFloat = 55.0
+    let movingSpace: CGFloat = 15.0
     let iPhone4Height: CGFloat = 480.0
     
     var isSmallScreen: Bool = false
-    var originalYCenter:CGFloat = 0.0
+    //var originalYCenter:CGFloat = 0.0
     
     
     //MARK: - init
@@ -40,32 +26,11 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        self.fanLoginButton.layer.cornerRadius = 5
-        self.fanLoginButton.clipsToBounds = true
-        
-        self.fanSignUpButton.layer.cornerRadius = 5
-        self.fanSignUpButton.clipsToBounds = true
-        
-        self.playerSignUpButon.layer.cornerRadius = 5
-        self.playerSignUpButon.clipsToBounds = true
-        
-        self.resetPwdButton.layer.cornerRadius = 5
-        self.resetPwdButton.clipsToBounds = true
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-        
-        
-        self.originalYCenter = self.view.frame.origin.y
-        
         if screenHeight == self.iPhone4Height {
             self.isSmallScreen = true
         }
         
-        
+        self.tableView.registerNib(UINib(nibName: "p2sLoginCell", bundle: nil), forCellReuseIdentifier: "CellId")
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,124 +38,80 @@ class p2sLoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    //MARK: - IB actions
+    //MARK: - table view source
     
-    @IBAction func fanLoginAction(sender: AnyObject) {
-        
-        //-- fan logn
-        self.clearKeyboard()
-        self.moveDown()
-        
-        delegate?.didCloseLogin?()
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
-    @IBAction func fanSignUpAction(sender: AnyObject) {
-        
-        //-- fan sign up
-        self.clearKeyboard()
-        self.moveDown()
-        
-        self.showRegisterPage()
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    @IBAction func playerSignUpAction(sender: AnyObject) {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        //-- player sign up
-        self.clearKeyboard()
-        self.moveDown()
+        let cell:p2sLoginCell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as! p2sLoginCell
+        cell.delegate = self
+        
+        cell.accessoryType = UITableViewCellAccessoryType.None
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        return cell
     }
     
-    @IBAction func resetPwdAction(sender: AnyObject) {
-        
-        //-- reset password
-        self.clearKeyboard()
-        self.moveDown()
+    
+    //MARK: - table view delegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    @IBAction func changeSwitchAction(sender: AnyObject) {
+    
+    //MARK: - cell delegate
+    
+    func didSuccessfulLogin() {
         //
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
-    //MARK: - text field delegate
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.clearKeyboard()
-        return true
-    }
-    
-    
-    //MARK: - notification
-    
-    func keyboardWillShow(notifucation: NSNotification) {
-        self.moveUp()
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        self.moveDown()
-    }
-    
-    
-    //MARK: - register page
-    
-    func showRegisterPage() {
-        
+    func didGotoRegister() {
+        //
         let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegister", bundle: nil)
         let reg3Page: p2sRegisterViewController? = storyBoard.instantiateViewControllerWithIdentifier("register") as? p2sRegisterViewController
         self.presentViewController(reg3Page!, animated: true, completion: nil)
     }
     
-    
-    //MARK: - register delegate
-    
-    func didCloseRegister() {
+    func didPlayerSignIn() {
         //
     }
     
-    func didShowRegisterSave() {
+    func didResetPassword() {
         //
     }
     
-    
-    //MARK: - move up/dowm
-    
-    func isAlreadyMoved() -> Bool {
-        
-        if self.view.frame.origin.y < self.originalYCenter {
-            return true
-        }
-        else {
-            return false
-        }
-    }
-    
-    func moveUp() {
+    func moveCellUp() {
         
         if isSmallScreen {
-            if self.isAlreadyMoved() {
-                return
-            }
-            self.view.frame.origin.y -= self.movingSpace
+            UIView.animateWithDuration(0.2, animations: {
+                self.tableView.contentOffset = CGPoint(x: 0, y: self.movingSpace)
+                }, completion: {
+                    (value: Bool) in
+                    //
+            })
         }
     }
     
-    func moveDown() {
+    func moveCellDown() {
         
         if isSmallScreen {
-            if !self.isAlreadyMoved() {
-                return
-            }
-            self.view.frame.origin.y += self.movingSpace
+            UIView.animateWithDuration(0.2, animations: {
+                self.tableView.contentOffset = CGPoint(x: 0, y: 0)
+                }, completion: {
+                    (value: Bool) in
+                    //
+            })
         }
     }
     
-    
-    //MARK: - local methods
-    
-    func clearKeyboard() {
-        self.emailTextField.resignFirstResponder()
-        self.passwordTextField.resignFirstResponder()
-    }
-
 }
 
