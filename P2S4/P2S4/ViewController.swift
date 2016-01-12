@@ -24,8 +24,6 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     let enableColor = UIColor.blackColor()
     let disableColor = UIColor.grayColor()
     
-    //var login: p2sLoginViewController? = p2sLoginViewController()
-    
     //-- testing
     var isShowing: Bool = false
     
@@ -68,6 +66,7 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    
     //MARK: - IB action
     
     @IBAction func showSettings(sender: AnyObject) {
@@ -104,39 +103,24 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
         print("-> search players")
     }
     
+    
     //MARK: - settings delegate
     
     func didLogout() {
         self.showLogin()
     }
     
-    //MARK: - login delegates
-    
-//    func didCloseLogin() {
-//        self.closeLogin()
-//    }
     
     //MARK: - login methods
     
     func showLogin() {
         
-//        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sLogin", bundle: nil)
-//        self.login = storyBoard.instantiateViewControllerWithIdentifier("login") as? p2sLoginViewController
-//        self.login?.delegate = self
-//        self.presentViewController(self.login!, animated: true, completion: nil)
-        
         let storyBoard: UIStoryboard = UIStoryboard(name: "p2sLogin", bundle: nil)
         let login = storyBoard.instantiateViewControllerWithIdentifier("login") as? p2sLoginViewController
-        //login?.delegate = self
         self.presentViewController(login!, animated: true, completion: nil)
-        
     }
     
-//    func closeLogin() {
-//        self.login!.dismissViewControllerAnimated(true, completion: nil)
-//        self.login = nil
-//    }
-
+    
     //MARK: - local methods
     
     func hidePage() {

@@ -17,6 +17,7 @@
 		9DCCF0851C42C949006921AF /* p2sRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF0811C42C949006921AF /* p2sRegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DCCF0881C42CB91006921AF /* p2sLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF0861C42CB91006921AF /* p2sLoginCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9DCCF0891C42CB91006921AF /* p2sLoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DCCF0871C42CB91006921AF /* p2sLoginCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0ADA41C458096008B60B1 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17A1C3E088700389567 /* AppDelegate.swift */; };
 		9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17C1C3E088700389567 /* ViewController.swift */; };
 		9DD1C1801C3E088700389567 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD1C17E1C3E088700389567 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		9DCCF0811C42C949006921AF /* p2sRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegisterViewController.swift; path = Controllers/p2sRegisterViewController.swift; sourceTree = "<group>"; };
 		9DCCF0861C42CB91006921AF /* p2sLoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sLoginCell.swift; path = Controllers/p2sLoginCell.swift; sourceTree = "<group>"; };
 		9DCCF0871C42CB91006921AF /* p2sLoginCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sLoginCell.xib; path = Controllers/p2sLoginCell.xib; sourceTree = "<group>"; };
+		9DD0ADA41C458096008B60B1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Data/Constants.swift; sourceTree = "<group>"; };
 		9DD1C1771C3E088700389567 /* P2S4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2S4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD1C17A1C3E088700389567 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD1C17C1C3E088700389567 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				9DD484631C4086D2003EB57A /* JsonLinks.swift */,
 				9DD484641C4086D2003EB57A /* LogoImageObject.swift */,
 				9DD484651C4086D2003EB57A /* StaticData.swift */,
+				9DD0ADA41C458096008B60B1 /* Constants.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				9DD484601C40866C003EB57A /* p2sLoginViewController.swift in Sources */,
 				9DCCF0831C42C949006921AF /* p2sRegisterCell.swift in Sources */,
 				9DD484691C4086D2003EB57A /* LogoImageObject.swift in Sources */,
+				9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

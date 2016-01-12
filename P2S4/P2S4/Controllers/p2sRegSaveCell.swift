@@ -71,11 +71,9 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
         
         if isSmallScreen {
             self.topSpaceConstraint.constant = 30
-            print(".. it is for iPhone 4/4s ...")
         }
         else {
             self.topSpaceConstraint.constant = 10
-            print(".. it is for iPhone 5/5s/6/6+ ...")
         }
     }
     

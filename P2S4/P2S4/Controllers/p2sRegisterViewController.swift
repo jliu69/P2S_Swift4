@@ -36,6 +36,7 @@ class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITabl
         super.didReceiveMemoryWarning()
     }
     
+    
     //MARK: - table view source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,11 +58,13 @@ class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
+    
     //MARK: - table view delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
     
     //MARK: - cell delegate
     
@@ -99,6 +102,5 @@ class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITabl
             })
         }
     }
-    
 }
 

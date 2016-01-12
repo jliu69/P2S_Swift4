@@ -28,6 +28,7 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
     
     //var loginPage: p2sLoginViewController? = p2sLoginViewController()
     
+    
     //MARK: - init
     
     override func viewDidLoad() {
@@ -45,11 +46,13 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
         super.didReceiveMemoryWarning()
     }
     
+    
     //MARK: - IB action
     
     @IBAction func close(sender: AnyObject) {
         self.closePage()
     }
+    
     
     //MARK: - table view datasource
     
@@ -77,6 +80,7 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
         return cell!
     }
     
+    
     //MARK: - table view delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -84,22 +88,24 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
         
         if indexPath.row == 2 {
             
-            print("... to bug report ...")
+            //-- bug report
             self.bugReportEmail()
         }
         else if indexPath.row == 3 {
             
-            print("... to logout ...")
+            //-- logout
             delegate?.didLogout?()
             self.closePage()
         }
     }
+    
     
     //MARK: - send email delegate
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     
     //MARK: - local methods
     

@@ -18,7 +18,6 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     let iPhone4Height: CGFloat = 480.0
     
     var isSmallScreen: Bool = false
-    //var originalYCenter:CGFloat = 0.0
     
     
     //MARK: - init
@@ -31,6 +30,9 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         self.tableView.registerNib(UINib(nibName: "p2sLoginCell", bundle: nil), forCellReuseIdentifier: "CellId")
+        
+        let key = Constants.registerSaveNotificationKey()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "clearAllLoginAndRegisterPages:", name: key, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -70,15 +72,14 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     //MARK: - cell delegate
     
     func didSuccessfulLogin() {
-        //
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: {})
     }
     
     func didGotoRegister() {
-        //
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegister", bundle: nil)
-        let reg3Page: p2sRegisterViewController? = storyBoard.instantiateViewControllerWithIdentifier("register") as? p2sRegisterViewController
-        self.presentViewController(reg3Page!, animated: true, completion: nil)
+        let regPage: p2sRegisterViewController? = storyBoard.instantiateViewControllerWithIdentifier("register") as? p2sRegisterViewController
+        self.presentViewController(regPage!, animated: true, completion: nil)
     }
     
     func didPlayerSignIn() {
@@ -111,6 +112,16 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
                     //
             })
         }
+    }
+    
+    
+    //MARK: - login notification
+    
+    @objc func clearAllLoginAndRegisterPages(notifcation: NSNotificationCenter) {
+        
+        self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
+        self.dismissViewControllerAnimated(true, completion: {})
     }
     
 }

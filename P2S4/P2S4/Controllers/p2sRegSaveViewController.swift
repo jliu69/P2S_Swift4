@@ -69,14 +69,16 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
     //MARK: - cell delegate
     
     func didGoback() {
-        //
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func didCompleteReigster() {
-        //
+        
+        //-- save data here
+        
+        let key = Constants.registerSaveNotificationKey()
+        NSNotificationCenter.defaultCenter().postNotificationName(key, object: self)
     }
-    
     
     
 }
