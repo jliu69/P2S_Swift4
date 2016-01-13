@@ -9,10 +9,20 @@
 import UIKit
 
 
+struct RegisterSave {
+    static let notificationKey = "RegisterSaveNotificationKey"
+}
+
+struct SelectionType {
+    static let ageRange = "ageRange"
+    static let state = "state"
+    static let nation = "nation"
+    static let sport = "sport"
+    static let height = "height"
+    static let weight = "weight"
+}
+
+
 class Constants: NSObject {
-    
-    class func registerSaveNotificationKey() -> String {
-        return "RegisterSaveNotificationKey"
-    }
-    
+    //
 }

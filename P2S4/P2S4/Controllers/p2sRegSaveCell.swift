@@ -14,8 +14,9 @@ import UIKit
     optional func didGoback()
     optional func didCompleteReigster()
     
-    //optional func moveCellUp()
-    //optional func moveCellDown()
+    optional func showAgeRanges()
+    optional func showStates()
+    optional func showNations()
 }
 
 
@@ -65,31 +66,18 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
     }
     
     
-    //MARK: - local methods
-    
-    func checkForSmallScreenSize(isSmallScreen: Bool) {
-        
-        if isSmallScreen {
-            self.topSpaceConstraint.constant = 30
-        }
-        else {
-            self.topSpaceConstraint.constant = 10
-        }
-    }
-    
-    
     //MARK: - IB actions
     
     @IBAction func ageRangeAction(sender: AnyObject) {
-        //
+        delegate?.showAgeRanges?()
     }
     
     @IBAction func selectStateAction(sender: AnyObject) {
-        //
+        delegate?.showStates?()
     }
     
     @IBAction func selectNationAction(sender: AnyObject) {
-        //
+        delegate?.showNations?()
     }
     
     @IBAction func chooseGenderAction(sender: AnyObject) {
@@ -123,6 +111,31 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
         self.lastNameTextField.resignFirstResponder()
         self.cityTextField.resignFirstResponder()
         return true
+    }
+    
+    
+    //MARK: - local methods
+    
+    func checkForSmallScreenSize(isSmallScreen: Bool) {
+        
+        if isSmallScreen {
+            self.topSpaceConstraint.constant = 30
+        }
+        else {
+            self.topSpaceConstraint.constant = 10
+        }
+    }
+    
+    func editAgeRangeButtonTitle(title: String) {
+        //
+    }
+    
+    func editStateButtonTitle(title: String) {
+        //
+    }
+    
+    func editNationButtonTitle(title: String) {
+        //
     }
     
     

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegSaveCellDelegate {
+class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegSaveCellDelegate, p2sSelectsViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,6 +17,7 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
     let iPhone4Height: CGFloat = 480.0
     
     var isSmallScreen: Bool = false
+    var cell: p2sRegSaveCell? = p2sRegSaveCell()
     
     
     //MARK: - init
@@ -48,14 +49,14 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:p2sRegSaveCell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as! p2sRegSaveCell
-        cell.delegate = self
-        cell.checkForSmallScreenSize(self.isSmallScreen)
+        self.cell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as? p2sRegSaveCell
+        self.cell!.delegate = self
+        self.cell!.checkForSmallScreenSize(self.isSmallScreen)
         
-        cell.accessoryType = UITableViewCellAccessoryType.None
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        self.cell!.accessoryType = UITableViewCellAccessoryType.None
+        self.cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
-        return cell
+        return self.cell!
     }
     
     
@@ -76,8 +77,33 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
         
         //-- save data here
         
-        let key = Constants.registerSaveNotificationKey()
+        let key = RegisterSave.notificationKey
         NSNotificationCenter.defaultCenter().postNotificationName(key, object: self)
+    }
+    
+    func showAgeRanges() {
+        
+        let storyBoard = UIStoryboard(name: "p2sSelect", bundle: nil)
+        let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
+        select!.delegate = self
+        select!.type = SelectionType.ageRange
+        select!.pageTitle("Select Your Birth Year")
+        self.presentViewController(select!, animated: true, completion: {})
+    }
+    
+    func showStates() {
+        //
+    }
+    
+    func showNations() {
+        //
+    }
+    
+    
+    //MARK: - selection delegate
+    
+    func didSelectItem(type: String, name: String, code: String) {
+        //
     }
     
     

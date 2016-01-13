@@ -31,7 +31,7 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.tableView.registerNib(UINib(nibName: "p2sLoginCell", bundle: nil), forCellReuseIdentifier: "CellId")
         
-        let key = Constants.registerSaveNotificationKey()
+        let key = RegisterSave.notificationKey
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "clearAllLoginAndRegisterPages:", name: key, object: nil)
     }
     
