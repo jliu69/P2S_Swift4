@@ -26,6 +26,7 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     var delegate: p2sSelectsViewControllerDelegate! = nil
     
     var type: String? = ""
+    var pageTitle: String? = ""
     var rowsArray: Array<AnyObject>? = [AnyObject]()
     
     var beginTimeInterval: NSTimeInterval = 0
@@ -64,19 +65,6 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    
-    //MARK: - set title
-    
-    func pageTitle(aTitle: String) {
-        
-        print("title label: '\(aTitle)'")
-        
-        if let label = self.pageTitleLabel {
-            label.text = title
-        }
-        
     }
     
     
@@ -131,6 +119,7 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         self.rowsArray = data
         self.tableView.reloadData()
         self.view.sendSubviewToBack(self.activityIndicator)
+        self.pageTitleLabel!.text = self.pageTitle
         
         let date = NSDate()
         endTimeInterval = date.timeIntervalSince1970

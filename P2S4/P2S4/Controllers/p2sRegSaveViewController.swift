@@ -87,7 +87,7 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
         let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
         select!.delegate = self
         select!.type = SelectionType.ageRange
-        select!.pageTitle("Select Your Birth Year")
+        select!.pageTitle = "Select Your Birth Year"
         self.presentViewController(select!, animated: true, completion: {})
     }
     
@@ -97,7 +97,7 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
         let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
         select!.delegate = self
         select!.type = SelectionType.state
-        select!.pageTitle("Select Your State/Province")
+        select!.pageTitle = "Select Your State/Province"
         self.presentViewController(select!, animated: true, completion: {})
     }
     
@@ -107,7 +107,7 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
         let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
         select!.delegate = self
         select!.type = SelectionType.nation
-        select!.pageTitle("Select Your Country")
+        select!.pageTitle = "Select Your Country"
         self.presentViewController(select!, animated: true, completion: {})
     }
     
