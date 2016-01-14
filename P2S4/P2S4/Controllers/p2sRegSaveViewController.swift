@@ -92,11 +92,23 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func showStates() {
-        //
+        
+        let storyBoard = UIStoryboard(name: "p2sSelect", bundle: nil)
+        let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
+        select!.delegate = self
+        select!.type = SelectionType.state
+        select!.pageTitle("Select Your State/Province")
+        self.presentViewController(select!, animated: true, completion: {})
     }
     
     func showNations() {
-        //
+        
+        let storyBoard = UIStoryboard(name: "p2sSelect", bundle: nil)
+        let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
+        select!.delegate = self
+        select!.type = SelectionType.nation
+        select!.pageTitle("Select Your Country")
+        self.presentViewController(select!, animated: true, completion: {})
     }
     
     

@@ -61,11 +61,12 @@
 		9DD484601C40866C003EB57A /* p2sLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4845E1C40866C003EB57A /* p2sLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD484661C4086D2003EB57A /* CommonDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484611C4086D2003EB57A /* CommonDataObject.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD484671C4086D2003EB57A /* CurrentUserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484621C4086D2003EB57A /* CurrentUserObject.swift */; settings = {ASSET_TAGS = (); }; };
-		9DD484681C4086D2003EB57A /* JsonLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484631C4086D2003EB57A /* JsonLinks.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD484691C4086D2003EB57A /* LogoImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484641C4086D2003EB57A /* LogoImageObject.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD4846A1C4086D2003EB57A /* StaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484651C4086D2003EB57A /* StaticData.swift */; settings = {ASSET_TAGS = (); }; };
 		9DDF42571C46CF0E00EF11EB /* p2sSelectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDF42561C46CF0E00EF11EB /* p2sSelectsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DDF42591C46D08600EF11EB /* p2sSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDF42581C46D08600EF11EB /* p2sSelect.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DE9747E1C47ED0D00D7AFA0 /* JsonLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9747D1C47ED0D00D7AFA0 /* JsonLinks.swift */; settings = {ASSET_TAGS = (); }; };
+		9DE974801C47ED2E00D7AFA0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9747F1C47ED2E00D7AFA0 /* DataManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,11 +127,12 @@
 		9DD4845E1C40866C003EB57A /* p2sLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sLoginViewController.swift; path = Controllers/p2sLoginViewController.swift; sourceTree = "<group>"; };
 		9DD484611C4086D2003EB57A /* CommonDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonDataObject.swift; path = Data/CommonDataObject.swift; sourceTree = "<group>"; };
 		9DD484621C4086D2003EB57A /* CurrentUserObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentUserObject.swift; path = Data/CurrentUserObject.swift; sourceTree = "<group>"; };
-		9DD484631C4086D2003EB57A /* JsonLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonLinks.swift; path = Data/JsonLinks.swift; sourceTree = "<group>"; };
 		9DD484641C4086D2003EB57A /* LogoImageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoImageObject.swift; path = Data/LogoImageObject.swift; sourceTree = "<group>"; };
 		9DD484651C4086D2003EB57A /* StaticData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticData.swift; path = Data/StaticData.swift; sourceTree = "<group>"; };
 		9DDF42561C46CF0E00EF11EB /* p2sSelectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sSelectsViewController.swift; path = Controllers/p2sSelectsViewController.swift; sourceTree = "<group>"; };
 		9DDF42581C46D08600EF11EB /* p2sSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sSelect.storyboard; path = Controllers/p2sSelect.storyboard; sourceTree = "<group>"; };
+		9DE9747D1C47ED0D00D7AFA0 /* JsonLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonLinks.swift; path = WebServices/JsonLinks.swift; sourceTree = "<group>"; };
+		9DE9747F1C47ED2E00D7AFA0 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = WebServices/DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,8 @@
 		9D6E553F1C4707D300399B03 /* Web Service */ = {
 			isa = PBXGroup;
 			children = (
+				9DE9747D1C47ED0D00D7AFA0 /* JsonLinks.swift */,
+				9DE9747F1C47ED2E00D7AFA0 /* DataManager.swift */,
 			);
 			name = "Web Service";
 			sourceTree = "<group>";
@@ -262,7 +266,6 @@
 				9DD0ADA41C458096008B60B1 /* Constants.swift */,
 				9DD484611C4086D2003EB57A /* CommonDataObject.swift */,
 				9DD484621C4086D2003EB57A /* CurrentUserObject.swift */,
-				9DD484631C4086D2003EB57A /* JsonLinks.swift */,
 				9DD484641C4086D2003EB57A /* LogoImageObject.swift */,
 				9DD484651C4086D2003EB57A /* StaticData.swift */,
 			);
@@ -384,6 +387,7 @@
 				9DCCF0851C42C949006921AF /* p2sRegisterViewController.swift in Sources */,
 				9D6E55361C47011E00399B03 /* Weights.swift in Sources */,
 				9D6E553C1C47011E00399B03 /* Nations.swift in Sources */,
+				9DE9747E1C47ED0D00D7AFA0 /* JsonLinks.swift in Sources */,
 				9D6E55301C47011E00399B03 /* Heights.swift in Sources */,
 				9D6E55311C47011E00399B03 /* Sports+CoreDataProperties.swift in Sources */,
 				9DDF42571C46CF0E00EF11EB /* p2sSelectsViewController.swift in Sources */,
@@ -399,10 +403,10 @@
 				9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */,
 				9D6E55381C47011E00399B03 /* Positions.swift in Sources */,
 				9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */,
+				9DE974801C47ED2E00D7AFA0 /* DataManager.swift in Sources */,
 				9D1F97AD1C42075100A83C6E /* p2sRegSaveViewController.swift in Sources */,
 				9D6E552F1C47011E00399B03 /* Heights+CoreDataProperties.swift in Sources */,
 				9D6E552D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift in Sources */,
-				9DD484681C4086D2003EB57A /* JsonLinks.swift in Sources */,
 				9DD390BC1C3F5A980052DE2D /* p2sSettingsViewController.swift in Sources */,
 				9DD484601C40866C003EB57A /* p2sLoginViewController.swift in Sources */,
 				9D6E55341C47011E00399B03 /* States.swift in Sources */,

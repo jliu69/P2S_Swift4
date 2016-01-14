@@ -15,17 +15,22 @@ import UIKit
 }
 
 
-class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DataManagerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var delegate: p2sSelectsViewControllerDelegate! = nil
     
     var type: String? = ""
     var rowsArray: Array<AnyObject>? = [AnyObject]()
+    
+    var beginTimeInterval: NSTimeInterval = 0
+    var endTimeInterval: NSTimeInterval = 0
+    
     
     //MARK: - init
     
@@ -43,11 +48,24 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         self.cancelButton.layer.cornerRadius = 5
         self.cancelButton.clipsToBounds = true
         
+        
+        self.view.bringSubviewToFront(self.activityIndicator)
+        
+        
+        //-- data
+        let dataManager: DataManager? = DataManager()
+        dataManager!.delegate = self
+        dataManager!.dataWithSelectType(type!)
+        
+        let date = NSDate()
+        beginTimeInterval = date.timeIntervalSince1970
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     //MARK: - set title
     
@@ -61,11 +79,13 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    
     //MARK: - IB action
     
     @IBAction func cancelAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
     }
+    
     
     //MARK: - table view source
     
@@ -92,6 +112,7 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         return cell!
     }
     
+    
     //MARK: - table view delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -101,6 +122,21 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         delegate?.didSelectItem?(self.type!, name: item!.name!, code: item!.code!)
         
         self.dismissViewControllerAnimated(true, completion: {})
+    }
+    
+    
+    //MARK: - data manager delegate
+    
+    func didReceiveData(data: Array<AnyObject>) {
+        self.rowsArray = data
+        self.tableView.reloadData()
+        self.view.sendSubviewToBack(self.activityIndicator)
+        
+        let date = NSDate()
+        endTimeInterval = date.timeIntervalSince1970
+        
+        let diff = endTimeInterval - beginTimeInterval
+        print("total time of getting date : \(diff)")
     }
     
     

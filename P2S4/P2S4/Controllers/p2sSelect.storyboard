@@ -84,6 +84,15 @@
                                     <action selector="cancelAction:" destination="uJR-Ue-yjb" eventType="touchUpInside" id="CAS-yP-pS4"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AfC-PE-OJc">
+                                <rect key="frame" x="290" y="264" width="20" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Gq8-T7-Sly"/>
+                                    <constraint firstAttribute="height" constant="20" id="VWR-lz-Qfh"/>
+                                </constraints>
+                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -94,8 +103,10 @@
                             <constraint firstItem="sn0-DC-aPJ" firstAttribute="centerX" secondItem="FA9-yR-AT4" secondAttribute="centerX" id="HJT-fc-ZhH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FIi-AW-zlz" secondAttribute="trailing" constant="-20" id="Jno-wZ-6wg"/>
                             <constraint firstItem="mdq-wP-N69" firstAttribute="top" secondItem="sn0-DC-aPJ" secondAttribute="bottom" constant="40" id="NQX-qz-bPW"/>
+                            <constraint firstItem="AfC-PE-OJc" firstAttribute="centerX" secondItem="sn0-DC-aPJ" secondAttribute="centerX" id="OJ4-MS-xga"/>
                             <constraint firstItem="MpP-pJ-bbJ" firstAttribute="centerX" secondItem="FA9-yR-AT4" secondAttribute="centerX" id="SgA-Ng-tbG"/>
                             <constraint firstItem="FIi-AW-zlz" firstAttribute="leading" secondItem="FA9-yR-AT4" secondAttribute="leadingMargin" constant="-20" id="YDv-FR-EGT"/>
+                            <constraint firstItem="AfC-PE-OJc" firstAttribute="centerY" secondItem="sn0-DC-aPJ" secondAttribute="centerY" id="aLS-Nw-bT9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aBj-wG-Fbs" secondAttribute="trailing" constant="-20" id="aYw-KX-KE5"/>
                             <constraint firstItem="MpP-pJ-bbJ" firstAttribute="top" secondItem="aBj-wG-Fbs" secondAttribute="bottom" constant="30" id="htj-Yc-8CM"/>
                             <constraint firstItem="aBj-wG-Fbs" firstAttribute="leading" secondItem="FA9-yR-AT4" secondAttribute="leadingMargin" constant="-20" id="mqt-6u-Lxp"/>
@@ -103,6 +114,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="AfC-PE-OJc" id="9Qh-Dd-iUV"/>
                         <outlet property="cancelButton" destination="mdq-wP-N69" id="xAL-hM-FRN"/>
                         <outlet property="pageTitleLabel" destination="MpP-pJ-bbJ" id="abD-Rs-gLl"/>
                         <outlet property="tableView" destination="sn0-DC-aPJ" id="psA-Z5-OHN"/>
