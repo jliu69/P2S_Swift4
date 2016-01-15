@@ -48,10 +48,17 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         
         self.cancelButton.layer.cornerRadius = 5
         self.cancelButton.clipsToBounds = true
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         self.view.bringSubviewToFront(self.activityIndicator)
-        
+        self.pageTitleLabel!.text = self.pageTitle
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         //-- data
         let dataManager: DataManager? = DataManager()
@@ -60,7 +67,6 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         
         let date = NSDate()
         beginTimeInterval = date.timeIntervalSince1970
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,7 +125,7 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         self.rowsArray = data
         self.tableView.reloadData()
         self.view.sendSubviewToBack(self.activityIndicator)
-        self.pageTitleLabel!.text = self.pageTitle
+        //self.pageTitleLabel!.text = self.pageTitle
         
         let date = NSDate()
         endTimeInterval = date.timeIntervalSince1970
