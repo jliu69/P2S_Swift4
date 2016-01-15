@@ -9,7 +9,7 @@
 import UIKit
 
 
-class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sLoginCellDelegate {
+class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sLoginCellDelegate, LoginRegisterManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -71,8 +71,38 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //MARK: - cell delegate
     
-    func didSuccessfulLogin() {
-        self.dismissViewControllerAnimated(true, completion: {})
+    func didLoginUser(email: String, password: String, savePwd: Bool) {
+        
+        //-- validataion
+        let alertHelper: AlertsHelper? = AlertsHelper()
+        if email == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Error", alertMessage: "User email cannot be empty.")
+            return
+        }
+        if password == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Error", alertMessage: "User password cannot be empty.")
+            return
+        }
+        
+        //-- save password
+        if savePwd {
+            NSUserDefaults.standardUserDefaults().setValue(email, forKey: UserDefaultKeys.savedUserEmail)
+            NSUserDefaults.standardUserDefaults().setValue(password, forKey: UserDefaultKeys.savedUserPassword)
+        }
+        else {
+            NSUserDefaults.standardUserDefaults().setValue("", forKey: UserDefaultKeys.savedUserEmail)
+            NSUserDefaults.standardUserDefaults().setValue("", forKey: UserDefaultKeys.savedUserPassword)
+        }
+        
+        //-- save user info
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDele.currentUser!.email! = email
+        appDele.currentUser!.password! = password
+        
+        //-- process login
+        let loginRegister: LoginRegisterManager? = LoginRegisterManager()
+        loginRegister!.delegate = self
+        loginRegister!.loginUser(email, password: password)
     }
     
     func didGotoRegister() {
@@ -115,7 +145,18 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     
-    //MARK: - login notification
+    //MARK: - login register delegate
+    
+    func loginSuccess(successFlag: Bool) {
+        
+        if successFlag {
+            self.dismissViewControllerAnimated(true, completion: {})
+        }
+    }
+    
+    
+    
+    //MARK: - register complete notification
     
     @objc func clearAllLoginAndRegisterPages(notifcation: NSNotificationCenter) {
         

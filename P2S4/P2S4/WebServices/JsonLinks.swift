@@ -34,4 +34,9 @@ class JsonLinks: NSObject {
         return "http://www.mysohoplace.com/php_p2s/weight_list.php"
     }
     
+    
+    static func userLogin() -> String {
+        return "/mobile/controller/MobileLoginController/login?"
+    }
+    
 }

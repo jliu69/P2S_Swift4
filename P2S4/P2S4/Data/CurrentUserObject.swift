@@ -10,9 +10,12 @@ import UIKit
 
 class CurrentUserObject: NSObject {
     
-    var email:String? = ""
-    var password:String? = ""
-    var sportId:String? = ""
-    var sportName:String? = ""
+    var personId: String? = ""
+    var email: String? = ""
+    var password: String? = ""
+    var lastName: String? = ""
+    var firstName: String? = ""
+    var sportId: String? = ""
+    var sportName: String? = ""
     
 }

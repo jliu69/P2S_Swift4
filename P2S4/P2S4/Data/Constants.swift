@@ -22,6 +22,11 @@ struct SelectionType {
     static let weight = "weight"
 }
 
+struct UserDefaultKeys {
+    static let savedUserEmail = "SavedUserEmail"
+    static let savedUserPassword = "SavedUserPassword"
+}
+
 
 class Constants: NSObject {
     //

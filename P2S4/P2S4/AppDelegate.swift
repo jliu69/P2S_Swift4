@@ -14,10 +14,43 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var currentUser: CurrentUserObject? = CurrentUserObject()
+    var urlHeader: String? = ""
     
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        var email: String?
+        email = NSUserDefaults.standardUserDefaults().valueForKey(UserDefaultKeys.savedUserEmail) as? String
+        if email == nil {
+            NSUserDefaults.standardUserDefaults().setValue("", forKey: UserDefaultKeys.savedUserEmail)
+        }
+        
+        var password: String?
+        password = NSUserDefaults.standardUserDefaults().valueForKey(UserDefaultKeys.savedUserPassword) as? String
+        if password == nil {
+            NSUserDefaults.standardUserDefaults().setValue("", forKey: UserDefaultKeys.savedUserPassword)
+        }
+        
+        
+        var myDict: NSDictionary?
+        if let path = NSBundle.mainBundle().pathForResource("dbLink", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+            
+            if let dict = myDict {
+                let envValue: String? = dict.objectForKey("env") as? NSString as? String
+                
+                if envValue != nil && envValue! == "prod" {
+                    self.urlHeader = dict.objectForKey("prod") as? NSString as? String
+                }
+                else {
+                    self.urlHeader = dict.objectForKey("dev") as? NSString as? String
+                }
+            }
+        }
+        
         return true
     }
     

@@ -11,7 +11,7 @@ import UIKit
 
 @objc protocol p2sLoginCellDelegate {
     
-    optional func didSuccessfulLogin()
+    optional func didLoginUser(email: String, password: String, savePwd: Bool)
     optional func didGotoRegister()
     optional func didPlayerSignIn()
     optional func didResetPassword()
@@ -32,6 +32,8 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var resetPwdButton: UIButton!
     
     var delegate: p2sLoginCellDelegate! = nil
+    
+    var savePwdFlag: Bool = true
     
     
     //MARK: - init
@@ -62,29 +64,40 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     @IBAction func fanLoginAction(sender: AnyObject) {
         //
         self.clearKeyboard()
-        delegate?.didSuccessfulLogin?()
+        
+        var email = ""
+        if self.emailTextField.text != nil {
+            email = self.emailTextField.text!
+        }
+        
+        var password = ""
+        if self.passwordTextField.text != nil {
+            password = self.passwordTextField.text!
+        }
+        
+        delegate?.didLoginUser?(email, password: password, savePwd: self.savePwdFlag)
     }
     
     @IBAction func fanSignUpAction(sender: AnyObject) {
-        //
+        
         self.clearKeyboard()
         delegate?.didGotoRegister?()
     }
     
     @IBAction func playerSignUpAction(sender: AnyObject) {
-        //
+        
         self.clearKeyboard()
         delegate?.didPlayerSignIn?()
     }
     
     @IBAction func resetPasswordAction(sender: AnyObject) {
-        //
+        
         self.clearKeyboard()
         delegate?.didResetPassword?()
     }
     
     @IBAction func savePwdAction(sender: AnyObject) {
-        //
+        self.savePwdFlag = self.savePwdSwitch.on
     }
     
     
