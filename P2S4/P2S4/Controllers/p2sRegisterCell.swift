@@ -12,10 +12,12 @@ import UIKit
 @objc protocol p2sRegisterCellDelegate {
     
     optional func didCancelRegister()
-    optional func didGotoNextPage()
+    optional func didGotoNextPage(email: String, password: String, password2: String)
     
     optional func moveCellUp()
     optional func moveCellDown()
+    
+    optional func showWarningMessage(title: String, message: String)
 }
 
 
@@ -66,15 +68,35 @@ class p2sRegisterCell: UITableViewCell, UITextFieldDelegate {
     //MARK: - IB action
     
     @IBAction func cancelAction(sender: AnyObject) {
-        //
+        
         self.clearKeyboard()
         delegate?.didCancelRegister?()
     }
     
     @IBAction func nextAction(sender: AnyObject) {
-        //
         self.clearKeyboard()
-        delegate?.didGotoNextPage?()
+        
+        var email = ""
+        if self.emailTextField.text != nil {
+            email = self.emailTextField.text!
+        }
+        
+        var password = ""
+        if self.passwordTextField.text != nil {
+            password = self.passwordTextField.text!
+        }
+        
+        var password2 = ""
+        if self.password2TextField.text != nil {
+            password2 = self.password2TextField.text!
+        }
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDele.currentUser!.clearData()
+        appDele.currentUser!.email! = email
+        appDele.currentUser!.password! = password
+        
+        delegate?.didGotoNextPage?(email, password: password, password2: password2)
     }
     
     

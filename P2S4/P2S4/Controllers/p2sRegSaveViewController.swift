@@ -9,7 +9,7 @@
 import UIKit
 
 
-class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegSaveCellDelegate, p2sSelectsViewControllerDelegate {
+class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegSaveCellDelegate, p2sSelectsViewControllerDelegate, LoginRegisterManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,6 +18,10 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
     
     var isSmallScreen: Bool = false
     var cell: p2sRegSaveCell? = p2sRegSaveCell()
+    
+    var selectedAgeRange: String? = ""
+    var selectedState: String? = ""
+    var selectedNation: String? = "US"
     
     
     //MARK: - init
@@ -73,10 +77,32 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func didCompleteReigster() {
+    func didReigsterWithData(firstName: String, lastName: String, gender: String, city: String, savePwd: Bool) {
+        
+        if !self.checkValidation(firstName, lastName: lastName, city: city) {
+            return
+        }
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        let email: String? = appDele.currentUser!.email
+        let password: String? = appDele.currentUser!.password
+        
+        //-- save password
+        if savePwd {
+            NSUserDefaults.standardUserDefaults().setValue(email!, forKey: UserDefaultKeys.savedUserEmail)
+            NSUserDefaults.standardUserDefaults().setValue(password!, forKey: UserDefaultKeys.savedUserPassword)
+        }
+        else {
+            NSUserDefaults.standardUserDefaults().setValue("", forKey: UserDefaultKeys.savedUserEmail)
+            NSUserDefaults.standardUserDefaults().setValue("", forKey: UserDefaultKeys.savedUserPassword)
+        }
         
         //-- save data here
+        let loginRegisterManager: LoginRegisterManager? = LoginRegisterManager()
+        loginRegisterManager!.delegate = self
+        loginRegisterManager!.saveRegistration(email!, password: password!, lastName: lastName, firstName: firstName, gender: gender, ageRange: self.selectedAgeRange!, city: city, stateCode: self.selectedState!, nationCode: self.selectedNation!)
         
+        //-- close all login & register pages
         let key = RegisterSave.notificationKey
         NSNotificationCenter.defaultCenter().postNotificationName(key, object: self)
     }
@@ -115,9 +141,63 @@ class p2sRegSaveViewController: UIViewController, UITableViewDataSource, UITable
     //MARK: - selection delegate
     
     func didSelectItem(type: String, name: String, code: String) {
-        //
+        
+        switch (type) {
+        case SelectionType.ageRange:
+            self.selectedAgeRange = code
+            break
+        case SelectionType.state:
+            self.selectedState = code
+            break
+        case SelectionType.nation:
+            self.selectedNation = code
+            break
+        default:
+            break
+        }
+        
+        self.cell!.editButton(type, value: code)
     }
     
+    
+    //MARK: - local method
+    
+    func checkValidation(firstName: String, lastName: String, city: String) -> Bool {
+        
+        let alertHelper: AlertsHelper? = AlertsHelper()
+        
+        if firstName == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "First name cannot be empty.")
+            return false
+        }
+        
+        if lastName == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Last name cannot be empty.")
+            return false
+        }
+        
+        if selectedAgeRange! == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Need to choose an age range.")
+            return false
+        }
+        
+        if city == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "City cannot be empty.")
+            return false
+        }
+        
+        if selectedState! == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Need to choose a state.")
+            return false
+        }
+        
+        if selectedNation! == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Need to choose a country.")
+            return false
+        }
+        
+        return true
+    }
     
 }
 

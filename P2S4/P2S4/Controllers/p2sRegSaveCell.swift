@@ -12,7 +12,7 @@ import UIKit
 @objc protocol p2sRegSaveCellDelegate {
     
     optional func didGoback()
-    optional func didCompleteReigster()
+    optional func didReigsterWithData(firstName: String, lastName: String, gender: String, city: String, savePwd: Bool)
     
     optional func showAgeRanges()
     optional func showStates()
@@ -39,6 +39,9 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
     
     var delegate:p2sRegSaveCellDelegate! = nil
     
+    var gender: String? = "Male"
+    var savePasswordFlag: Bool = true
+    
     
     //MARK: - init
     
@@ -59,6 +62,10 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
         
         self.registerButton.layer.cornerRadius = 5
         self.registerButton.clipsToBounds = true
+        
+        
+        self.selectNationButton.setTitle("COUNTRY : US", forState: UIControlState.Normal)
+        self.selectNationButton.setTitle("COUNTRY : US", forState: UIControlState.Highlighted)
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -81,11 +88,23 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction func chooseGenderAction(sender: AnyObject) {
-        //
+        
+        if self.genderSegmentControl.selectedSegmentIndex == 0 {
+            gender = "Male"
+        }
+        else {
+            gender = "Female"
+        }
     }
     
     @IBAction func savePwdAction(sender: AnyObject) {
-        //
+        
+        if self.savePwdSwitch.on {
+            savePasswordFlag = true
+        }
+        else {
+            savePasswordFlag = false
+        }
     }
     
     @IBAction func gobackAction(sender: AnyObject) {
@@ -94,16 +113,55 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction func registerAction(sender: AnyObject) {
-        //
-        delegate?.didCompleteReigster?()
+        
+        //delegate?.didCompleteReigster?()
+        
+        var firstName = ""
+        if self.firstNameTextField.text != nil {
+            firstName = self.firstNameTextField.text!
+        }
+        
+        var lastName = ""
+        if self.lastNameTextField.text != nil {
+            lastName = self.lastNameTextField.text!
+        }
+        
+        var city = ""
+        if self.cityTextField.text != nil {
+            city = self.cityTextField.text!
+        }
+        
+        delegate?.didReigsterWithData?(firstName, lastName: lastName, gender: gender!, city: city, savePwd: savePasswordFlag)
+    }
+    
+    
+    //MARK: - edit button
+    
+    func editButton(type: String, value: String) {
+        
+        switch (type) {
+        case SelectionType.ageRange:
+            let title = "AGE RANGE : \(value)"
+            self.ageRangeButton.setTitle(title, forState: UIControlState.Normal)
+            self.ageRangeButton.setTitle(title, forState: UIControlState.Highlighted)
+            break
+        case SelectionType.state:
+            let title = "STATE/PROVINCE : \(value)"
+            self.selectStateButton.setTitle(title, forState: UIControlState.Normal)
+            self.selectStateButton.setTitle(title, forState: UIControlState.Highlighted)
+            break
+        case SelectionType.nation:
+            let title = "COUNTRY : \(value)"
+            self.selectNationButton.setTitle(title, forState: UIControlState.Normal)
+            self.selectNationButton.setTitle(title, forState: UIControlState.Highlighted)
+            break
+        default:
+            break
+        }
     }
     
     
     //MARK: - text field delegate
-    
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        return true
-    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
@@ -125,19 +183,5 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
             self.topSpaceConstraint.constant = 10
         }
     }
-    
-    func editAgeRangeButtonTitle(title: String) {
-        //
-    }
-    
-    func editStateButtonTitle(title: String) {
-        //
-    }
-    
-    func editNationButtonTitle(title: String) {
-        //
-    }
-    
-    
 }
 

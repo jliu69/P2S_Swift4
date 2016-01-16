@@ -125,7 +125,6 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         self.rowsArray = data
         self.tableView.reloadData()
         self.view.sendSubviewToBack(self.activityIndicator)
-        //self.pageTitleLabel!.text = self.pageTitle
         
         let date = NSDate()
         endTimeInterval = date.timeIntervalSince1970
@@ -133,7 +132,6 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         let diff = endTimeInterval - beginTimeInterval
         print("total time of getting date : \(diff)")
     }
-    
     
 }
 

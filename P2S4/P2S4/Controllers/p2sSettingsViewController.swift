@@ -26,8 +26,6 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
     let titles: Array<String> = ["Version", "Year", "Bugs Report", "Logout"]
     var descs: Array<String> = []
     
-    //var loginPage: p2sLoginViewController? = p2sLoginViewController()
-    
     
     //MARK: - init
     
@@ -95,6 +93,10 @@ class p2sSettingsViewController: UIViewController, UITableViewDataSource, UITabl
             
             //-- logout
             delegate?.didLogout?()
+            
+            let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDele.currentUser!.clearData()
+            
             self.closePage()
         }
     }

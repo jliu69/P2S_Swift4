@@ -18,4 +18,14 @@ class CurrentUserObject: NSObject {
     var sportId: String? = ""
     var sportName: String? = ""
     
+    func clearData() {
+        
+        self.personId = ""
+        self.email = ""
+        self.password = ""
+        self.lastName = ""
+        self.firstName = ""
+        self.sportId = ""
+        self.sportName = ""
+    }
 }

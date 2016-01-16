@@ -107,6 +107,7 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     //MARK: - settings delegate
     
     func didLogout() {
+        self.hidePage()
         self.showLogin()
     }
     

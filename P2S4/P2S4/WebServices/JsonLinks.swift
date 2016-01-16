@@ -39,4 +39,13 @@ class JsonLinks: NSObject {
         return "/mobile/controller/MobileLoginController/login?"
     }
     
+    static func checkRegisterEmail() -> String {
+        return "/mobile/controller/MobileDataController/checkRegisterEmail?"
+    }
+    
+    static func saveRegister() -> String {
+        return "/controller/RegisterController/registerFan?"
+    }
+    
 }
+

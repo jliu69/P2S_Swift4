@@ -76,11 +76,11 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         //-- validataion
         let alertHelper: AlertsHelper? = AlertsHelper()
         if email == "" {
-            alertHelper!.showSimpleAlert(self, alertTitle: "Error", alertMessage: "User email cannot be empty.")
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Email cannot be empty.")
             return
         }
         if password == "" {
-            alertHelper!.showSimpleAlert(self, alertTitle: "Error", alertMessage: "User password cannot be empty.")
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Password cannot be empty.")
             return
         }
         
@@ -96,6 +96,7 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //-- save user info
         let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDele.currentUser!.clearData()
         appDele.currentUser!.email! = email
         appDele.currentUser!.password! = password
         
@@ -151,6 +152,10 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if successFlag {
             self.dismissViewControllerAnimated(true, completion: {})
+        }
+        else {
+            let alertsHelper: AlertsHelper? = AlertsHelper()
+            alertsHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Login incorrect.")
         }
     }
     

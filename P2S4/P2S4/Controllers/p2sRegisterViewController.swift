@@ -9,7 +9,7 @@
 import UIKit
 
 
-class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegisterCellDelegate {
+class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sRegisterCellDelegate, LoginRegisterManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -72,11 +72,32 @@ class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITabl
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func didGotoNextPage() {
+    func didGotoNextPage(email: String, password: String, password2: String) {
         
-        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegSave", bundle: nil)
-        let regSave: p2sRegSaveViewController? = storyBoard.instantiateViewControllerWithIdentifier("regSave") as? p2sRegSaveViewController
-        self.presentViewController(regSave!, animated: true, completion: nil)
+        let alertHelper: AlertsHelper? = AlertsHelper()
+        let emailHelper: EmailsHelper? = EmailsHelper()
+        
+        if email == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Email cannot be empty.")
+            self.validateResult(false)
+        }
+        else if !emailHelper!.validateEmail(email) {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Email is not valid.")
+            self.validateResult(false)
+        }
+        else if password == "" || password2 == "" {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Password cannot be empty.")
+            self.validateResult(false)
+        }
+        else if password != password2 {
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Two passwords are not match.")
+            self.validateResult(false)
+        }
+        else {
+            let loginRegisterManager: LoginRegisterManager? = LoginRegisterManager()
+            loginRegisterManager!.delegate = self
+            loginRegisterManager!.checkRegisterEmail(email)
+        }
     }
     
     func moveCellUp() {
@@ -102,5 +123,40 @@ class p2sRegisterViewController: UIViewController, UITableViewDataSource, UITabl
             })
         }
     }
+    
+    func showWarningMessage(title: String, message: String) {
+        
+        let alertHelper: AlertsHelper? = AlertsHelper()
+        alertHelper!.showSimpleAlert(self, alertTitle: title, alertMessage: message)
+    }
+    
+    
+    //MARK: - login register delegate
+    
+    func isEmailExisted(isExisted: Bool) {
+        
+        if isExisted {
+            let alertHelper: AlertsHelper? = AlertsHelper()
+            alertHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Email is already existed.")
+            self.validateResult(false)
+        }
+        else {
+            self.validateResult(true)
+        }
+    }
+    
+    //MARK: - validation
+    
+    func validateResult(isValid: Bool) {
+        
+        if !isValid {
+            return
+        }
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sRegSave", bundle: nil)
+        let regSave: p2sRegSaveViewController? = storyBoard.instantiateViewControllerWithIdentifier("regSave") as? p2sRegSaveViewController
+        self.presentViewController(regSave!, animated: true, completion: nil)
+    }
+    
 }
 

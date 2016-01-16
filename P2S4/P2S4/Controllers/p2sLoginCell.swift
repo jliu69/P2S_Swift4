@@ -52,6 +52,16 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
         
         self.resetPwdButton.layer.cornerRadius = 5
         self.resetPwdButton.clipsToBounds = true
+        
+        if let emailObject = NSUserDefaults.standardUserDefaults().valueForKey(UserDefaultKeys.savedUserEmail) {
+            let email = emailObject as! String
+            self.emailTextField.text = email
+        }
+        
+        if let passwordObject = NSUserDefaults.standardUserDefaults().valueForKey(UserDefaultKeys.savedUserPassword) {
+            let password = passwordObject as! String
+            self.passwordTextField.text = password
+        }
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
