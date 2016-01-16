@@ -47,5 +47,10 @@ class JsonLinks: NSObject {
         return "/controller/RegisterController/registerFan?"
     }
     
+    
+    static func positionsFromSport() -> String {
+        return "http://www.mysohoplace.com/php_p2s/sport_positions.php"
+    }
+    
 }
 

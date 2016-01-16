@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
+class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSelectsViewControllerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     
@@ -23,6 +23,11 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     
     let enableColor = UIColor.blackColor()
     let disableColor = UIColor.grayColor()
+    
+    var selectedSportName: String? = ""
+    var selectedSportId: String? = ""
+    var selectedStateCode: String? = ""
+    var selectedPositionCode: String? = ""
     
     //-- testing
     var isShowing: Bool = false
@@ -79,18 +84,36 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     }
     
     @IBAction func selectSportAction(sender: AnyObject) {
-        //
-        print("-> select a sport")
+        
+        let storyBoard = UIStoryboard(name: "p2sSelect", bundle: nil)
+        let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
+        select!.delegate = self
+        select!.type = SelectionType.sport
+        select!.pageTitle = "Select a Sport"
+        self.presentViewController(select!, animated: true, completion: {})
     }
     
     @IBAction func selectStateActon(sender: AnyObject) {
-        //
-        print("-> select a state")
+        
+        let storyBoard = UIStoryboard(name: "p2sSelect", bundle: nil)
+        let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
+        select!.delegate = self
+        select!.type = SelectionType.state
+        select!.withAllOptionFlag = true
+        select!.pageTitle = "Select a State/Province"
+        self.presentViewController(select!, animated: true, completion: {})
     }
     
     @IBAction func selectPositionAction(sender: AnyObject) {
-        //
-        print("-> select a position")
+        
+        let storyBoard = UIStoryboard(name: "p2sSelect", bundle: nil)
+        let select: p2sSelectsViewController? = storyBoard.instantiateViewControllerWithIdentifier("select") as? p2sSelectsViewController
+        select!.delegate = self
+        select!.type = SelectionType.position
+        select!.parameters = "sportId=\(self.selectedSportId!)"
+        select!.withAllOptionFlag = true
+        select!.pageTitle = "Select a Position"
+        self.presentViewController(select!, animated: true, completion: {})
     }
     
     @IBAction func showTopAction(sender: AnyObject) {
@@ -112,6 +135,26 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
     }
     
     
+    //MARK: - select delegate
+    
+    func didSelectItem(type: String, name: String, code: String) {
+        
+        switch (type) {
+        case SelectionType.sport:
+            self.changeSportButton(code, sportName: name)
+            break
+        case SelectionType.state:
+            self.changeStateButton(code, stateName: name)
+            break
+        case SelectionType.position:
+            self.changePositionButton(code, positionName: name)
+            break
+        default:
+            break
+        }
+    }
+    
+    
     //MARK: - login methods
     
     func showLogin() {
@@ -129,13 +172,25 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
         self.totalViewedLabel.text = ""
         self.totalRatedLabel.text = ""
         
+        self.selectedSportName = ""
+        self.selectedSportId = ""
+        self.selectedStateCode = ""
+        self.selectedPositionCode = ""
+        
+        self.selectSportButton.setTitle("Select Sport (Required)", forState: UIControlState.Normal)
+        self.selectSportButton.setTitle("Select Sport (Required)", forState: UIControlState.Highlighted)
+        
         self.selectStateButton.setTitleColor(disableColor, forState: UIControlState.Normal)
         self.selectStateButton.setTitleColor(disableColor, forState: UIControlState.Highlighted)
+        self.selectStateButton.setTitle("Select a State (Optional)", forState: UIControlState.Normal)
+        self.selectStateButton.setTitle("Select a State (Optional)", forState: UIControlState.Highlighted)
         self.selectStateButton.enabled = false
         self.selectStateButton.userInteractionEnabled = false
         
         self.selectPositionButton.setTitleColor(disableColor, forState: UIControlState.Normal)
         self.selectPositionButton.setTitleColor(disableColor, forState: UIControlState.Highlighted)
+        self.selectPositionButton.setTitle("Select a Position (Optional)", forState: UIControlState.Normal)
+        self.selectPositionButton.setTitle("Select a Position (Optional)", forState: UIControlState.Highlighted)
         self.selectPositionButton.enabled = false
         self.selectPositionButton.userInteractionEnabled = false
         
@@ -148,6 +203,7 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
         self.searchPlayersButton.setTitleColor(disableColor, forState: UIControlState.Highlighted)
         self.searchPlayersButton.enabled = false
         self.searchPlayersButton.userInteractionEnabled = false
+        
     }
     
     func showPage() {
@@ -174,6 +230,47 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate {
         self.searchPlayersButton.setTitleColor(enableColor, forState: UIControlState.Highlighted)
         self.searchPlayersButton.enabled = true
         self.searchPlayersButton.userInteractionEnabled = true
+    }
+    
+    func changeSportButton(sportCode: String, sportName: String) {
+        
+        self.selectedSportName = sportName
+        self.selectedSportId = sportCode
+        
+        self.selectSportButton.setTitle(sportName, forState: UIControlState.Normal)
+        self.selectSportButton.setTitle(sportName, forState: UIControlState.Highlighted)
+        
+        self.showPage()
+        
+        //-- query for total view and total rate
+    }
+    
+    func changeStateButton(stateCode: String, stateName: String) {
+        
+        if stateName == "ALL" {
+            self.selectedStateCode = ""
+            self.selectStateButton.setTitle("Select a State (Optional)", forState: UIControlState.Normal)
+            self.selectStateButton.setTitle("Select a State (Optional)", forState: UIControlState.Highlighted)
+        }
+        else {
+            self.selectedStateCode = stateCode
+            self.selectStateButton.setTitle("State/Province: \(stateCode)", forState: UIControlState.Normal)
+            self.selectStateButton.setTitle("State/Province: \(stateCode)", forState: UIControlState.Highlighted)
+        }
+    }
+    
+    func changePositionButton(positionCode: String, positionName: String) {
+        
+        if positionName == "ALL" {
+            self.selectedPositionCode = ""
+            self.selectPositionButton.setTitle("Select a Position (Optional)", forState: UIControlState.Normal)
+            self.selectPositionButton.setTitle("Select a Position (Optional)", forState: UIControlState.Highlighted)
+        }
+        else {
+            self.selectedPositionCode = positionCode
+            self.selectPositionButton.setTitle("Position: \(positionCode)", forState: UIControlState.Normal)
+            self.selectPositionButton.setTitle("Position: \(positionCode)", forState: UIControlState.Highlighted)
+        }
     }
     
     

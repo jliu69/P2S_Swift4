@@ -23,10 +23,18 @@ class DataManager: NSObject {
     //MARK: - action methods
     
     func dataWithSelectType(type: String) {
+        self.dataWithSelectTypeAndParameters(type, parameters: "")
+    }
+    
+    func dataWithSelectTypeAndParameters(type: String, parameters: String) {
         
-        let link = self.linkWithType(type)
+        var link = self.linkWithType(type)
         if link == "" {
             return
+        }
+        
+        if parameters != "" {
+           link = "\(link)?\(parameters)"
         }
         
         let url = NSURL(string: link)
@@ -59,7 +67,6 @@ class DataManager: NSObject {
         self.delegate?.didReceiveData?(dataList)
     }
     
-    
     //MARK: - private methods
     
     private func linkWithType(typeName: String) -> String {
@@ -83,6 +90,9 @@ class DataManager: NSObject {
             break
         case SelectionType.weight:
             link = JsonLinks.weightsList()
+            break
+        case SelectionType.position:
+            link = JsonLinks.positionsFromSport()
             break
         default:
             link = ""

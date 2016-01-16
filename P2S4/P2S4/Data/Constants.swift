@@ -20,6 +20,7 @@ struct SelectionType {
     static let sport = "sport"
     static let height = "height"
     static let weight = "weight"
+    static let position = "position"
 }
 
 struct UserDefaultKeys {

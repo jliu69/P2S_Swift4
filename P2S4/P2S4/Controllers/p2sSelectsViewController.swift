@@ -27,6 +27,10 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     
     var type: String? = ""
     var pageTitle: String? = ""
+    
+    var withAllOptionFlag: Bool = false
+    var parameters: String? = ""
+    
     var rowsArray: Array<AnyObject>? = [AnyObject]()
     
     var beginTimeInterval: NSTimeInterval = 0
@@ -63,7 +67,7 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         //-- data
         let dataManager: DataManager? = DataManager()
         dataManager!.delegate = self
-        dataManager!.dataWithSelectType(type!)
+        dataManager!.dataWithSelectTypeAndParameters(type!, parameters: parameters!)
         
         let date = NSDate()
         beginTimeInterval = date.timeIntervalSince1970
@@ -123,6 +127,15 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     
     func didReceiveData(data: Array<AnyObject>) {
         self.rowsArray = data
+        
+        if self.withAllOptionFlag {
+            let allItem: CommonDataObject? = CommonDataObject()
+            allItem!.name = "ALL"
+            allItem!.code = "ALL"
+            
+            self.rowsArray!.insert(allItem!, atIndex: 0)
+        }
+        
         self.tableView.reloadData()
         self.view.sendSubviewToBack(self.activityIndicator)
         

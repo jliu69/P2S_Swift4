@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D1F97AD1C42075100A83C6E /* p2sRegSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F97AC1C42075100A83C6E /* p2sRegSaveViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9D1F97B01C42077300A83C6E /* p2sRegSaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1F97AE1C42077300A83C6E /* p2sRegSaveCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9D1F97B11C42077300A83C6E /* p2sRegSaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F97AF1C42077300A83C6E /* p2sRegSaveCell.xib */; settings = {ASSET_TAGS = (); }; };
-		9D1F97B31C42079F00A83C6E /* p2sRegSave.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1F97B21C42079F00A83C6E /* p2sRegSave.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9D6E551C1C46FDF400399B03 /* Selection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551A1C46FDF400399B03 /* Selection.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		9D6E552D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E552E1C47011E00399B03 /* AgeRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551E1C47011E00399B03 /* AgeRanges.swift */; settings = {ASSET_TAGS = (); }; };
@@ -31,12 +27,20 @@
 		9D6E553E1C47015100399B03 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6E553D1C47015100399B03 /* CoreData.framework */; };
 		9DBCCAA81C493EC600896966 /* LoginRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBCCAA71C493EC600896966 /* LoginRegisterManager.swift */; settings = {ASSET_TAGS = (); }; };
 		9DBCCAAA1C49486400896966 /* dbLink.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DBCCAA91C49486400896966 /* dbLink.plist */; settings = {ASSET_TAGS = (); }; };
-		9DCCF0821C42C949006921AF /* p2sRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCCF07E1C42C949006921AF /* p2sRegister.storyboard */; settings = {ASSET_TAGS = (); }; };
-		9DCCF0831C42C949006921AF /* p2sRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF07F1C42C949006921AF /* p2sRegisterCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9DCCF0841C42C949006921AF /* p2sRegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DCCF0801C42C949006921AF /* p2sRegisterCell.xib */; settings = {ASSET_TAGS = (); }; };
-		9DCCF0851C42C949006921AF /* p2sRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF0811C42C949006921AF /* p2sRegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		9DCCF0881C42CB91006921AF /* p2sLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCF0861C42CB91006921AF /* p2sLoginCell.swift */; settings = {ASSET_TAGS = (); }; };
-		9DCCF0891C42CB91006921AF /* p2sLoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DCCF0871C42CB91006921AF /* p2sLoginCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC11C4AA6D000AF2F8E /* p2sLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC21C4AA6D000AF2F8E /* p2sLoginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70AB41C4AA6D000AF2F8E /* p2sLoginCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC31C4AA6D000AF2F8E /* p2sLoginCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70AB51C4AA6D000AF2F8E /* p2sLoginCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC41C4AA6D000AF2F8E /* p2sLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70AB61C4AA6D000AF2F8E /* p2sLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC51C4AA6D000AF2F8E /* p2sRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70AB71C4AA6D000AF2F8E /* p2sRegister.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC61C4AA6D000AF2F8E /* p2sRegisterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70AB81C4AA6D000AF2F8E /* p2sRegisterCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC71C4AA6D000AF2F8E /* p2sRegisterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70AB91C4AA6D000AF2F8E /* p2sRegisterCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC81C4AA6D000AF2F8E /* p2sRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70ABA1C4AA6D000AF2F8E /* p2sRegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9DC70AC91C4AA6D000AF2F8E /* p2sRegSave.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70ABB1C4AA6D000AF2F8E /* p2sRegSave.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DC70ACA1C4AA6D000AF2F8E /* p2sRegSaveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70ABC1C4AA6D000AF2F8E /* p2sRegSaveCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9DC70ACB1C4AA6D000AF2F8E /* p2sRegSaveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70ABD1C4AA6D000AF2F8E /* p2sRegSaveCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DC70ACC1C4AA6D000AF2F8E /* p2sRegSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70ABE1C4AA6D000AF2F8E /* p2sRegSaveViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9DC70ACD1C4AA6D000AF2F8E /* p2sSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70ABF1C4AA6D000AF2F8E /* p2sSettings.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DC70ACE1C4AA6D000AF2F8E /* p2sSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70AC01C4AA6D000AF2F8E /* p2sSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0ADA41C458096008B60B1 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17A1C3E088700389567 /* AppDelegate.swift */; };
 		9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17C1C3E088700389567 /* ViewController.swift */; };
@@ -55,12 +59,8 @@
 		9DD1C1A41C3E0A2900389567 /* upAndDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DD1C19A1C3E0A2900389567 /* upAndDown.png */; settings = {ASSET_TAGS = (); }; };
 		9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C1A51C3E15CC00389567 /* ColorsHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD390B81C3F5A890052DE2D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD390B71C3F5A890052DE2D /* MessageUI.framework */; };
-		9DD390BB1C3F5A980052DE2D /* p2sSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD390B91C3F5A980052DE2D /* p2sSettings.storyboard */; settings = {ASSET_TAGS = (); }; };
-		9DD390BC1C3F5A980052DE2D /* p2sSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD390BA1C3F5A980052DE2D /* p2sSettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD390BD1C3F5B5F0052DE2D /* AlertsHelper.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD390C01C3F5B5F0052DE2D /* EmailsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD390BE1C3F5B5F0052DE2D /* EmailsHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		9DD4845F1C40866C003EB57A /* p2sLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD4845D1C40866C003EB57A /* p2sLogin.storyboard */; settings = {ASSET_TAGS = (); }; };
-		9DD484601C40866C003EB57A /* p2sLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD4845E1C40866C003EB57A /* p2sLoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD484661C4086D2003EB57A /* CommonDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484611C4086D2003EB57A /* CommonDataObject.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD484671C4086D2003EB57A /* CurrentUserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484621C4086D2003EB57A /* CurrentUserObject.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD484691C4086D2003EB57A /* LogoImageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD484641C4086D2003EB57A /* LogoImageObject.swift */; settings = {ASSET_TAGS = (); }; };
@@ -72,10 +72,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D1F97AC1C42075100A83C6E /* p2sRegSaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegSaveViewController.swift; path = Controllers/p2sRegSaveViewController.swift; sourceTree = "<group>"; };
-		9D1F97AE1C42077300A83C6E /* p2sRegSaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegSaveCell.swift; path = Controllers/p2sRegSaveCell.swift; sourceTree = "<group>"; };
-		9D1F97AF1C42077300A83C6E /* p2sRegSaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sRegSaveCell.xib; path = Controllers/p2sRegSaveCell.xib; sourceTree = "<group>"; };
-		9D1F97B21C42079F00A83C6E /* p2sRegSave.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sRegSave.storyboard; path = Controllers/p2sRegSave.storyboard; sourceTree = "<group>"; };
 		9D6E54C21C46FB7C00399B03 /* P2S4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2S4-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D6E551B1C46FDF400399B03 /* Selection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Selection.xcdatamodel; sourceTree = "<group>"; };
 		9D6E551D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AgeRanges+CoreDataProperties.swift"; path = "Core_Data/AgeRanges+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -97,12 +93,20 @@
 		9D6E553D1C47015100399B03 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9DBCCAA71C493EC600896966 /* LoginRegisterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRegisterManager.swift; path = WebServices/LoginRegisterManager.swift; sourceTree = "<group>"; };
 		9DBCCAA91C49486400896966 /* dbLink.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dbLink.plist; sourceTree = "<group>"; };
-		9DCCF07E1C42C949006921AF /* p2sRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sRegister.storyboard; path = Controllers/p2sRegister.storyboard; sourceTree = "<group>"; };
-		9DCCF07F1C42C949006921AF /* p2sRegisterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegisterCell.swift; path = Controllers/p2sRegisterCell.swift; sourceTree = "<group>"; };
-		9DCCF0801C42C949006921AF /* p2sRegisterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sRegisterCell.xib; path = Controllers/p2sRegisterCell.xib; sourceTree = "<group>"; };
-		9DCCF0811C42C949006921AF /* p2sRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegisterViewController.swift; path = Controllers/p2sRegisterViewController.swift; sourceTree = "<group>"; };
-		9DCCF0861C42CB91006921AF /* p2sLoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sLoginCell.swift; path = Controllers/p2sLoginCell.swift; sourceTree = "<group>"; };
-		9DCCF0871C42CB91006921AF /* p2sLoginCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sLoginCell.xib; path = Controllers/p2sLoginCell.xib; sourceTree = "<group>"; };
+		9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sLogin.storyboard; path = Login/p2sLogin.storyboard; sourceTree = "<group>"; };
+		9DC70AB41C4AA6D000AF2F8E /* p2sLoginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sLoginCell.swift; path = Login/p2sLoginCell.swift; sourceTree = "<group>"; };
+		9DC70AB51C4AA6D000AF2F8E /* p2sLoginCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sLoginCell.xib; path = Login/p2sLoginCell.xib; sourceTree = "<group>"; };
+		9DC70AB61C4AA6D000AF2F8E /* p2sLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sLoginViewController.swift; path = Login/p2sLoginViewController.swift; sourceTree = "<group>"; };
+		9DC70AB71C4AA6D000AF2F8E /* p2sRegister.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sRegister.storyboard; path = Login/p2sRegister.storyboard; sourceTree = "<group>"; };
+		9DC70AB81C4AA6D000AF2F8E /* p2sRegisterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegisterCell.swift; path = Login/p2sRegisterCell.swift; sourceTree = "<group>"; };
+		9DC70AB91C4AA6D000AF2F8E /* p2sRegisterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sRegisterCell.xib; path = Login/p2sRegisterCell.xib; sourceTree = "<group>"; };
+		9DC70ABA1C4AA6D000AF2F8E /* p2sRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegisterViewController.swift; path = Login/p2sRegisterViewController.swift; sourceTree = "<group>"; };
+		9DC70ABB1C4AA6D000AF2F8E /* p2sRegSave.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sRegSave.storyboard; path = Login/p2sRegSave.storyboard; sourceTree = "<group>"; };
+		9DC70ABC1C4AA6D000AF2F8E /* p2sRegSaveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegSaveCell.swift; path = Login/p2sRegSaveCell.swift; sourceTree = "<group>"; };
+		9DC70ABD1C4AA6D000AF2F8E /* p2sRegSaveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sRegSaveCell.xib; path = Login/p2sRegSaveCell.xib; sourceTree = "<group>"; };
+		9DC70ABE1C4AA6D000AF2F8E /* p2sRegSaveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sRegSaveViewController.swift; path = Login/p2sRegSaveViewController.swift; sourceTree = "<group>"; };
+		9DC70ABF1C4AA6D000AF2F8E /* p2sSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sSettings.storyboard; path = Login/p2sSettings.storyboard; sourceTree = "<group>"; };
+		9DC70AC01C4AA6D000AF2F8E /* p2sSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sSettingsViewController.swift; path = Login/p2sSettingsViewController.swift; sourceTree = "<group>"; };
 		9DD0ADA41C458096008B60B1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Data/Constants.swift; sourceTree = "<group>"; };
 		9DD1C1771C3E088700389567 /* P2S4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2S4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD1C17A1C3E088700389567 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,12 +127,8 @@
 		9DD1C19A1C3E0A2900389567 /* upAndDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = upAndDown.png; path = Images/upAndDown.png; sourceTree = "<group>"; };
 		9DD1C1A51C3E15CC00389567 /* ColorsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorsHelper.swift; path = Helpers/ColorsHelper.swift; sourceTree = "<group>"; };
 		9DD390B71C3F5A890052DE2D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		9DD390B91C3F5A980052DE2D /* p2sSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sSettings.storyboard; path = Controllers/p2sSettings.storyboard; sourceTree = "<group>"; };
-		9DD390BA1C3F5A980052DE2D /* p2sSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sSettingsViewController.swift; path = Controllers/p2sSettingsViewController.swift; sourceTree = "<group>"; };
 		9DD390BD1C3F5B5F0052DE2D /* AlertsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertsHelper.swift; path = Helpers/AlertsHelper.swift; sourceTree = "<group>"; };
 		9DD390BE1C3F5B5F0052DE2D /* EmailsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailsHelper.swift; path = Helpers/EmailsHelper.swift; sourceTree = "<group>"; };
-		9DD4845D1C40866C003EB57A /* p2sLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sLogin.storyboard; path = Controllers/p2sLogin.storyboard; sourceTree = "<group>"; };
-		9DD4845E1C40866C003EB57A /* p2sLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sLoginViewController.swift; path = Controllers/p2sLoginViewController.swift; sourceTree = "<group>"; };
 		9DD484611C4086D2003EB57A /* CommonDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonDataObject.swift; path = Data/CommonDataObject.swift; sourceTree = "<group>"; };
 		9DD484621C4086D2003EB57A /* CurrentUserObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentUserObject.swift; path = Data/CurrentUserObject.swift; sourceTree = "<group>"; };
 		9DD484641C4086D2003EB57A /* LogoImageObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogoImageObject.swift; path = Data/LogoImageObject.swift; sourceTree = "<group>"; };
@@ -186,6 +186,27 @@
 			name = "Web Service";
 			sourceTree = "<group>";
 		};
+		9DC70AB21C4AA6B300AF2F8E /* Login Register */ = {
+			isa = PBXGroup;
+			children = (
+				9DC70AC01C4AA6D000AF2F8E /* p2sSettingsViewController.swift */,
+				9DC70ABF1C4AA6D000AF2F8E /* p2sSettings.storyboard */,
+				9DC70AB61C4AA6D000AF2F8E /* p2sLoginViewController.swift */,
+				9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */,
+				9DC70AB41C4AA6D000AF2F8E /* p2sLoginCell.swift */,
+				9DC70AB51C4AA6D000AF2F8E /* p2sLoginCell.xib */,
+				9DC70ABA1C4AA6D000AF2F8E /* p2sRegisterViewController.swift */,
+				9DC70AB71C4AA6D000AF2F8E /* p2sRegister.storyboard */,
+				9DC70AB81C4AA6D000AF2F8E /* p2sRegisterCell.swift */,
+				9DC70AB91C4AA6D000AF2F8E /* p2sRegisterCell.xib */,
+				9DC70ABE1C4AA6D000AF2F8E /* p2sRegSaveViewController.swift */,
+				9DC70ABB1C4AA6D000AF2F8E /* p2sRegSave.storyboard */,
+				9DC70ABC1C4AA6D000AF2F8E /* p2sRegSaveCell.swift */,
+				9DC70ABD1C4AA6D000AF2F8E /* p2sRegSaveCell.xib */,
+			);
+			name = "Login Register";
+			sourceTree = "<group>";
+		};
 		9DD1C16E1C3E088700389567 = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +231,7 @@
 				9DD1C17C1C3E088700389567 /* ViewController.swift */,
 				9DD1C17E1C3E088700389567 /* Main.storyboard */,
 				9DD1C18D1C3E09EB00389567 /* Controllers */,
+				9DC70AB21C4AA6B300AF2F8E /* Login Register */,
 				9D6E553F1C4707D300399B03 /* Web Service */,
 				9DD1C18F1C3E09F900389567 /* UI */,
 				9DD1C1901C3E09FE00389567 /* Helpers */,
@@ -246,20 +268,6 @@
 		9DD1C18D1C3E09EB00389567 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9DD390BA1C3F5A980052DE2D /* p2sSettingsViewController.swift */,
-				9DD390B91C3F5A980052DE2D /* p2sSettings.storyboard */,
-				9DD4845E1C40866C003EB57A /* p2sLoginViewController.swift */,
-				9DD4845D1C40866C003EB57A /* p2sLogin.storyboard */,
-				9DCCF0861C42CB91006921AF /* p2sLoginCell.swift */,
-				9DCCF0871C42CB91006921AF /* p2sLoginCell.xib */,
-				9DCCF0811C42C949006921AF /* p2sRegisterViewController.swift */,
-				9DCCF07E1C42C949006921AF /* p2sRegister.storyboard */,
-				9DCCF07F1C42C949006921AF /* p2sRegisterCell.swift */,
-				9DCCF0801C42C949006921AF /* p2sRegisterCell.xib */,
-				9D1F97AC1C42075100A83C6E /* p2sRegSaveViewController.swift */,
-				9D1F97B21C42079F00A83C6E /* p2sRegSave.storyboard */,
-				9D1F97AE1C42077300A83C6E /* p2sRegSaveCell.swift */,
-				9D1F97AF1C42077300A83C6E /* p2sRegSaveCell.xib */,
 				9DDF42561C46CF0E00EF11EB /* p2sSelectsViewController.swift */,
 				9DDF42581C46D08600EF11EB /* p2sSelect.storyboard */,
 			);
@@ -355,26 +363,26 @@
 			files = (
 				9DD1C1851C3E088700389567 /* LaunchScreen.storyboard in Resources */,
 				9DD1C1A11C3E0A2900389567 /* star_yellow.png in Resources */,
-				9DCCF0841C42C949006921AF /* p2sRegisterCell.xib in Resources */,
-				9DCCF0891C42CB91006921AF /* p2sLoginCell.xib in Resources */,
 				9DD1C19B1C3E0A2900389567 /* default_person.gif in Resources */,
+				9DC70AC51C4AA6D000AF2F8E /* p2sRegister.storyboard in Resources */,
 				9DD1C1A21C3E0A2900389567 /* thumbs_down_icon.png in Resources */,
+				9DC70ACD1C4AA6D000AF2F8E /* p2sSettings.storyboard in Resources */,
 				9DD1C1A41C3E0A2900389567 /* upAndDown.png in Resources */,
 				9DD1C1A01C3E0A2900389567 /* star_blank.png in Resources */,
 				9DD1C1821C3E088700389567 /* Assets.xcassets in Resources */,
 				9DD1C19F1C3E0A2900389567 /* p2s_login_page_logo.png in Resources */,
+				9DC70AC11C4AA6D000AF2F8E /* p2sLogin.storyboard in Resources */,
 				9DD1C19C1C3E0A2900389567 /* home_page_launch_image.png in Resources */,
+				9DC70ACB1C4AA6D000AF2F8E /* p2sRegSaveCell.xib in Resources */,
 				9DD1C1A31C3E0A2900389567 /* thumbs_up_icon.png in Resources */,
-				9D1F97B11C42077300A83C6E /* p2sRegSaveCell.xib in Resources */,
-				9D1F97B31C42079F00A83C6E /* p2sRegSave.storyboard in Resources */,
 				9DD1C19D1C3E0A2900389567 /* p2s_action_bar_logo_small.png in Resources */,
-				9DCCF0821C42C949006921AF /* p2sRegister.storyboard in Resources */,
 				9DDF42591C46D08600EF11EB /* p2sSelect.storyboard in Resources */,
-				9DD390BB1C3F5A980052DE2D /* p2sSettings.storyboard in Resources */,
 				9DBCCAAA1C49486400896966 /* dbLink.plist in Resources */,
 				9DD1C1801C3E088700389567 /* Main.storyboard in Resources */,
+				9DC70AC31C4AA6D000AF2F8E /* p2sLoginCell.xib in Resources */,
+				9DC70AC71C4AA6D000AF2F8E /* p2sRegisterCell.xib in Resources */,
+				9DC70AC91C4AA6D000AF2F8E /* p2sRegSave.storyboard in Resources */,
 				9DD1C19E1C3E0A2900389567 /* p2s_action_bar_logo.png in Resources */,
-				9DD4845F1C40866C003EB57A /* p2sLogin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,12 +395,12 @@
 			files = (
 				9DD390C01C3F5B5F0052DE2D /* EmailsHelper.swift in Sources */,
 				9D6E55351C47011E00399B03 /* Weights+CoreDataProperties.swift in Sources */,
-				9D1F97B01C42077300A83C6E /* p2sRegSaveCell.swift in Sources */,
 				9D6E553B1C47011E00399B03 /* Nations+CoreDataProperties.swift in Sources */,
 				9D6E553A1C47011E00399B03 /* Skills.swift in Sources */,
+				9DC70ACC1C4AA6D000AF2F8E /* p2sRegSaveViewController.swift in Sources */,
 				9DD484671C4086D2003EB57A /* CurrentUserObject.swift in Sources */,
-				9DCCF0851C42C949006921AF /* p2sRegisterViewController.swift in Sources */,
 				9D6E55361C47011E00399B03 /* Weights.swift in Sources */,
+				9DC70AC41C4AA6D000AF2F8E /* p2sLoginViewController.swift in Sources */,
 				9D6E553C1C47011E00399B03 /* Nations.swift in Sources */,
 				9DE9747E1C47ED0D00D7AFA0 /* JsonLinks.swift in Sources */,
 				9D6E55301C47011E00399B03 /* Heights.swift in Sources */,
@@ -400,28 +408,28 @@
 				9DDF42571C46CF0E00EF11EB /* p2sSelectsViewController.swift in Sources */,
 				9D6E55391C47011E00399B03 /* Skills+CoreDataProperties.swift in Sources */,
 				9D6E55331C47011E00399B03 /* States+CoreDataProperties.swift in Sources */,
+				9DC70ACE1C4AA6D000AF2F8E /* p2sSettingsViewController.swift in Sources */,
 				9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */,
 				9D6E55321C47011E00399B03 /* Sports.swift in Sources */,
 				9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */,
+				9DC70ACA1C4AA6D000AF2F8E /* p2sRegSaveCell.swift in Sources */,
 				9DD484661C4086D2003EB57A /* CommonDataObject.swift in Sources */,
 				9D6E551C1C46FDF400399B03 /* Selection.xcdatamodeld in Sources */,
 				9DD4846A1C4086D2003EB57A /* StaticData.swift in Sources */,
-				9DCCF0881C42CB91006921AF /* p2sLoginCell.swift in Sources */,
 				9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */,
 				9D6E55381C47011E00399B03 /* Positions.swift in Sources */,
 				9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */,
+				9DC70AC81C4AA6D000AF2F8E /* p2sRegisterViewController.swift in Sources */,
 				9DE974801C47ED2E00D7AFA0 /* DataManager.swift in Sources */,
-				9D1F97AD1C42075100A83C6E /* p2sRegSaveViewController.swift in Sources */,
 				9D6E552F1C47011E00399B03 /* Heights+CoreDataProperties.swift in Sources */,
 				9DBCCAA81C493EC600896966 /* LoginRegisterManager.swift in Sources */,
 				9D6E552D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift in Sources */,
-				9DD390BC1C3F5A980052DE2D /* p2sSettingsViewController.swift in Sources */,
-				9DD484601C40866C003EB57A /* p2sLoginViewController.swift in Sources */,
 				9D6E55341C47011E00399B03 /* States.swift in Sources */,
+				9DC70AC21C4AA6D000AF2F8E /* p2sLoginCell.swift in Sources */,
 				9D6E55371C47011E00399B03 /* Positions+CoreDataProperties.swift in Sources */,
-				9DCCF0831C42C949006921AF /* p2sRegisterCell.swift in Sources */,
 				9DD484691C4086D2003EB57A /* LogoImageObject.swift in Sources */,
 				9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */,
+				9DC70AC61C4AA6D000AF2F8E /* p2sRegisterCell.swift in Sources */,
 				9D6E552E1C47011E00399B03 /* AgeRanges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
