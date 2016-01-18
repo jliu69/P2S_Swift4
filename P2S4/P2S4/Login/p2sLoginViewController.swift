@@ -114,11 +114,16 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func didPlayerSignIn() {
-        //
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sPlayerSignUp", bundle: nil)
+        let playerSignUp: p2sPlayerSignUpViewController? = storyBoard.instantiateViewControllerWithIdentifier("playerSignUp") as? p2sPlayerSignUpViewController
+        self.presentViewController(playerSignUp!, animated: true, completion: nil)
     }
     
     func didResetPassword() {
-        //
+        
+        let alertsHelper: AlertsHelper? = AlertsHelper()
+        alertsHelper!.showSimpleAlert(self, alertTitle: "Attention", alertMessage: "Please visit our website Prep2Star.com to retrieve/reset your password.")
     }
     
     func moveCellUp() {

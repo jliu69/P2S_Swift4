@@ -10,6 +10,9 @@ import UIKit
 
 class JsonLinks: NSObject {
     
+    
+    //-- selection data
+    
     static func allStatesLink() -> String {
         return "http://www.mysohoplace.com/php_p2s/all_states.php"
     }
@@ -35,6 +38,22 @@ class JsonLinks: NSObject {
     }
     
     
+    //-- position of sport
+    
+    static func positionsFromSport() -> String {
+        return "http://www.mysohoplace.com/php_p2s/sport_positions.php"
+    }
+    
+    
+    //-- player register (or quick register)
+    
+    static func quickRegisterLink() -> String {
+        return "http://prep2star.com/prep2starApp/public/web/pages/player/QuickRegister.php"
+    }
+    
+    
+    //-- login & register
+    
     static func userLogin() -> String {
         return "/mobile/controller/MobileLoginController/login?"
     }
@@ -48,9 +67,16 @@ class JsonLinks: NSObject {
     }
     
     
-    static func positionsFromSport() -> String {
-        return "http://www.mysohoplace.com/php_p2s/sport_positions.php"
+    //-- totally rated & viewed
+    
+    static func totallyRatedLink() -> String {
+        return "/mobile/controller/MobileViewController/totalFanRates"
     }
+    
+    static func totallyViewedLink() -> String {
+        return "/mobile/controller/MobileViewController/totalFanViews"
+    }
+    
     
 }
 

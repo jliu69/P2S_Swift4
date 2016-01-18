@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSelectsViewControllerDelegate {
+class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSelectsViewControllerDelegate, ViewsAndRatesManagerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     
@@ -28,6 +28,9 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     var selectedSportId: String? = ""
     var selectedStateCode: String? = ""
     var selectedPositionCode: String? = ""
+    
+    var totallyRatedValue: String? = ""
+    var totallyViewedValue: String? = ""
     
     //-- testing
     var isShowing: Bool = false
@@ -165,7 +168,24 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     }
     
     
-    //MARK: - local methods
+    //MARK: - views & rates delegate
+    
+    func totalRates(ratesValue: String) {
+        
+        self.totallyRatedValue = ratesValue
+        self.totallyViewed(self.selectedSportId!)
+    }
+    
+    func totalViews(viewsValue: String) {
+        
+        self.totallyViewedValue = viewsValue
+        if Int(self.totallyRatedValue!) > Int(self.totallyViewedValue!) {
+            self.totallyViewedValue = self.totallyRatedValue
+        }
+        self.showPage()
+    }
+    
+    //MARK: - show/hide page data
     
     func hidePage() {
         
@@ -208,8 +228,8 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     
     func showPage() {
         
-        self.totalViewedLabel.text = "0"
-        self.totalRatedLabel.text = "0"
+        self.totalViewedLabel.text = self.totallyViewedValue!
+        self.totalRatedLabel.text = self.totallyRatedValue!
         
         self.selectStateButton.setTitleColor(enableColor, forState: UIControlState.Normal)
         self.selectStateButton.setTitleColor(enableColor, forState: UIControlState.Highlighted)
@@ -232,6 +252,9 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         self.searchPlayersButton.userInteractionEnabled = true
     }
     
+    
+    //MARK: - selection action
+    
     func changeSportButton(sportCode: String, sportName: String) {
         
         self.selectedSportName = sportName
@@ -240,9 +263,10 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         self.selectSportButton.setTitle(sportName, forState: UIControlState.Normal)
         self.selectSportButton.setTitle(sportName, forState: UIControlState.Highlighted)
         
-        self.showPage()
+        self.totallyRated(self.selectedSportId!)
         
-        //-- query for total view and total rate
+        //self.totallyViewed(self.selectedSportId!)
+        //self.showPage()
     }
     
     func changeStateButton(stateCode: String, stateName: String) {
@@ -271,6 +295,29 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
             self.selectPositionButton.setTitle("Position: \(positionCode)", forState: UIControlState.Normal)
             self.selectPositionButton.setTitle("Position: \(positionCode)", forState: UIControlState.Highlighted)
         }
+    }
+    
+    
+    //MARK: - total viewed & rated
+    
+    func totallyRated(sportId: String) {
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        let userId = appDele.currentUser!.personId!
+        
+        let viewRateManager: ViewsAndRatesManager? = ViewsAndRatesManager()
+        viewRateManager!.delegate = self
+        viewRateManager!.totallyRated(userId, sportId: sportId)
+    }
+    
+    func totallyViewed(sportId: String) {
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        let userId = appDele.currentUser!.personId!
+        
+        let viewRateManager: ViewsAndRatesManager? = ViewsAndRatesManager()
+        viewRateManager!.delegate = self
+        viewRateManager!.totallyViewed(userId, sportId: sportId)
     }
     
     
