@@ -33,4 +33,36 @@ struct UserDefaultKeys {
 
 class Constants: NSObject {
     //
+    
+    class func selectionTitle(type: String) -> String {
+        
+        var title: String? = ""
+        
+        switch (type) {
+        case SelectionType.state:
+            title = "Select a State/Province"
+            break
+        case SelectionType.nation:
+            title = "Select a Country"
+            break
+        case SelectionType.sport:
+            title = "Select a Sport"
+            break
+        case SelectionType.height:
+            title = "Select a Height"
+            break
+        case SelectionType.weight:
+            title = "Select a Weight"
+            break
+        case SelectionType.position:
+            title = "Select a Position"
+            break
+        default:
+            break
+        }
+        
+        return title!
+    }
+    
+    
 }

@@ -12,7 +12,7 @@ import UIKit
 @objc protocol p2sSearchPlayersCellDelegate {
     
     optional func displaySelection(selectType: String)
-    optional func searchWithData(playerName: String, schoolName: String, state: String, nation: String, position: String, height: String, weight: String)
+    optional func searchWithData(firstName: String, lastName: String, schoolName: String, state: String, nation: String, position: String, height: String, weight: String)
 }
 
 
@@ -30,13 +30,15 @@ class p2sSearchPlayersCell: UITableViewCell {
     
     var delegate:p2sSearchPlayersCellDelegate! = nil
     
-    var playerName: String? = ""
+    var playerFirstName: String? = ""
+    var playerLastName: String? = ""
     var schoolName: String? = ""
     var stateCode: String? = ""
     var nationCode: String? = ""
     var positionCode: String? = ""
     var heightCode: String? = ""
     var weightCode: String? = ""
+    
     
     //MARK: - init
     
@@ -66,12 +68,12 @@ class p2sSearchPlayersCell: UITableViewCell {
         
         self.startSearchButton.layer.cornerRadius = 5
         self.startSearchButton.clipsToBounds = true
-        
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
     
     //MARK: - IB actions
     
@@ -104,8 +106,9 @@ class p2sSearchPlayersCell: UITableViewCell {
     }
     
     @IBAction func startSearchAction(sender: AnyObject) {
-        delegate?.searchWithData?(self.playerName!, schoolName: self.schoolName!, state: self.stateCode!, nation: self.nationCode!, position: self.positionCode!, height: self.heightCode!, weight: self.weightCode!)
+        delegate?.searchWithData?(self.playerFirstName!, lastName: self.playerLastName!, schoolName: self.schoolName!, state: self.stateCode!, nation: self.nationCode!, position: self.positionCode!, height: self.heightCode!, weight: self.weightCode!)
     }
+    
     
     //MARK: - change sport name
     
@@ -113,26 +116,25 @@ class p2sSearchPlayersCell: UITableViewCell {
         self.sportNameLabel.text = "Sport : \(sportName)"
     }
     
+    
     //MARK: - change button name
     
     func selectedPlayerName(firstName: String, lastName: String) {
         
-        var title: String = ""
+        var title: String = "PLAYER NAME (OPTIONAL)"
         
         if firstName != "" && lastName != "" {
             title = "PLAYER NAME : \(lastName), \(firstName)"
-            self.playerName = "\(lastName), \(firstName)"
+            self.playerFirstName = firstName
+            self.playerLastName = lastName
         }
-        else if firstName == "" {
+        else if firstName == "" && lastName != "" {
             title = "PLAYER NAME : \(lastName)"
-            self.playerName = lastName
+            self.playerLastName = lastName
         }
-        else if lastName == "" {
+        else if lastName == "" && firstName != "" {
             title = "PLAYER NAME : \(firstName)"
-            self.playerName = firstName
-        }
-        else {
-            title = "PLAYER NAME (OPTIONAL)"
+            self.playerFirstName = firstName
         }
         
         self.playerNameButton.setTitle(title, forState: UIControlState.Normal)
@@ -192,7 +194,7 @@ class p2sSearchPlayersCell: UITableViewCell {
         self.selectHeightButton.setTitle(title, forState: UIControlState.Highlighted)
     }
     
-    func selectWeightCode(weightCode: String) {
+    func selectedWeightCode(weightCode: String) {
         
         var title: String = "WEIGHT (OPTIONAL)"
         if weightCode != "ALL" {

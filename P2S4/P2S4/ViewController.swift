@@ -125,8 +125,10 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     }
     
     @IBAction func searchPlayersAction(sender: AnyObject) {
-        //
-        print("-> search players")
+        
+        let storyBoard = UIStoryboard(name: "p2sSearchPlayers", bundle: nil)
+        let search: p2sSearchPlayersViewController? = storyBoard.instantiateViewControllerWithIdentifier("searchPlayers") as? p2sSearchPlayersViewController
+        self.navigationController!.pushViewController(search!, animated: true)
     }
     
     
@@ -260,13 +262,14 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         self.selectedSportName = sportName
         self.selectedSportId = sportCode
         
-        self.selectSportButton.setTitle(sportName, forState: UIControlState.Normal)
-        self.selectSportButton.setTitle(sportName, forState: UIControlState.Highlighted)
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDele.currentUser!.sportId = self.selectedSportId!
+        appDele.currentUser!.sportName = self.selectedSportName!
+        
+        self.selectSportButton.setTitle(self.selectedSportName!, forState: UIControlState.Normal)
+        self.selectSportButton.setTitle(self.selectedSportName!, forState: UIControlState.Highlighted)
         
         self.totallyRated(self.selectedSportId!)
-        
-        //self.totallyViewed(self.selectedSportId!)
-        //self.showPage()
     }
     
     func changeStateButton(stateCode: String, stateName: String) {

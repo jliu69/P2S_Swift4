@@ -36,8 +36,6 @@ class ViewsAndRatesManager: NSObject {
         let data: NSData? = NSData(contentsOfURL: url!)
         
         let dataText = NSString(data: data!, encoding: NSUTF8StringEncoding) as NSString? as String?
-        print("totally rated = \(dataText!), with userId = \(userId), sportId = \(sportId)")
-        
         delegate?.totalRates?(dataText!)
     }
     
@@ -55,8 +53,6 @@ class ViewsAndRatesManager: NSObject {
         let data: NSData? = NSData(contentsOfURL: url!)
         
         let dataText = NSString(data: data!, encoding: NSUTF8StringEncoding) as NSString? as String?
-        print("totally viewed = \(dataText!), with userId = \(userId), sportId = \(sportId)")
-        
         delegate?.totalViews?(dataText!)
     }
 

@@ -9,7 +9,7 @@
         <!--2s Search Players View Controller-->
         <scene sceneID="JNd-gZ-KBF">
             <objects>
-                <viewController storyboardIdentifier="searchPlayer" id="iME-PL-2cJ" customClass="p2sSearchPlayersViewController" customModule="P2S4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchPlayers" id="iME-PL-2cJ" customClass="p2sSearchPlayersViewController" customModule="P2S4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cnx-QS-mlW"/>
                         <viewControllerLayoutGuide type="bottom" id="19R-ZC-9O7"/>
@@ -36,7 +36,11 @@
                                     <constraint firstAttribute="height" constant="44" id="5zo-ik-rSL"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Back" id="ou8-4F-QGO"/>
+                                    <barButtonItem title="Back" id="ou8-4F-QGO">
+                                        <connections>
+                                            <action selector="closeAction:" destination="iME-PL-2cJ" id="SiS-9q-eqB"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5UY-Hb-FMT"/>
                                     <barButtonItem id="dxk-gH-Rej">
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -48,29 +52,37 @@
                                 </items>
                                 <color key="barTintColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-Fj-oVg">
-                                <rect key="frame" x="145" y="69" width="310" height="526"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="720" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0p2-Fj-oVg">
+                                <rect key="frame" x="150" y="74" width="300" height="516"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="310" id="MQf-52-Ps4"/>
+                                    <constraint firstAttribute="width" constant="300" id="MQf-52-Ps4"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="iME-PL-2cJ" id="GHR-xt-CVh"/>
+                                    <outlet property="delegate" destination="iME-PL-2cJ" id="xCb-4u-vsg"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1eI-7H-eWa" firstAttribute="leading" secondItem="ew1-yC-An7" secondAttribute="leadingMargin" constant="-20" id="2er-Wg-11c"/>
-                            <constraint firstItem="19R-ZC-9O7" firstAttribute="top" secondItem="0p2-Fj-oVg" secondAttribute="bottom" constant="5" id="7Ds-LK-anA"/>
+                            <constraint firstItem="19R-ZC-9O7" firstAttribute="top" secondItem="0p2-Fj-oVg" secondAttribute="bottom" constant="10" id="7Ds-LK-anA"/>
                             <constraint firstItem="i55-DW-da7" firstAttribute="top" secondItem="ew1-yC-An7" secondAttribute="topMargin" id="ELq-Z3-XHr"/>
                             <constraint firstItem="1eI-7H-eWa" firstAttribute="top" secondItem="cnx-QS-mlW" secondAttribute="bottom" id="HaR-tj-IAf"/>
-                            <constraint firstItem="0p2-Fj-oVg" firstAttribute="top" secondItem="1eI-7H-eWa" secondAttribute="bottom" constant="5" id="MCa-Lo-Bwu"/>
+                            <constraint firstItem="0p2-Fj-oVg" firstAttribute="top" secondItem="1eI-7H-eWa" secondAttribute="bottom" constant="10" id="MCa-Lo-Bwu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1eI-7H-eWa" secondAttribute="trailing" constant="-20" id="TC2-Uh-B8H"/>
                             <constraint firstItem="0p2-Fj-oVg" firstAttribute="centerX" secondItem="ew1-yC-An7" secondAttribute="centerX" id="Wwq-EU-hrK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i55-DW-da7" secondAttribute="trailing" constant="-20" id="jdl-2u-tdc"/>
                             <constraint firstItem="i55-DW-da7" firstAttribute="leading" secondItem="ew1-yC-An7" secondAttribute="leadingMargin" constant="-20" id="mKm-eW-fKd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="0p2-Fj-oVg" id="1OD-M7-RHc"/>
+                        <outlet property="titleBarItem" destination="dxk-gH-Rej" id="eCa-tW-m8e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhD-Xu-SMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
