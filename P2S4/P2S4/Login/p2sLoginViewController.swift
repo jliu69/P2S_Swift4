@@ -18,6 +18,7 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     let iPhone4Height: CGFloat = 480.0
     
     var isSmallScreen: Bool = false
+    var cell:p2sLoginCell? = p2sLoginCell()
     
     
     //MARK: - init
@@ -52,13 +53,13 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell:p2sLoginCell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as! p2sLoginCell
-        cell.delegate = self
+        self.cell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as? p2sLoginCell
+        self.cell!.delegate = self
         
-        cell.accessoryType = UITableViewCellAccessoryType.None
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        self.cell!.accessoryType = UITableViewCellAccessoryType.None
+        self.cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
-        return cell
+        return self.cell!
     }
     
     
@@ -72,6 +73,8 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     //MARK: - cell delegate
     
     func didLoginUser(email: String, password: String, savePwd: Bool) {
+        
+        self.cell!.showActivityIndicator()
         
         //-- validataion
         let alertHelper: AlertsHelper? = AlertsHelper()

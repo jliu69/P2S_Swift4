@@ -30,6 +30,7 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var fanSignUpButton: UIButton!
     @IBOutlet weak var playerSignUpButon: UIButton!
     @IBOutlet weak var resetPwdButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var delegate: p2sLoginCellDelegate! = nil
     
@@ -62,6 +63,8 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
             let password = passwordObject as! String
             self.passwordTextField.text = password
         }
+        
+        self.hideActivityIndicator()
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -72,8 +75,8 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     //MARK: - IB actions
     
     @IBAction func fanLoginAction(sender: AnyObject) {
-        //
         self.clearKeyboard()
+        self.showActivityIndicator()
         
         var email = ""
         if self.emailTextField.text != nil {
@@ -89,19 +92,16 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     }
     
     @IBAction func fanSignUpAction(sender: AnyObject) {
-        
         self.clearKeyboard()
         delegate?.didGotoRegister?()
     }
     
     @IBAction func playerSignUpAction(sender: AnyObject) {
-        
         self.clearKeyboard()
         delegate?.didPlayerSignIn?()
     }
     
     @IBAction func resetPasswordAction(sender: AnyObject) {
-        
         self.clearKeyboard()
         delegate?.didResetPassword?()
     }
@@ -131,6 +131,14 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     func clearKeyboard() {
         self.emailTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
+    }
+    
+    func showActivityIndicator() {
+        self.activityIndicator.alpha = 1.0
+    }
+    
+    func hideActivityIndicator() {
+        self.activityIndicator.alpha = 0.0
     }
     
 }
