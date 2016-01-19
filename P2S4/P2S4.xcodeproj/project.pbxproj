@@ -26,6 +26,13 @@
 		9D6E553B1C47011E00399B03 /* Nations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E552B1C47011E00399B03 /* Nations+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E553C1C47011E00399B03 /* Nations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E552C1C47011E00399B03 /* Nations.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E553E1C47015100399B03 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6E553D1C47015100399B03 /* CoreData.framework */; };
+		9DB7E28B1C4DAF2600300DCA /* SearchPlayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E28A1C4DAF2600300DCA /* SearchPlayerObject.swift */; settings = {ASSET_TAGS = (); }; };
+		9DB7E28D1C4DC40300300DCA /* p2sPlayersListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E28C1C4DC40300300DCA /* p2sPlayersListingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9DB7E28F1C4DC41E00300DCA /* p2sPlayersListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB7E28E1C4DC41E00300DCA /* p2sPlayersListing.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DB7E2911C4DD65900300DCA /* TitleViewObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E2901C4DD65900300DCA /* TitleViewObject.swift */; settings = {ASSET_TAGS = (); }; };
+		9DB7E2941C4DE10F00300DCA /* p2sPlayersListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E2921C4DE10F00300DCA /* p2sPlayersListingCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9DB7E2951C4DE10F00300DCA /* p2sPlayersListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB7E2931C4DE10F00300DCA /* p2sPlayersListingCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DB7E2971C4DE78400300DCA /* PlayersListingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E2961C4DE78400300DCA /* PlayersListingObject.swift */; settings = {ASSET_TAGS = (); }; };
 		9DBCCAA81C493EC600896966 /* LoginRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBCCAA71C493EC600896966 /* LoginRegisterManager.swift */; settings = {ASSET_TAGS = (); }; };
 		9DBCCAAA1C49486400896966 /* dbLink.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DBCCAA91C49486400896966 /* dbLink.plist */; settings = {ASSET_TAGS = (); }; };
 		9DC70AC11C4AA6D000AF2F8E /* p2sLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -101,6 +108,13 @@
 		9D6E552B1C47011E00399B03 /* Nations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Nations+CoreDataProperties.swift"; path = "Core_Data/Nations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9D6E552C1C47011E00399B03 /* Nations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nations.swift; path = Core_Data/Nations.swift; sourceTree = "<group>"; };
 		9D6E553D1C47015100399B03 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9DB7E28A1C4DAF2600300DCA /* SearchPlayerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPlayerObject.swift; path = Data/SearchPlayerObject.swift; sourceTree = "<group>"; };
+		9DB7E28C1C4DC40300300DCA /* p2sPlayersListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayersListingViewController.swift; path = Controllers/p2sPlayersListingViewController.swift; sourceTree = "<group>"; };
+		9DB7E28E1C4DC41E00300DCA /* p2sPlayersListing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sPlayersListing.storyboard; path = Controllers/p2sPlayersListing.storyboard; sourceTree = "<group>"; };
+		9DB7E2901C4DD65900300DCA /* TitleViewObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleViewObject.swift; path = Data/TitleViewObject.swift; sourceTree = "<group>"; };
+		9DB7E2921C4DE10F00300DCA /* p2sPlayersListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayersListingCell.swift; path = Controllers/p2sPlayersListingCell.swift; sourceTree = "<group>"; };
+		9DB7E2931C4DE10F00300DCA /* p2sPlayersListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sPlayersListingCell.xib; path = Controllers/p2sPlayersListingCell.xib; sourceTree = "<group>"; };
+		9DB7E2961C4DE78400300DCA /* PlayersListingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersListingObject.swift; path = Data/PlayersListingObject.swift; sourceTree = "<group>"; };
 		9DBCCAA71C493EC600896966 /* LoginRegisterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRegisterManager.swift; path = WebServices/LoginRegisterManager.swift; sourceTree = "<group>"; };
 		9DBCCAA91C49486400896966 /* dbLink.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dbLink.plist; sourceTree = "<group>"; };
 		9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sLogin.storyboard; path = Login/p2sLogin.storyboard; sourceTree = "<group>"; };
@@ -297,6 +311,10 @@
 				9DC70ADC1C4AFB3800AF2F8E /* p2sSearchPlayersCell.xib */,
 				9DF1933B1C4C06B9007C9C84 /* p2sSearchDataInputViewController.swift */,
 				9DF1933D1C4C06DA007C9C84 /* p2sSearchDataInput.storyboard */,
+				9DB7E28C1C4DC40300300DCA /* p2sPlayersListingViewController.swift */,
+				9DB7E28E1C4DC41E00300DCA /* p2sPlayersListing.storyboard */,
+				9DB7E2921C4DE10F00300DCA /* p2sPlayersListingCell.swift */,
+				9DB7E2931C4DE10F00300DCA /* p2sPlayersListingCell.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -305,10 +323,13 @@
 			isa = PBXGroup;
 			children = (
 				9DD0ADA41C458096008B60B1 /* Constants.swift */,
+				9DD484651C4086D2003EB57A /* StaticData.swift */,
 				9DD484611C4086D2003EB57A /* CommonDataObject.swift */,
 				9DD484621C4086D2003EB57A /* CurrentUserObject.swift */,
 				9DD484641C4086D2003EB57A /* LogoImageObject.swift */,
-				9DD484651C4086D2003EB57A /* StaticData.swift */,
+				9DB7E28A1C4DAF2600300DCA /* SearchPlayerObject.swift */,
+				9DB7E2901C4DD65900300DCA /* TitleViewObject.swift */,
+				9DB7E2961C4DE78400300DCA /* PlayersListingObject.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -393,6 +414,7 @@
 				9DD1C19B1C3E0A2900389567 /* default_person.gif in Resources */,
 				9DC70AC51C4AA6D000AF2F8E /* p2sRegister.storyboard in Resources */,
 				9DD1C1A21C3E0A2900389567 /* thumbs_down_icon.png in Resources */,
+				9DB7E2951C4DE10F00300DCA /* p2sPlayersListingCell.xib in Resources */,
 				9DF1933E1C4C06DA007C9C84 /* p2sSearchDataInput.storyboard in Resources */,
 				9DC70ADA1C4AFB0600AF2F8E /* p2sSearchPlayers.storyboard in Resources */,
 				9DC70ACD1C4AA6D000AF2F8E /* p2sSettings.storyboard in Resources */,
@@ -406,6 +428,7 @@
 				9DD1C1A31C3E0A2900389567 /* thumbs_up_icon.png in Resources */,
 				9DD1C19D1C3E0A2900389567 /* p2s_action_bar_logo_small.png in Resources */,
 				9DDF42591C46D08600EF11EB /* p2sSelect.storyboard in Resources */,
+				9DB7E28F1C4DC41E00300DCA /* p2sPlayersListing.storyboard in Resources */,
 				9DBCCAAA1C49486400896966 /* dbLink.plist in Resources */,
 				9DD1C1801C3E088700389567 /* Main.storyboard in Resources */,
 				9DC70AC31C4AA6D000AF2F8E /* p2sLoginCell.xib in Resources */,
@@ -446,13 +469,18 @@
 				9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */,
 				9D6E55321C47011E00399B03 /* Sports.swift in Sources */,
 				9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */,
+				9DB7E2971C4DE78400300DCA /* PlayersListingObject.swift in Sources */,
+				9DB7E2941C4DE10F00300DCA /* p2sPlayersListingCell.swift in Sources */,
 				9DC70ACA1C4AA6D000AF2F8E /* p2sRegSaveCell.swift in Sources */,
 				9DD484661C4086D2003EB57A /* CommonDataObject.swift in Sources */,
+				9DB7E28D1C4DC40300300DCA /* p2sPlayersListingViewController.swift in Sources */,
 				9D6E551C1C46FDF400399B03 /* Selection.xcdatamodeld in Sources */,
 				9DD4846A1C4086D2003EB57A /* StaticData.swift in Sources */,
 				9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */,
 				9D6E55381C47011E00399B03 /* Positions.swift in Sources */,
 				9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */,
+				9DB7E2911C4DD65900300DCA /* TitleViewObject.swift in Sources */,
+				9DB7E28B1C4DAF2600300DCA /* SearchPlayerObject.swift in Sources */,
 				9DC70AC81C4AA6D000AF2F8E /* p2sRegisterViewController.swift in Sources */,
 				9DE974801C47ED2E00D7AFA0 /* DataManager.swift in Sources */,
 				9D6E552F1C47011E00399B03 /* Heights+CoreDataProperties.swift in Sources */,

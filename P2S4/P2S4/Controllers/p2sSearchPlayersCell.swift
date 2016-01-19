@@ -12,7 +12,7 @@ import UIKit
 @objc protocol p2sSearchPlayersCellDelegate {
     
     optional func displaySelection(selectType: String)
-    optional func searchWithData(firstName: String, lastName: String, schoolName: String, state: String, nation: String, position: String, height: String, weight: String)
+    optional func searchWithData(data: SearchPlayerObject)
 }
 
 
@@ -34,7 +34,7 @@ class p2sSearchPlayersCell: UITableViewCell {
     var playerLastName: String? = ""
     var schoolName: String? = ""
     var stateCode: String? = ""
-    var nationCode: String? = ""
+    var nationCode: String? = "US"
     var positionCode: String? = ""
     var heightCode: String? = ""
     var weightCode: String? = ""
@@ -106,7 +106,19 @@ class p2sSearchPlayersCell: UITableViewCell {
     }
     
     @IBAction func startSearchAction(sender: AnyObject) {
-        delegate?.searchWithData?(self.playerFirstName!, lastName: self.playerLastName!, schoolName: self.schoolName!, state: self.stateCode!, nation: self.nationCode!, position: self.positionCode!, height: self.heightCode!, weight: self.weightCode!)
+        
+        var searchData: SearchPlayerObject? = SearchPlayerObject()
+        
+        searchData!.firstName = self.playerFirstName!
+        searchData!.lastName = self.playerLastName!
+        searchData!.school = self.schoolName!
+        searchData!.state = self.stateCode!
+        searchData!.nation = self.nationCode!
+        searchData!.position = self.positionCode!
+        searchData!.height = self.heightCode!
+        searchData!.weight = self.weightCode!
+        
+        delegate?.searchWithData!(searchData!)
     }
     
     

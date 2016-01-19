@@ -120,8 +120,10 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     }
     
     @IBAction func showTopAction(sender: AnyObject) {
-        //
-        print("-> show top 10")
+        
+        let storyBoard = UIStoryboard(name: "p2sPlayersListing", bundle: nil)
+        let playersListing: p2sPlayersListingViewController? = storyBoard.instantiateViewControllerWithIdentifier("playerListing") as? p2sPlayersListingViewController
+        self.navigationController!.pushViewController(playersListing!, animated: true)
     }
     
     @IBAction func searchPlayersAction(sender: AnyObject) {

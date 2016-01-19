@@ -124,21 +124,21 @@ class p2sSearchPlayersViewController: UIViewController, UITableViewDataSource, U
         }
     }
     
-    func searchWithData(firstName: String, lastName: String, schoolName: String, state: String, nation: String, position: String, height: String, weight: String) {
+    func searchWithData(data: SearchPlayerObject) {
         
         //
         
         print("... ")
         print("... search criteria")
         print("... ")
-        print("... first name  = '\(firstName)' ")
-        print("... last name   = '\(lastName)' ")
-        print("... school name = '\(schoolName)' ")
-        print("... state    = '\(state)' ")
-        print("... country  = '\(nation)' ")
-        print("... position = '\(position)' ")
-        print("... height   = '\(height)' ")
-        print("... weight   = '\(weight)' ")
+        print("... first name  = '\(data.firstName!)' ")
+        print("... last name   = '\(data.lastName!)' ")
+        print("... school name = '\(data.school!)' ")
+        print("... state    = '\(data.state!)' ")
+        print("... country  = '\(data.nation!)' ")
+        print("... position = '\(data.position!)' ")
+        print("... height   = '\(data.height!)' ")
+        print("... weight   = '\(data.weight!)' ")
         print("... ")
     }
     

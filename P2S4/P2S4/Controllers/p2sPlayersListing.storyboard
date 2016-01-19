@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--2s Players Listing View Controller-->
+        <scene sceneID="1oN-Fq-bs0">
+            <objects>
+                <viewController storyboardIdentifier="playerListing" id="1Jn-rh-ALf" customClass="p2sPlayersListingViewController" customModule="P2S4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I6H-cv-OI4"/>
+                        <viewControllerLayoutGuide type="bottom" id="wwY-Gr-rHU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Icy-gz-eka">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bg Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWe-Lm-9MF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="tTF-3J-mTf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jxu-wL-l3D">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="JDa-Wf-xfY"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Back" id="TZj-0y-hG1">
+                                        <connections>
+                                            <action selector="closeAction:" destination="1Jn-rh-ALf" id="ZBz-z7-Va4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Z4U-wc-3ko"/>
+                                    <barButtonItem id="qQC-T4-o5D">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Jc6-LJ-ak3"/>
+                                    <barButtonItem enabled="NO" title="Back" id="Bvu-mB-P2E">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOP Players by Voters and Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4NP-Mx-0Yd">
+                                <rect key="frame" x="0.0" y="64" width="600" height="41"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="iiq-An-NEz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTr-pU-pJg">
+                                <rect key="frame" x="145" y="105" width="310" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.97999999999999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BvK-gX-PhQ"/>
+                                    <constraint firstAttribute="width" constant="310" id="JrP-Ns-0P1"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No players for this position." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHj-yk-YGy">
+                                <rect key="frame" x="175" y="245" width="250" height="40"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mcZ-Np-ZAZ"/>
+                                    <constraint firstAttribute="width" constant="250" id="umg-1M-sNd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GJG-n2-tM8">
+                                <rect key="frame" x="145" y="145" width="310" height="445"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="94e-iE-qBd"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Jn-rh-ALf" id="3An-Da-5pl"/>
+                                    <outlet property="delegate" destination="1Jn-rh-ALf" id="Tht-pa-wpw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wwY-Gr-rHU" firstAttribute="top" secondItem="GJG-n2-tM8" secondAttribute="bottom" constant="10" id="0yl-en-wJW"/>
+                            <constraint firstItem="YHj-yk-YGy" firstAttribute="centerX" secondItem="Icy-gz-eka" secondAttribute="centerX" id="6zr-Se-l4v"/>
+                            <constraint firstItem="YHj-yk-YGy" firstAttribute="top" secondItem="kTr-pU-pJg" secondAttribute="bottom" constant="100" id="9gy-IQ-nN9"/>
+                            <constraint firstItem="Jxu-wL-l3D" firstAttribute="leading" secondItem="Icy-gz-eka" secondAttribute="leadingMargin" constant="-20" id="CIH-1s-yQX"/>
+                            <constraint firstItem="GJG-n2-tM8" firstAttribute="centerX" secondItem="Icy-gz-eka" secondAttribute="centerX" id="DAk-Dj-fC0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4NP-Mx-0Yd" secondAttribute="trailing" constant="-20" id="DZ6-qd-LTw"/>
+                            <constraint firstItem="kWe-Lm-9MF" firstAttribute="leading" secondItem="Icy-gz-eka" secondAttribute="leadingMargin" constant="-20" id="Vuh-ZB-RlX"/>
+                            <constraint firstItem="Jxu-wL-l3D" firstAttribute="top" secondItem="I6H-cv-OI4" secondAttribute="bottom" id="Z14-SO-xja"/>
+                            <constraint firstItem="4NP-Mx-0Yd" firstAttribute="leading" secondItem="Icy-gz-eka" secondAttribute="leadingMargin" constant="-20" id="Z5M-TQ-Bg7"/>
+                            <constraint firstItem="GJG-n2-tM8" firstAttribute="top" secondItem="kTr-pU-pJg" secondAttribute="bottom" id="ZV8-tH-DQh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kWe-Lm-9MF" secondAttribute="trailing" constant="-20" id="bD9-fR-uEc"/>
+                            <constraint firstItem="kWe-Lm-9MF" firstAttribute="top" secondItem="Icy-gz-eka" secondAttribute="topMargin" id="fD9-jc-QNP"/>
+                            <constraint firstItem="kTr-pU-pJg" firstAttribute="top" secondItem="4NP-Mx-0Yd" secondAttribute="bottom" id="k3p-3X-R54"/>
+                            <constraint firstItem="4NP-Mx-0Yd" firstAttribute="top" secondItem="Jxu-wL-l3D" secondAttribute="bottom" id="lRP-xq-naz"/>
+                            <constraint firstItem="kTr-pU-pJg" firstAttribute="centerX" secondItem="Icy-gz-eka" secondAttribute="centerX" id="otg-dZ-31D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jxu-wL-l3D" secondAttribute="trailing" constant="-20" id="tXx-7j-Jwr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="GJG-n2-tM8" id="lu0-ey-PiB"/>
+                        <outlet property="titleBarItem" destination="qQC-T4-o5D" id="bE1-rc-qW2"/>
+                        <outlet property="titleView" destination="kTr-pU-pJg" id="elu-Zo-yMV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nMc-XW-Hdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="719" y="469"/>
+        </scene>
+    </scenes>
+</document>
