@@ -26,6 +26,10 @@
 		9D6E553B1C47011E00399B03 /* Nations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E552B1C47011E00399B03 /* Nations+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E553C1C47011E00399B03 /* Nations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E552C1C47011E00399B03 /* Nations.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E553E1C47015100399B03 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6E553D1C47015100399B03 /* CoreData.framework */; };
+		9D87C9D11C4EC6070019D771 /* p2sPlayerVotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D87C9D01C4EC6070019D771 /* p2sPlayerVotingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9D87C9D31C4ECB230019D771 /* p2sPlayerVoting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D87C9D21C4ECB230019D771 /* p2sPlayerVoting.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9D87C9D61C4ECB490019D771 /* p2sPlayerVotingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D87C9D41C4ECB490019D771 /* p2sPlayerVotingCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9D87C9D71C4ECB490019D771 /* p2sPlayerVotingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D87C9D51C4ECB490019D771 /* p2sPlayerVotingCell.xib */; settings = {ASSET_TAGS = (); }; };
 		9DB7E28B1C4DAF2600300DCA /* SearchPlayerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E28A1C4DAF2600300DCA /* SearchPlayerObject.swift */; settings = {ASSET_TAGS = (); }; };
 		9DB7E28D1C4DC40300300DCA /* p2sPlayersListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E28C1C4DC40300300DCA /* p2sPlayersListingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DB7E28F1C4DC41E00300DCA /* p2sPlayersListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB7E28E1C4DC41E00300DCA /* p2sPlayersListing.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -33,6 +37,12 @@
 		9DB7E2941C4DE10F00300DCA /* p2sPlayersListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E2921C4DE10F00300DCA /* p2sPlayersListingCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9DB7E2951C4DE10F00300DCA /* p2sPlayersListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB7E2931C4DE10F00300DCA /* p2sPlayersListingCell.xib */; settings = {ASSET_TAGS = (); }; };
 		9DB7E2971C4DE78400300DCA /* PlayersListingObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7E2961C4DE78400300DCA /* PlayersListingObject.swift */; settings = {ASSET_TAGS = (); }; };
+		9DBB01CF1C4E79FE00E673D4 /* p2sPlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB01CE1C4E79FE00E673D4 /* p2sPlayerDetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9DBB01D11C4E7A2D00E673D4 /* p2sPlayerDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DBB01D01C4E7A2D00E673D4 /* p2sPlayerDetails.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9DBB01D41C4E7A5400E673D4 /* p2sPlayerDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB01D21C4E7A5400E673D4 /* p2sPlayerDetailsCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9DBB01D51C4E7A5400E673D4 /* p2sPlayerDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBB01D31C4E7A5400E673D4 /* p2sPlayerDetailsCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DBB01D81C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBB01D61C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.swift */; settings = {ASSET_TAGS = (); }; };
+		9DBB01D91C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DBB01D71C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.xib */; settings = {ASSET_TAGS = (); }; };
 		9DBCCAA81C493EC600896966 /* LoginRegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBCCAA71C493EC600896966 /* LoginRegisterManager.swift */; settings = {ASSET_TAGS = (); }; };
 		9DBCCAAA1C49486400896966 /* dbLink.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DBCCAA91C49486400896966 /* dbLink.plist */; settings = {ASSET_TAGS = (); }; };
 		9DC70AC11C4AA6D000AF2F8E /* p2sLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -108,6 +118,10 @@
 		9D6E552B1C47011E00399B03 /* Nations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Nations+CoreDataProperties.swift"; path = "Core_Data/Nations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9D6E552C1C47011E00399B03 /* Nations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nations.swift; path = Core_Data/Nations.swift; sourceTree = "<group>"; };
 		9D6E553D1C47015100399B03 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9D87C9D01C4EC6070019D771 /* p2sPlayerVotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayerVotingViewController.swift; path = Controllers/p2sPlayerVotingViewController.swift; sourceTree = "<group>"; };
+		9D87C9D21C4ECB230019D771 /* p2sPlayerVoting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sPlayerVoting.storyboard; path = Controllers/p2sPlayerVoting.storyboard; sourceTree = "<group>"; };
+		9D87C9D41C4ECB490019D771 /* p2sPlayerVotingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayerVotingCell.swift; path = Controllers/p2sPlayerVotingCell.swift; sourceTree = "<group>"; };
+		9D87C9D51C4ECB490019D771 /* p2sPlayerVotingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sPlayerVotingCell.xib; path = Controllers/p2sPlayerVotingCell.xib; sourceTree = "<group>"; };
 		9DB7E28A1C4DAF2600300DCA /* SearchPlayerObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchPlayerObject.swift; path = Data/SearchPlayerObject.swift; sourceTree = "<group>"; };
 		9DB7E28C1C4DC40300300DCA /* p2sPlayersListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayersListingViewController.swift; path = Controllers/p2sPlayersListingViewController.swift; sourceTree = "<group>"; };
 		9DB7E28E1C4DC41E00300DCA /* p2sPlayersListing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sPlayersListing.storyboard; path = Controllers/p2sPlayersListing.storyboard; sourceTree = "<group>"; };
@@ -115,6 +129,12 @@
 		9DB7E2921C4DE10F00300DCA /* p2sPlayersListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayersListingCell.swift; path = Controllers/p2sPlayersListingCell.swift; sourceTree = "<group>"; };
 		9DB7E2931C4DE10F00300DCA /* p2sPlayersListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sPlayersListingCell.xib; path = Controllers/p2sPlayersListingCell.xib; sourceTree = "<group>"; };
 		9DB7E2961C4DE78400300DCA /* PlayersListingObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayersListingObject.swift; path = Data/PlayersListingObject.swift; sourceTree = "<group>"; };
+		9DBB01CE1C4E79FE00E673D4 /* p2sPlayerDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayerDetailsViewController.swift; path = Controllers/p2sPlayerDetailsViewController.swift; sourceTree = "<group>"; };
+		9DBB01D01C4E7A2D00E673D4 /* p2sPlayerDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sPlayerDetails.storyboard; path = Controllers/p2sPlayerDetails.storyboard; sourceTree = "<group>"; };
+		9DBB01D21C4E7A5400E673D4 /* p2sPlayerDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayerDetailsCell.swift; path = Controllers/p2sPlayerDetailsCell.swift; sourceTree = "<group>"; };
+		9DBB01D31C4E7A5400E673D4 /* p2sPlayerDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sPlayerDetailsCell.xib; path = Controllers/p2sPlayerDetailsCell.xib; sourceTree = "<group>"; };
+		9DBB01D61C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayerDetailsVotesCell.swift; path = Controllers/p2sPlayerDetailsVotesCell.swift; sourceTree = "<group>"; };
+		9DBB01D71C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sPlayerDetailsVotesCell.xib; path = Controllers/p2sPlayerDetailsVotesCell.xib; sourceTree = "<group>"; };
 		9DBCCAA71C493EC600896966 /* LoginRegisterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRegisterManager.swift; path = WebServices/LoginRegisterManager.swift; sourceTree = "<group>"; };
 		9DBCCAA91C49486400896966 /* dbLink.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dbLink.plist; sourceTree = "<group>"; };
 		9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sLogin.storyboard; path = Login/p2sLogin.storyboard; sourceTree = "<group>"; };
@@ -315,6 +335,16 @@
 				9DB7E28E1C4DC41E00300DCA /* p2sPlayersListing.storyboard */,
 				9DB7E2921C4DE10F00300DCA /* p2sPlayersListingCell.swift */,
 				9DB7E2931C4DE10F00300DCA /* p2sPlayersListingCell.xib */,
+				9DBB01CE1C4E79FE00E673D4 /* p2sPlayerDetailsViewController.swift */,
+				9DBB01D01C4E7A2D00E673D4 /* p2sPlayerDetails.storyboard */,
+				9DBB01D21C4E7A5400E673D4 /* p2sPlayerDetailsCell.swift */,
+				9DBB01D31C4E7A5400E673D4 /* p2sPlayerDetailsCell.xib */,
+				9DBB01D61C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.swift */,
+				9DBB01D71C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.xib */,
+				9D87C9D01C4EC6070019D771 /* p2sPlayerVotingViewController.swift */,
+				9D87C9D21C4ECB230019D771 /* p2sPlayerVoting.storyboard */,
+				9D87C9D41C4ECB490019D771 /* p2sPlayerVotingCell.swift */,
+				9D87C9D51C4ECB490019D771 /* p2sPlayerVotingCell.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -414,15 +444,20 @@
 				9DD1C19B1C3E0A2900389567 /* default_person.gif in Resources */,
 				9DC70AC51C4AA6D000AF2F8E /* p2sRegister.storyboard in Resources */,
 				9DD1C1A21C3E0A2900389567 /* thumbs_down_icon.png in Resources */,
+				9DBB01D91C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.xib in Resources */,
 				9DB7E2951C4DE10F00300DCA /* p2sPlayersListingCell.xib in Resources */,
+				9DBB01D11C4E7A2D00E673D4 /* p2sPlayerDetails.storyboard in Resources */,
 				9DF1933E1C4C06DA007C9C84 /* p2sSearchDataInput.storyboard in Resources */,
 				9DC70ADA1C4AFB0600AF2F8E /* p2sSearchPlayers.storyboard in Resources */,
+				9D87C9D31C4ECB230019D771 /* p2sPlayerVoting.storyboard in Resources */,
 				9DC70ACD1C4AA6D000AF2F8E /* p2sSettings.storyboard in Resources */,
 				9DD1C1A41C3E0A2900389567 /* upAndDown.png in Resources */,
 				9DD1C1A01C3E0A2900389567 /* star_blank.png in Resources */,
 				9DD1C1821C3E088700389567 /* Assets.xcassets in Resources */,
+				9D87C9D71C4ECB490019D771 /* p2sPlayerVotingCell.xib in Resources */,
 				9DD1C19F1C3E0A2900389567 /* p2s_login_page_logo.png in Resources */,
 				9DC70AC11C4AA6D000AF2F8E /* p2sLogin.storyboard in Resources */,
+				9DBB01D51C4E7A5400E673D4 /* p2sPlayerDetailsCell.xib in Resources */,
 				9DD1C19C1C3E0A2900389567 /* home_page_launch_image.png in Resources */,
 				9DC70ACB1C4AA6D000AF2F8E /* p2sRegSaveCell.xib in Resources */,
 				9DD1C1A31C3E0A2900389567 /* thumbs_up_icon.png in Resources */,
@@ -453,6 +488,7 @@
 				9D6E553B1C47011E00399B03 /* Nations+CoreDataProperties.swift in Sources */,
 				9D6E553A1C47011E00399B03 /* Skills.swift in Sources */,
 				9DC70ACC1C4AA6D000AF2F8E /* p2sRegSaveViewController.swift in Sources */,
+				9DBB01D81C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.swift in Sources */,
 				9DD484671C4086D2003EB57A /* CurrentUserObject.swift in Sources */,
 				9D6E55361C47011E00399B03 /* Weights.swift in Sources */,
 				9DC70AC41C4AA6D000AF2F8E /* p2sLoginViewController.swift in Sources */,
@@ -464,6 +500,8 @@
 				9D6E55311C47011E00399B03 /* Sports+CoreDataProperties.swift in Sources */,
 				9DDF42571C46CF0E00EF11EB /* p2sSelectsViewController.swift in Sources */,
 				9D6E55391C47011E00399B03 /* Skills+CoreDataProperties.swift in Sources */,
+				9D87C9D61C4ECB490019D771 /* p2sPlayerVotingCell.swift in Sources */,
+				9DBB01CF1C4E79FE00E673D4 /* p2sPlayerDetailsViewController.swift in Sources */,
 				9D6E55331C47011E00399B03 /* States+CoreDataProperties.swift in Sources */,
 				9DC70ACE1C4AA6D000AF2F8E /* p2sSettingsViewController.swift in Sources */,
 				9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */,
@@ -471,6 +509,7 @@
 				9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */,
 				9DB7E2971C4DE78400300DCA /* PlayersListingObject.swift in Sources */,
 				9DB7E2941C4DE10F00300DCA /* p2sPlayersListingCell.swift in Sources */,
+				9D87C9D11C4EC6070019D771 /* p2sPlayerVotingViewController.swift in Sources */,
 				9DC70ACA1C4AA6D000AF2F8E /* p2sRegSaveCell.swift in Sources */,
 				9DD484661C4086D2003EB57A /* CommonDataObject.swift in Sources */,
 				9DB7E28D1C4DC40300300DCA /* p2sPlayersListingViewController.swift in Sources */,
@@ -493,6 +532,7 @@
 				9D6E55371C47011E00399B03 /* Positions+CoreDataProperties.swift in Sources */,
 				9DD484691C4086D2003EB57A /* LogoImageObject.swift in Sources */,
 				9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */,
+				9DBB01D41C4E7A5400E673D4 /* p2sPlayerDetailsCell.swift in Sources */,
 				9DC70AC61C4AA6D000AF2F8E /* p2sRegisterCell.swift in Sources */,
 				9D6E552E1C47011E00399B03 /* AgeRanges.swift in Sources */,
 			);

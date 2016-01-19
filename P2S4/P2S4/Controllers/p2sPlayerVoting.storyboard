@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--2s Player Voting View Controller-->
+        <scene sceneID="xaZ-Xa-IgI">
+            <objects>
+                <viewController storyboardIdentifier="playerVoting" id="MfL-5S-1cm" customClass="p2sPlayerVotingViewController" customModule="P2S4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dE5-1e-ML8"/>
+                        <viewControllerLayoutGuide type="bottom" id="o2e-Q2-PAf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="usO-RI-wyY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bg Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OC6-tR-tcD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="vHI-xn-832"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqA-N4-0AJ">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="L5e-S9-F8W"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Back" id="enC-tR-pwz">
+                                        <connections>
+                                            <action selector="closeAction:" destination="MfL-5S-1cm" id="1CC-kS-8TN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NUS-cH-KPy"/>
+                                    <barButtonItem id="ns9-7X-dMC">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Jhw-fZ-SLG"/>
+                                    <barButtonItem enabled="NO" title="Back" id="lwF-eL-rq3">
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUl-iL-gwp">
+                                <rect key="frame" x="200" y="545" width="200" height="35"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6nx-e3-Gyz"/>
+                                    <constraint firstAttribute="height" constant="35" id="lCa-VZ-vBu"/>
+                                </constraints>
+                                <state key="normal" title="SAVE YOUR VOTES">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveVotesAction:" destination="MfL-5S-1cm" eventType="touchUpInside" id="7LS-dv-fwD"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xWG-qU-Dfb">
+                                <rect key="frame" x="145" y="74" width="310" height="451"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="310" id="0Hl-yO-Ipp"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="MfL-5S-1cm" id="lkj-LT-kxh"/>
+                                    <outlet property="delegate" destination="MfL-5S-1cm" id="JxJ-jQ-eYV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OC6-tR-tcD" firstAttribute="top" secondItem="usO-RI-wyY" secondAttribute="topMargin" id="4pd-Nu-CTA"/>
+                            <constraint firstItem="CqA-N4-0AJ" firstAttribute="leading" secondItem="usO-RI-wyY" secondAttribute="leadingMargin" constant="-20" id="6m4-ze-eqg"/>
+                            <constraint firstItem="o2e-Q2-PAf" firstAttribute="top" secondItem="dUl-iL-gwp" secondAttribute="bottom" constant="20" id="AhZ-16-sMW"/>
+                            <constraint firstItem="OC6-tR-tcD" firstAttribute="leading" secondItem="usO-RI-wyY" secondAttribute="leadingMargin" constant="-20" id="Ipc-4j-sH6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OC6-tR-tcD" secondAttribute="trailing" constant="-20" id="MSh-1x-dx9"/>
+                            <constraint firstItem="dUl-iL-gwp" firstAttribute="top" secondItem="xWG-qU-Dfb" secondAttribute="bottom" constant="20" id="P3U-J7-yL2"/>
+                            <constraint firstItem="dUl-iL-gwp" firstAttribute="centerX" secondItem="usO-RI-wyY" secondAttribute="centerX" id="WVN-Mp-vxg"/>
+                            <constraint firstItem="xWG-qU-Dfb" firstAttribute="centerX" secondItem="usO-RI-wyY" secondAttribute="centerX" id="n58-mt-fxA"/>
+                            <constraint firstItem="CqA-N4-0AJ" firstAttribute="top" secondItem="dE5-1e-ML8" secondAttribute="bottom" id="oK5-5K-EeJ"/>
+                            <constraint firstItem="xWG-qU-Dfb" firstAttribute="top" secondItem="CqA-N4-0AJ" secondAttribute="bottom" constant="10" id="t82-bx-3Hg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CqA-N4-0AJ" secondAttribute="trailing" constant="-20" id="tEx-Ma-xI4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="saveVotesButton" destination="dUl-iL-gwp" id="sjf-Kv-AQB"/>
+                        <outlet property="tableView" destination="xWG-qU-Dfb" id="ze2-b6-uKk"/>
+                        <outlet property="titleBarItem" destination="ns9-7X-dMC" id="X7A-PZ-S2o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chS-UU-PNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="494"/>
+        </scene>
+    </scenes>
+</document>

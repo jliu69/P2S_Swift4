@@ -13,10 +13,12 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var rowsArray: Array<AnyObject>? = [AnyObject]()
-    
     var cell: p2sPlayersListingCell? = p2sPlayersListingCell()
+    var isForSearch: Bool? = false
+    
     
     //MARK: - init
     
@@ -56,6 +58,15 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
         
         self.rowsArray!.append(player!)
         self.tableView.reloadData()
+        
+        
+        //-- check for rows array size
+        if self.rowsArray!.count > 0 {
+            self.messageLabel.hidden = true
+        }
+        else {
+            self.messageLabel.hidden = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,7 +102,8 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
         self.cell!.cityStateLabel.text = "\(player!.city!), \(player!.state!)"
         self.cell!.positionLabel.text = player!.position!
         
-        //self.cell!.accessoryType = UITableViewCellAccessoryType.DetailDisclosureButton
+        self.cell!.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        self.cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
         return self.cell!
     }
@@ -101,6 +113,10 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let storyBoard = UIStoryboard(name: "p2sPlayerDetails", bundle: nil)
+        let playerDetail: p2sPlayerDetailsViewController? = storyBoard.instantiateViewControllerWithIdentifier("playerDetails") as? p2sPlayerDetailsViewController
+        self.navigationController!.pushViewController(playerDetail!, animated: true)
     }
     
 }
