@@ -34,6 +34,8 @@ class LoginRegisterManager: NSObject {
         let urlLink = (loginUrl as NSString).stringByReplacingOccurrencesOfString(" ", withString: "+") as String
         let url = NSURL(string: urlLink)
         
+        weak var currentClass: LoginRegisterManager? = self
+        
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             print(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
             
@@ -69,8 +71,8 @@ class LoginRegisterManager: NSObject {
                             
                             if let status = json["message"] as! NSString as? String {
                                 if status == "success" {
-                                    self.saveLoginData(personId!, firstName: firstName!, lastName: lastName!)
-                                    self.responseToLogin(true)
+                                    currentClass!.saveLoginData(personId!, firstName: firstName!, lastName: lastName!)
+                                    currentClass!.responseToLogin(true)
                                 }
                             }
                         }
@@ -143,15 +145,7 @@ class LoginRegisterManager: NSObject {
         }
         
         task.resume()
-        
-        /*
-        let url = NSURL(string: urlLink)
-        let data = NSData(contentsOfURL: url!)
-        
-        let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
-        let objcString: NSString = NSString(string: dataString!)
-        */
-        
+
     }
 }
 

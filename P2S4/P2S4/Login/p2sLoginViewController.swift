@@ -36,11 +36,6 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let key = RegisterSave.notificationKey
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "clearAllLoginAndRegisterPages:", name: key, object: nil)
-        
-        
-        let activityObject: ActivityIndicatorObject? = ActivityIndicatorObject()
-        self.progressView = activityObject!.activityIndicator()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -164,6 +159,13 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     //MARK: - login register delegate
     
     func showActivityIndicator() {
+        
+        if self.progressView != nil {
+            self.progressView = nil
+        }
+        let activityObject: ActivityIndicatorObject? = ActivityIndicatorObject()
+        self.progressView = activityObject!.activityIndicator()
+        
         let tvWidth: CGFloat = self.tableView.frame.size.width
         let tvHeight: CGFloat = self.tableView.frame.size.height
         
@@ -172,14 +174,13 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         let width: CGFloat = self.progressView!.frame.size.width
         let height: CGFloat = self.progressView!.frame.size.height
         
-        let activityObject: ActivityIndicatorObject? = ActivityIndicatorObject()
-        self.progressView = activityObject!.activityIndicator()
         self.progressView!.frame = CGRectMake(xPosition, yPosition, width, height)
         self.tableView.addSubview(self.progressView!)
     }
     
     func hideActivityIndicator() {
         self.progressView!.removeFromSuperview()
+        self.progressView = nil
     }
     
     func loginSuccess(successFlag: Bool) {

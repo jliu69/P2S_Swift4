@@ -125,25 +125,47 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     
     //MARK: - data manager delegate
     
-    func didReceiveData(data: Array<AnyObject>) {
-        self.rowsArray = data
+    func selectionWithData(data: NSData) {
         
-        if self.withAllOptionFlag {
-            let allItem: CommonDataObject? = CommonDataObject()
-            allItem!.name = "ALL"
-            allItem!.code = "ALL"
+        self.rowsArray!.removeAll()
+        var count: Int = 0
+        var isActivityIndicatorShowing: Bool = true
+        
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                
+                if let items = json["selects"] as? [[String: AnyObject]] {
+                    for item in items {
+                        var object: CommonDataObject? = CommonDataObject()
+                        
+                        if let name = item["name"] as? String {
+                            object!.name = name
+                        }
+                        if let code = item["code"] as? String {
+                            object!.code = code
+                        }
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.rowsArray!.append(object!)
+                            count++
+                            self.tableView.reloadData()
+                            
+                            if isActivityIndicatorShowing {
+                                self.view.sendSubviewToBack(self.activityIndicator)
+                                isActivityIndicatorShowing = false
+                            }
+                        }
+                    }
+                }
+            }
+            catch {
+                print("error serializing JSON: \(error)")
+            }
             
-            self.rowsArray!.insert(allItem!, atIndex: 0)
         }
-        
-        self.tableView.reloadData()
-        self.view.sendSubviewToBack(self.activityIndicator)
-        
-        let date = NSDate()
-        endTimeInterval = date.timeIntervalSince1970
-        
-        let diff = endTimeInterval - beginTimeInterval
-        print("total time of getting date : \(diff)")
     }
     
 }

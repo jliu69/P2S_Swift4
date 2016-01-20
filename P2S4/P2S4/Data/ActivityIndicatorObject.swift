@@ -24,7 +24,7 @@ class ActivityIndicatorObject: NSObject {
         baseView!.addSubview(bgLabel!)
         
         var activityIndicator: UIActivityIndicatorView? = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-        activityIndicator!.frame = CGRectMake(32, 15, 37, 37)
+        activityIndicator!.frame = CGRectMake(32, 20, 37, 37)
         activityIndicator!.startAnimating()
         baseView!.addSubview(activityIndicator!)
         

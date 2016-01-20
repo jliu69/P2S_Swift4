@@ -11,7 +11,7 @@ import UIKit
 
 @objc protocol DataManagerDelegate {
     
-    optional func didReceiveData(data: Array<AnyObject>)
+    optional func selectionWithData(data: NSData)
 }
 
 
@@ -22,10 +22,6 @@ class DataManager: NSObject {
     
     //MARK: - action methods
     
-    func dataWithSelectType(type: String) {
-        self.dataWithSelectTypeAndParameters(type, parameters: "")
-    }
-    
     func dataWithSelectTypeAndParameters(type: String, parameters: String) {
         
         var link = self.linkWithType(type)
@@ -34,38 +30,21 @@ class DataManager: NSObject {
         }
         
         if parameters != "" {
-           link = "\(link)?\(parameters)"
+            link = "\(link)?\(parameters)"
         }
-        
         let url = NSURL(string: link)
-        var data = NSData(contentsOfURL: url!)
         
-        var dataList = [AnyObject]()
-        do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
-            
-            if let items = json["selects"] as? [[String: AnyObject]] {
-                for item in items {
-                    var object: CommonDataObject? = CommonDataObject()
-                    
-                    if let name = item["name"] as? String {
-                        object!.name = name
-                    }
-                    if let code = item["code"] as? String {
-                        object!.code = code
-                    }
-                    
-                    dataList.append(object!)
-                    object = nil
-                }
-            }
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            self.selectionData(data!)
         }
-        catch {
-            print("error serializing JSON: \(error)")
-        }
-        
-        self.delegate?.didReceiveData?(dataList)
+        task.resume()
     }
+    
+    func selectionData(data: NSData) {
+        self.delegate?.selectionWithData?(data)
+    }
+    
     
     //MARK: - private methods
     
