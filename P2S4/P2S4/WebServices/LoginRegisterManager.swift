@@ -32,51 +32,69 @@ class LoginRegisterManager: NSObject {
         let loginUrl = "\(linkHeader)\(linkBody)\(parameter)"
         
         let urlLink = (loginUrl as NSString).stringByReplacingOccurrencesOfString(" ", withString: "+") as String
-        
         let url = NSURL(string: urlLink)
-        let data: NSData? = NSData(contentsOfURL: url!)
         
-        if data == nil {
-            delegate?.loginSuccess?(false)
-            return
-        }
-        
-        let dataText = NSString(data: data!, encoding: NSUTF8StringEncoding) as NSString? as String?
-        let range: NSRange = (dataText! as NSString).rangeOfString("null")
-        if range.location != NSNotFound {
-            delegate?.loginSuccess?(false)
-            return
-        }
-        
-        var loginSuccess: Bool = false
-        if data != nil {
-            do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
+            
+            if data == nil {
+                self.responseToLogin(false)
+            }
+            else {
+                let dataText = NSString(data: data!, encoding: NSUTF8StringEncoding) as NSString? as String?
+                let range: NSRange = (dataText! as NSString).rangeOfString("null")
                 
-                if appDele.currentUser == nil {
-                    appDele.currentUser = CurrentUserObject()
+                if range.location != NSNotFound {
+                    self.responseToLogin(false)
                 }
-                
-                if let personId = json["personId"] as! NSString as? String {
-                    appDele.currentUser!.personId = personId
-                }
-                if let firstName = json["firstNm"] as! NSString as? String {
-                    appDele.currentUser!.firstName = firstName
-                }
-                if let lastName = json["lastNm"] as! NSString as? String {
-                    appDele.currentUser!.lastName = lastName
-                }
-                if let status = json["message"] as! NSString as? String {
-                    if status == "success" {
-                        loginSuccess = true
+                else {
+                    if data != nil {
+                        
+                        do {
+                            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                            
+                            var personId: String? = ""
+                            var firstName: String? = ""
+                            var lastName: String? = ""
+                            
+                            if let personIdTxt = json["personId"] as! NSString as? String {
+                                personId = personIdTxt
+                            }
+                            if let firstNameTxt = json["firstNm"] as! NSString as? String {
+                                firstName = firstNameTxt
+                            }
+                            if let lastNameTxt = json["lastNm"] as! NSString as? String {
+                                lastName = lastNameTxt
+                            }
+                            
+                            if let status = json["message"] as! NSString as? String {
+                                if status == "success" {
+                                    self.saveLoginData(personId!, firstName: firstName!, lastName: lastName!)
+                                    self.responseToLogin(true)
+                                }
+                            }
+                        }
+                        catch {
+                            print("error serializing JSON: \(error)")
+                        }
                     }
                 }
             }
-            catch {
-                print("error serializing JSON: \(error)")
-            }
         }
-        delegate?.loginSuccess?(loginSuccess)
+        
+        task.resume()
+    }
+    
+    func saveLoginData(personId: String, firstName: String, lastName: String) {
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDele.currentUser!.personId = personId
+        appDele.currentUser!.firstName = firstName
+        appDele.currentUser!.lastName = lastName
+    }
+    
+    func responseToLogin(isSuccess: Bool) {
+        delegate?.loginSuccess?(isSuccess)
     }
     
     
@@ -118,12 +136,22 @@ class LoginRegisterManager: NSObject {
         
         let urlLink = (regSaveUrl as NSString).stringByReplacingOccurrencesOfString(" ", withString: "+") as String
         
+        
+        let url = NSURL(string: urlLink)
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding)!)
+        }
+        
+        task.resume()
+        
+        /*
         let url = NSURL(string: urlLink)
         let data = NSData(contentsOfURL: url!)
         
         let dataString = String(data: data!, encoding: NSUTF8StringEncoding)
         let objcString: NSString = NSString(string: dataString!)
-        print("save register status : '\(objcString)' ")
+        */
+        
     }
 }
 

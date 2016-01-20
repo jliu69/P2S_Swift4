@@ -65,6 +65,7 @@
 		9DC70ADA1C4AFB0600AF2F8E /* p2sSearchPlayers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70AD91C4AFB0600AF2F8E /* p2sSearchPlayers.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9DC70ADD1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70ADB1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9DC70ADE1C4AFB3800AF2F8E /* p2sSearchPlayersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70ADC1C4AFB3800AF2F8E /* p2sSearchPlayersCell.xib */; settings = {ASSET_TAGS = (); }; };
+		9DCB6CFB1C4FE36700998CF5 /* ActivityIndicatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB6CFA1C4FE36700998CF5 /* ActivityIndicatorObject.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0ADA41C458096008B60B1 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17A1C3E088700389567 /* AppDelegate.swift */; };
 		9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17C1C3E088700389567 /* ViewController.swift */; };
@@ -157,6 +158,7 @@
 		9DC70AD91C4AFB0600AF2F8E /* p2sSearchPlayers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sSearchPlayers.storyboard; path = Controllers/p2sSearchPlayers.storyboard; sourceTree = "<group>"; };
 		9DC70ADB1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sSearchPlayersCell.swift; path = Controllers/p2sSearchPlayersCell.swift; sourceTree = "<group>"; };
 		9DC70ADC1C4AFB3800AF2F8E /* p2sSearchPlayersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sSearchPlayersCell.xib; path = Controllers/p2sSearchPlayersCell.xib; sourceTree = "<group>"; };
+		9DCB6CFA1C4FE36700998CF5 /* ActivityIndicatorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorObject.swift; path = Data/ActivityIndicatorObject.swift; sourceTree = "<group>"; };
 		9DD0ADA41C458096008B60B1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Data/Constants.swift; sourceTree = "<group>"; };
 		9DD1C1771C3E088700389567 /* P2S4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2S4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD1C17A1C3E088700389567 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				9DD484611C4086D2003EB57A /* CommonDataObject.swift */,
 				9DD484621C4086D2003EB57A /* CurrentUserObject.swift */,
 				9DD484641C4086D2003EB57A /* LogoImageObject.swift */,
+				9DCB6CFA1C4FE36700998CF5 /* ActivityIndicatorObject.swift */,
 				9DB7E28A1C4DAF2600300DCA /* SearchPlayerObject.swift */,
 				9DB7E2901C4DD65900300DCA /* TitleViewObject.swift */,
 				9DB7E2961C4DE78400300DCA /* PlayersListingObject.swift */,
@@ -505,6 +508,7 @@
 				9D6E55331C47011E00399B03 /* States+CoreDataProperties.swift in Sources */,
 				9DC70ACE1C4AA6D000AF2F8E /* p2sSettingsViewController.swift in Sources */,
 				9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */,
+				9DCB6CFB1C4FE36700998CF5 /* ActivityIndicatorObject.swift in Sources */,
 				9D6E55321C47011E00399B03 /* Sports.swift in Sources */,
 				9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */,
 				9DB7E2971C4DE78400300DCA /* PlayersListingObject.swift in Sources */,

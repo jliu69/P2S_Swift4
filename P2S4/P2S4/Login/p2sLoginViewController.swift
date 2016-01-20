@@ -20,6 +20,8 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     var isSmallScreen: Bool = false
     var cell:p2sLoginCell? = p2sLoginCell()
     
+    var progressView: UIView? = UIView(frame: CGRectZero)
+    
     
     //MARK: - init
     
@@ -34,6 +36,11 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         
         let key = RegisterSave.notificationKey
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "clearAllLoginAndRegisterPages:", name: key, object: nil)
+        
+        
+        let activityObject: ActivityIndicatorObject? = ActivityIndicatorObject()
+        self.progressView = activityObject!.activityIndicator()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,7 +81,7 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func didLoginUser(email: String, password: String, savePwd: Bool) {
         
-        self.cell!.showActivityIndicator()
+        self.showActivityIndicator()
         
         //-- validataion
         let alertHelper: AlertsHelper? = AlertsHelper()
@@ -156,12 +163,32 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //MARK: - login register delegate
     
+    func showActivityIndicator() {
+        let tvWidth: CGFloat = self.tableView.frame.size.width
+        let tvHeight: CGFloat = self.tableView.frame.size.height
+        
+        let xPosition: CGFloat = (tvWidth - self.progressView!.frame.size.width) / 2.0
+        let yPosition: CGFloat = (tvHeight - 64.0 - self.progressView!.frame.size.height) / 2.0
+        let width: CGFloat = self.progressView!.frame.size.width
+        let height: CGFloat = self.progressView!.frame.size.height
+        
+        let activityObject: ActivityIndicatorObject? = ActivityIndicatorObject()
+        self.progressView = activityObject!.activityIndicator()
+        self.progressView!.frame = CGRectMake(xPosition, yPosition, width, height)
+        self.tableView.addSubview(self.progressView!)
+    }
+    
+    func hideActivityIndicator() {
+        self.progressView!.removeFromSuperview()
+    }
+    
     func loginSuccess(successFlag: Bool) {
         
         if successFlag {
             self.dismissViewControllerAnimated(true, completion: {})
         }
         else {
+            self.hideActivityIndicator()
             let alertsHelper: AlertsHelper? = AlertsHelper()
             alertsHelper!.showSimpleAlert(self, alertTitle: "Warning", alertMessage: "Login incorrect.")
         }
@@ -176,6 +203,16 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
         self.dismissViewControllerAnimated(true, completion: {})
+        
+        //-- get persone Id, first name, last name
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        let email: String? = appDele.currentUser!.email
+        let password: String? = appDele.currentUser!.password
+        
+        let loginRegister: LoginRegisterManager? = LoginRegisterManager()
+        loginRegister!.delegate = nil
+        loginRegister!.loginUser(email!, password: password!)
+        
     }
     
 }

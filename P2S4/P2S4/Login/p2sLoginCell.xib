@@ -160,15 +160,6 @@
                             <action selector="resetPasswordAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZUD-3w-wVy"/>
                         </connections>
                     </button>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kqC-9G-YZe">
-                        <rect key="frame" x="150" y="240" width="20" height="20"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="EAE-Ab-A5Y"/>
-                            <constraint firstAttribute="width" constant="20" id="Qcz-uz-osr"/>
-                        </constraints>
-                        <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </activityIndicatorView>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -180,13 +171,11 @@
                     <constraint firstItem="420-Ac-ce0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="DuS-Io-Tvy"/>
                     <constraint firstItem="AIN-q9-Xrz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Flt-gu-bdq"/>
                     <constraint firstItem="3xl-v5-VpK" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Jg2-H1-8Hm"/>
-                    <constraint firstItem="kqC-9G-YZe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MEz-Zc-ITn"/>
                     <constraint firstItem="3xl-v5-VpK" firstAttribute="top" secondItem="AnT-VV-0yd" secondAttribute="bottom" constant="5" id="SvH-84-WOB"/>
                     <constraint firstItem="ySG-Bl-tAg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="UB5-w7-O4M"/>
                     <constraint firstItem="ySG-Bl-tAg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="WHU-pN-xaD"/>
                     <constraint firstItem="lLY-nb-Phk" firstAttribute="leading" secondItem="420-Ac-ce0" secondAttribute="leading" id="X6k-qp-WIC"/>
                     <constraint firstItem="lLY-nb-Phk" firstAttribute="top" secondItem="420-Ac-ce0" secondAttribute="bottom" constant="15" id="XHv-TG-xp8"/>
-                    <constraint firstItem="kqC-9G-YZe" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="cZ8-S9-z8O"/>
                     <constraint firstItem="AIN-q9-Xrz" firstAttribute="top" secondItem="Gbg-vZ-LLq" secondAttribute="bottom" constant="15" id="ccy-Dn-m87"/>
                     <constraint firstItem="AnT-VV-0yd" firstAttribute="top" secondItem="h6O-za-CR1" secondAttribute="bottom" constant="15" id="dXT-mH-4Qz"/>
                     <constraint firstItem="Gbg-vZ-LLq" firstAttribute="top" secondItem="TD2-47-ANa" secondAttribute="bottom" constant="15" id="fKR-Ma-Mhv"/>
@@ -202,7 +191,6 @@
             <animations/>
             <color key="backgroundColor" red="1" green="0.84313725490196079" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="activityIndicator" destination="kqC-9G-YZe" id="eEs-V5-dE6"/>
                 <outlet property="emailTextField" destination="h6O-za-CR1" id="4Jn-wx-khE"/>
                 <outlet property="fanLoginButton" destination="lLY-nb-Phk" id="t8a-rF-W0A"/>
                 <outlet property="fanSignUpButton" destination="TD2-47-ANa" id="dKm-zV-p9l"/>

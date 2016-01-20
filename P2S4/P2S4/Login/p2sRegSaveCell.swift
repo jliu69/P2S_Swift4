@@ -114,8 +114,6 @@ class p2sRegSaveCell: UITableViewCell, UITextFieldDelegate {
     
     @IBAction func registerAction(sender: AnyObject) {
         
-        //delegate?.didCompleteReigster?()
-        
         var firstName = ""
         if self.firstNameTextField.text != nil {
             firstName = self.firstNameTextField.text!

@@ -11,6 +11,8 @@ import UIKit
 
 @objc protocol p2sLoginCellDelegate {
     
+    optional func didShowActivityIndicator()
+    
     optional func didLoginUser(email: String, password: String, savePwd: Bool)
     optional func didGotoRegister()
     optional func didPlayerSignIn()
@@ -30,10 +32,10 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var fanSignUpButton: UIButton!
     @IBOutlet weak var playerSignUpButon: UIButton!
     @IBOutlet weak var resetPwdButton: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var progressView: UIView? = UIView(frame: CGRectZero)
     
     var delegate: p2sLoginCellDelegate! = nil
-    
     var savePwdFlag: Bool = true
     
     
@@ -63,8 +65,6 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
             let password = passwordObject as! String
             self.passwordTextField.text = password
         }
-        
-        self.hideActivityIndicator()
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -72,11 +72,23 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     }
     
     
+    //MARK: - activity indicator
+    
+    func showActivityIndicator() {
+        self.bringSubviewToFront(self.progressView!)
+        self.progressView!.alpha = 1.0
+    }
+    
+    func hideActivityIndicator() {
+        self.progressView!.alpha = 0.0
+        self.sendSubviewToBack(self.progressView!)
+    }
+    
+    
     //MARK: - IB actions
     
     @IBAction func fanLoginAction(sender: AnyObject) {
         self.clearKeyboard()
-        self.showActivityIndicator()
         
         var email = ""
         if self.emailTextField.text != nil {
@@ -119,7 +131,6 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
         self.clearKeyboard()
         delegate?.moveCellDown?()
         return true
@@ -132,14 +143,5 @@ class p2sLoginCell: UITableViewCell, UITextFieldDelegate {
         self.emailTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
     }
-    
-    func showActivityIndicator() {
-        self.activityIndicator.alpha = 1.0
-    }
-    
-    func hideActivityIndicator() {
-        self.activityIndicator.alpha = 0.0
-    }
-    
 }
 
