@@ -14,6 +14,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="277" height="39"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bg Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeI-bk-Bnv">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="40"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="votes  /  ratings" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV6-rE-Gin">
                         <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                         <animations/>
@@ -79,6 +87,7 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="bgLabel" destination="AeI-bk-Bnv" id="anp-12-TaC"/>
                 <outlet property="cityStateLabel" destination="5Nu-he-TXe" id="tSr-6c-vai"/>
                 <outlet property="nameLabel" destination="cN6-0s-AKg" id="FrK-4y-zV9"/>
                 <outlet property="positionLabel" destination="bDV-FO-lO4" id="4U2-Pf-bgU"/>

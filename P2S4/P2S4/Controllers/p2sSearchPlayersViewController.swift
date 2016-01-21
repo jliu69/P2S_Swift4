@@ -126,8 +126,7 @@ class p2sSearchPlayersViewController: UIViewController, UITableViewDataSource, U
     
     func searchWithData(data: SearchPlayerObject) {
         
-        //
-        
+        /*
         print("... ")
         print("... search criteria")
         print("... ")
@@ -140,6 +139,33 @@ class p2sSearchPlayersViewController: UIViewController, UITableViewDataSource, U
         print("... height   = '\(data.height!)' ")
         print("... weight   = '\(data.weight!)' ")
         print("... ")
+        
+        ...
+        ... search criteria
+        ...
+        ... first name  = 'John'
+        ... last name   = 'Lin'
+        ... school name = 'CCNY'
+        ... state    = 'NY'
+        ... country  = 'US'
+        ... position = 'C'
+        ... height   = '4-9'
+        ... weight   = '105'
+        ... 
+        */
+        
+        let heightValue = (data.height! as NSString).stringByReplacingOccurrencesOfString("-", withString: "&#92;&#39;") as String
+        
+        let storyBoard = UIStoryboard(name: "p2sPlayersListing", bundle: nil)
+        let playersListing: p2sPlayersListingViewController? = storyBoard.instantiateViewControllerWithIdentifier("playerListing") as? p2sPlayersListingViewController
+        playersListing!.isForSearch = true
+        
+        var parameters = "sportId=\(self.sportId!)&sportName=\(self.sportName!)&positions=\(data.position!)&firstNm=\(data.firstName!)&lastNm=\(data.lastName!)&schoolTerm=\(data.school!)&schoolStTxt=\(data.state!)&schoolCountyTxt=&schoolCountryTxt=\(data.nation!)&totalHeightInInchesNbr=\(heightValue)&weightInPoundsNbr=\(data.weight!)"
+        
+        parameters = (parameters as NSString).stringByReplacingOccurrencesOfString(" ", withString: "+") as String
+        playersListing!.parameters = parameters
+        
+        self.navigationController!.pushViewController(playersListing!, animated: true)
     }
     
     

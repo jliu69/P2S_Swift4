@@ -10,6 +10,7 @@ import UIKit
 
 class p2sPlayersListingCell: UITableViewCell {
     
+    @IBOutlet weak var bgLabel: UILabel!
     @IBOutlet weak var votesRatingsLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cityStateLabel: UILabel!
@@ -23,6 +24,10 @@ class p2sPlayersListingCell: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func changeBgColor(bgColor: UIColor) {
+        self.bgLabel.backgroundColor = bgColor
     }
     
 }

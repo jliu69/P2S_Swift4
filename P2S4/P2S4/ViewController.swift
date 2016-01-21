@@ -123,6 +123,12 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         
         let storyBoard = UIStoryboard(name: "p2sPlayersListing", bundle: nil)
         let playersListing: p2sPlayersListingViewController? = storyBoard.instantiateViewControllerWithIdentifier("playerListing") as? p2sPlayersListingViewController
+        playersListing!.isForSearch = false
+        
+        var parameters = "sportId=\(self.selectedSportId!)&sportName=\(self.selectedSportName!)&positions=\(self.selectedPositionCode!)&schoolStTxt=\(self.selectedStateCode!)"
+        parameters = (parameters as NSString).stringByReplacingOccurrencesOfString(" ", withString: "+") as String
+        playersListing!.parameters = parameters
+        
         self.navigationController!.pushViewController(playersListing!, animated: true)
     }
     

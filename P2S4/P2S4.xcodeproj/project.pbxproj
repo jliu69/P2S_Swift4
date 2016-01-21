@@ -94,6 +94,7 @@
 		9DDF42591C46D08600EF11EB /* p2sSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DDF42581C46D08600EF11EB /* p2sSelect.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9DE9747E1C47ED0D00D7AFA0 /* JsonLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9747D1C47ED0D00D7AFA0 /* JsonLinks.swift */; settings = {ASSET_TAGS = (); }; };
 		9DE974801C47ED2E00D7AFA0 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE9747F1C47ED2E00D7AFA0 /* DataManager.swift */; settings = {ASSET_TAGS = (); }; };
+		9DED36A71C50654400FB9621 /* PlayerDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DED36A61C50654400FB9621 /* PlayerDataManager.swift */; settings = {ASSET_TAGS = (); }; };
 		9DF1933C1C4C06B9007C9C84 /* p2sSearchDataInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF1933B1C4C06B9007C9C84 /* p2sSearchDataInputViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9DF1933E1C4C06DA007C9C84 /* p2sSearchDataInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DF1933D1C4C06DA007C9C84 /* p2sSearchDataInput.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -189,6 +190,7 @@
 		9DDF42581C46D08600EF11EB /* p2sSelect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sSelect.storyboard; path = Controllers/p2sSelect.storyboard; sourceTree = "<group>"; };
 		9DE9747D1C47ED0D00D7AFA0 /* JsonLinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonLinks.swift; path = WebServices/JsonLinks.swift; sourceTree = "<group>"; };
 		9DE9747F1C47ED2E00D7AFA0 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = WebServices/DataManager.swift; sourceTree = "<group>"; };
+		9DED36A61C50654400FB9621 /* PlayerDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerDataManager.swift; path = WebServices/PlayerDataManager.swift; sourceTree = "<group>"; };
 		9DF1933B1C4C06B9007C9C84 /* p2sSearchDataInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sSearchDataInputViewController.swift; path = Controllers/p2sSearchDataInputViewController.swift; sourceTree = "<group>"; };
 		9DF1933D1C4C06DA007C9C84 /* p2sSearchDataInput.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sSearchDataInput.storyboard; path = Controllers/p2sSearchDataInput.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +239,7 @@
 				9DE9747F1C47ED2E00D7AFA0 /* DataManager.swift */,
 				9DBCCAA71C493EC600896966 /* LoginRegisterManager.swift */,
 				9D1410381C4C7B50004EA7E5 /* ViewsAndRatesManager.swift */,
+				9DED36A61C50654400FB9621 /* PlayerDataManager.swift */,
 			);
 			name = "Web Service";
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				9DBB01D41C4E7A5400E673D4 /* p2sPlayerDetailsCell.swift in Sources */,
 				9DC70AC61C4AA6D000AF2F8E /* p2sRegisterCell.swift in Sources */,
 				9D6E552E1C47011E00399B03 /* AgeRanges.swift in Sources */,
+				9DED36A71C50654400FB9621 /* PlayerDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
