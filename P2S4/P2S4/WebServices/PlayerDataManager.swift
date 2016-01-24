@@ -14,12 +14,14 @@ import UIKit
     optional func playersListData(data: NSData)
     optional func playerDetailsData(data: NSData)
     optional func playerVotingsData(data: NSData)
+    optional func profileImageData(data: NSData)
 }
 
 
 class PlayerDataManager: NSObject {
     
     var delegate: PlayerDataManagerDelegate! = nil
+    
     
     //MARK: - players listing
     
@@ -35,15 +37,9 @@ class PlayerDataManager: NSObject {
         else {
             linkBody = JsonLinks.topPlayers()
         }
+        
         let playersUrl = "\(linkHeader)\(linkBody)?\(parameters)"
-        
-        self.retrievePlayers(playersUrl)
-    }
-    
-    
-    func retrievePlayers(urlLink: String) {
-        
-        let url = NSURL(string: urlLink)
+        let url = NSURL(string: playersUrl)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
@@ -52,17 +48,14 @@ class PlayerDataManager: NSObject {
         task.resume()
     }
     
-    
     func playersData(data: NSData) {
         delegate?.playersListData?(data)
     }
     
+    
     //MARK: - player details
     
     func playerDetailsAndVotingsInfo(isForVotings: Bool, parameters: String) {
-        
-        //-- details : person ID, sport ID
-        //-- votings : player ID, sport ID
         
         let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
         let linkHeader = appDele.urlHeader!
@@ -74,13 +67,9 @@ class PlayerDataManager: NSObject {
         else {
             linkBody = JsonLinks.playerDetailsLink()
         }
-        let detailsUrl = "\(linkHeader)\(linkBody)?\(parameters)"
-        self.getDetailsAndVotings(isForVotings, urlLink: detailsUrl)
-    }
-    
-    func getDetailsAndVotings(isForVotings: Bool, urlLink: String) {
         
-        let url = NSURL(string: urlLink)
+        let detailsUrl = "\(linkHeader)\(linkBody)?\(parameters)"
+        let url = NSURL(string: detailsUrl)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
@@ -90,7 +79,6 @@ class PlayerDataManager: NSObject {
     }
     
     func detailsAndVotingsData(isForVotings: Bool, data: NSData) {
-        //delegate?.detailsAndVotingData?(data)
         
         if isForVotings {
             delegate?.playerVotingsData?(data)
@@ -99,6 +87,30 @@ class PlayerDataManager: NSObject {
             delegate?.playerDetailsData?(data)
         }
     }
+    
+    
+    //MARK: - profile image
+    
+    func playerProfileImage(parameters: String) {
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        let linkHeader = appDele.urlHeader!
+        
+        var linkBody = JsonLinks.profileImageLink()
+        let imageUrl = "\(linkHeader)\(linkBody)/\(parameters)"
+        let url = NSURL(string: imageUrl)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            self.playerProfileImageData(data!)
+        }
+        task.resume()
+    }
+    
+    func playerProfileImageData(data: NSData) {
+        delegate?.profileImageData?(data)
+    }
+    
     
 }
 

@@ -15,6 +15,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="310" height="1399"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fwx-XZ-JuK">
+                        <rect key="frame" x="145" y="91" width="20" height="20"/>
+                        <animations/>
+                        <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </activityIndicatorView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v1c-4p-Hth">
                         <rect key="frame" x="93" y="23" width="124" height="155"/>
                         <animations/>
@@ -390,6 +395,7 @@
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="activityIndicator" destination="fwx-XZ-JuK" id="CZu-67-vyk"/>
                 <outlet property="cityStateLabel" destination="4AC-SD-3Fm" id="DeT-rh-2Fg"/>
                 <outlet property="classYearLabel" destination="4DV-g6-mb5" id="L2O-Jb-294"/>
                 <outlet property="currentRateLabel" destination="pl4-fx-kQH" id="6Rf-jp-Y8R"/>

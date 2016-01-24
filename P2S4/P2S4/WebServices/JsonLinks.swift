@@ -99,5 +99,12 @@ class JsonLinks: NSObject {
         return "/controller/SelectDataController/playerVotesInfo"
     }
     
+    
+    //MARK: - profile image
+    
+    static func profileImageLink() -> String {
+        return "/mobile/controller/MobileViewController/getImage"
+    }
+    
 }
 

@@ -44,6 +44,9 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
         }
         print(" ")
         
+        let profileImageParameters = "\(self.playerListObject!.playerId!)/1"
+        self.playerData!.playerProfileImage(profileImageParameters)
+        
         let parameters = "personId=\(self.playerListObject!.playerId!)&sportId=\(self.playerListObject!.sportId!)"
         self.playerData!.playerDetailsAndVotingsInfo(false, parameters: parameters)
         
@@ -77,7 +80,6 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
         
         self.cell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as? p2sPlayerDetailsCell
         self.cell!.delegate = self
-        //self.playerListObject = self.playerListObject!
         self.cell!.displayData(self.playerListObject!)
         
         self.cell!.accessoryType = UITableViewCellAccessoryType.None
@@ -251,6 +253,16 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
             catch {
                 print("error serializing JSON: \(error)")
             }
+        }
+    }
+    
+    func profileImageData(data: NSData) {
+        
+        if let image = UIImage(data: data) {
+            self.cell!.showProfileImage(image)
+        }
+        else {
+            self.cell!.showProfileImage(UIImage(named: "default_person.gif")!)
         }
     }
     

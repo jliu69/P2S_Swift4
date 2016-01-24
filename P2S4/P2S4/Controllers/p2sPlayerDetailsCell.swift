@@ -18,6 +18,7 @@ import UIKit
 class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var playerImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var fullNameLabel: UILabel!
     @IBOutlet weak var positionLabel: UILabel!
     @IBOutlet weak var cityStateLabel: UILabel!
@@ -42,6 +43,8 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
     
     var delegate: p2sPlayerDetailsCellDelegate! = nil
     var cell: p2sPlayerDetailsVotesCell? = p2sPlayerDetailsVotesCell()
+    
+    var playerVideoLink: String? = ""
     
     //MARK: - init
     
@@ -129,25 +132,25 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
             self.showScheduleButton.hidden = false
         }
         
-        var videoLink: String? = ""
+        //var videoLink: String? = ""
         
         if playerListObject!.video1 != "" {
-            videoLink = playerListObject!.video1!
+            self.playerVideoLink = playerListObject!.video1!
         }
         else if playerListObject!.video2 != "" {
-            videoLink = playerListObject!.video2!
+            self.playerVideoLink = playerListObject!.video2!
         }
         else if playerListObject!.video3 != "" {
-            videoLink = playerListObject!.video3!
+            self.playerVideoLink = playerListObject!.video3!
         }
         else if playerListObject!.video4 != "" {
-            videoLink = playerListObject!.video4!
+            self.playerVideoLink = playerListObject!.video4!
         }
         else if playerListObject!.video5 != "" {
-            videoLink = playerListObject!.video5!
+            self.playerVideoLink = playerListObject!.video5!
         }
         
-        if videoLink == ""  {
+        if self.playerVideoLink == ""  {
             self.showVideoButton.enabled = false
             self.showVideoButton.userInteractionEnabled = false
             self.showVideoButton.hidden = true
@@ -162,6 +165,12 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
     func votingData(votesDataArray: Array<AnyObject>) {
         self.rowsArray = votesDataArray
         self.tableView.reloadData()
+    }
+    
+    //MARK: - profile image
+    
+    func showProfileImage(image: UIImage) {
+        self.playerImageView.image = image
     }
     
     //MARK: - IB action
