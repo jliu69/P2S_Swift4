@@ -18,31 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_launch_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="UU5-h8-Zwh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demo Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Di-pl-fph">
                                 <rect key="frame" x="150" y="370" width="300" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="LfI-so-Z0I"/>
-                                    <constraint firstAttribute="height" constant="30" id="hof-mf-jS9"/>
+                                    <constraint firstAttribute="height" constant="30" id="y4M-hF-puw"/>
+                                    <constraint firstAttribute="width" constant="300" id="ySP-E0-TtG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" white="0.25" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_page_launch_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="UU5-h8-Zwh">
+                                <rect key="frame" x="140" y="0.0" width="320" height="600"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="h2f-a9-XG6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.99215686274509807" green="0.85098039215686272" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="UU5-h8-Zwh" secondAttribute="trailing" constant="-20" id="EQF-i9-8cK"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UU5-h8-Zwh" secondAttribute="bottom" id="I2C-GW-J1c"/>
-                            <constraint firstItem="3Di-pl-fph" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="350" id="TZ7-yr-P7g"/>
-                            <constraint firstItem="3Di-pl-fph" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="erC-8U-dvz"/>
-                            <constraint firstItem="UU5-h8-Zwh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="vG1-wC-yjJ"/>
-                            <constraint firstItem="UU5-h8-Zwh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="wJW-li-q83"/>
+                            <constraint firstItem="UU5-h8-Zwh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="DlO-d2-1iP"/>
+                            <constraint firstItem="3Di-pl-fph" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="350" id="GXq-q4-7J6"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="UU5-h8-Zwh" secondAttribute="bottom" id="VfO-5c-5jf"/>
+                            <constraint firstItem="3Di-pl-fph" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bI6-mI-CwN"/>
+                            <constraint firstItem="UU5-h8-Zwh" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="xa6-JN-Oi9"/>
                         </constraints>
                     </view>
                 </viewController>

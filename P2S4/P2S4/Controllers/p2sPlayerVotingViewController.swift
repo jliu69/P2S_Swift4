@@ -31,6 +31,9 @@ class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UI
         let logoView: UIImageView = imageObject!.logoView()
         self.titleBarItem!.customView = logoView
         
+        self.tableView.layer.borderColor = UIColor.blackColor().CGColor
+        self.tableView.layer.borderWidth = 0.5
+        
         self.saveVotesButton.layer.cornerRadius = 5
         self.saveVotesButton.clipsToBounds = true
         
@@ -48,14 +51,14 @@ class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UI
     //MARK: - IB action
     
     @IBAction func closeAction(sender: AnyObject) {
-        self.navigationController!.popToRootViewControllerAnimated(true)
+        self.navigationController!.popViewControllerAnimated(true)
     }
     
     @IBAction func saveVotesAction(sender: AnyObject) {
         
         //-- save voting value
         
-        self.navigationController!.popToRootViewControllerAnimated(true)
+        self.navigationController!.popViewControllerAnimated(true)
     }
     
     

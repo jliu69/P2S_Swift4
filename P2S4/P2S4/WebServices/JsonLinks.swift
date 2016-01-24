@@ -89,5 +89,15 @@ class JsonLinks: NSObject {
     }
     
     
+    //MARK: - player details
+    
+    static func playerDetailsLink() -> String {
+        return "/mobile/controller/MobileDataController/playerDetails"
+    }
+    
+    static func playerVotingsLink() -> String {
+        return "/controller/SelectDataController/playerVotesInfo"
+    }
+    
 }
 

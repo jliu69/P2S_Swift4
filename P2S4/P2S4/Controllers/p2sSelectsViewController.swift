@@ -22,6 +22,7 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var cancelButtonSpace: NSLayoutConstraint!
     
     var delegate: p2sSelectsViewControllerDelegate! = nil
     
@@ -35,6 +36,10 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     
     var beginTimeInterval: NSTimeInterval = 0
     var endTimeInterval: NSTimeInterval = 0
+    
+    let screenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
+    let iPhone4Height: CGFloat = 480.0
+    var isSmallScreen: Bool = false
     
     
     //MARK: - init
@@ -52,6 +57,11 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         
         self.cancelButton.layer.cornerRadius = 5
         self.cancelButton.clipsToBounds = true
+        
+        if screenHeight == self.iPhone4Height {
+            self.isSmallScreen = true
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -59,6 +69,13 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         
         self.view.bringSubviewToFront(self.activityIndicator)
         self.pageTitleLabel!.text = self.pageTitle
+        
+        if self.isSmallScreen {
+            self.cancelButtonSpace.constant = 20.0
+        }
+        else {
+            self.cancelButtonSpace.constant = 40.0
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

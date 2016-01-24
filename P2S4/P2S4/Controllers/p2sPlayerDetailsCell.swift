@@ -38,11 +38,9 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
     @IBOutlet weak var showVideoButton: UIButton!
     @IBOutlet weak var votePlayerButton: UIButton!
     
-    var skillsArrary: Array? = [String]()
-    var ratingsArray: Array? = [String]()
+    var rowsArray: Array<AnyObject>? = [AnyObject]()
     
     var delegate: p2sPlayerDetailsCellDelegate! = nil
-    
     var cell: p2sPlayerDetailsVotesCell? = p2sPlayerDetailsVotesCell()
     
     //MARK: - init
@@ -56,6 +54,16 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
         self.tableView.layer.borderColor = UIColor.blackColor().CGColor
         self.tableView.layer.borderWidth = 0.5
         
+        self.noScheduleLabel.layer.cornerRadius = 5
+        self.noScheduleLabel.clipsToBounds = true
+        self.noScheduleLabel.layer.borderColor = UIColor.blackColor().CGColor
+        self.noScheduleLabel.layer.borderWidth = 0.5
+        
+        self.noVideoLabel.layer.cornerRadius = 5
+        self.noVideoLabel.clipsToBounds = true
+        self.noVideoLabel.layer.borderColor = UIColor.blackColor().CGColor
+        self.noVideoLabel.layer.borderWidth = 0.5
+        
         self.showScheduleButton.layer.cornerRadius = 5
         self.showScheduleButton.clipsToBounds = true
         
@@ -65,14 +73,95 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
         self.votePlayerButton.layer.cornerRadius = 5
         self.votePlayerButton.clipsToBounds = true
         
-        self.skillsArrary = ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6"]
-        self.ratingsArray = ["1.2", "2.3", "3.4", "4.5", "5.1", "1.3"]
-        
         self.tableView.registerNib(UINib(nibName: "p2sPlayerDetailsVotesCell", bundle: nil), forCellReuseIdentifier: "CellId")
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    //MARK: - display data
+    
+    func displayData(playerListObject: PlayersListingObject?) {
+        
+        let fullname = "\(playerListObject!.firstName!) \(playerListObject!.lastName!)"
+        self.fullNameLabel.text = fullname
+        
+        self.positionLabel.text = playerListObject!.position1!
+        
+        let cityState = "\(playerListObject!.city!), \(playerListObject!.state!)"
+        self.cityStateLabel.text = cityState
+        
+        self.scheduleCodeLabel.text = playerListObject!.school!
+        
+        let positionsList = "Positions: xx, xx, xx"
+        self.positionsListLabel.text = positionsList
+        
+        let uniformText = "Uniform Number: \(playerListObject!.uniformNumber!)"
+        self.uniformNumberLabel.text = uniformText
+        
+        let currentRate = "Current Rating: \(playerListObject!.average!)"
+        self.currentRateLabel.text = currentRate
+        
+        self.twitterLinkLabel.text = playerListObject!.twitterLink!
+        
+        let scheduleFlag = "Schedule: \(playerListObject!.scheduleUploadedIndicator!)"
+        self.scheduleCodeLabel.text = scheduleFlag
+        
+        let heightValue = "Ht: \(playerListObject!.height!)"
+        self.heightValueLabel.text = heightValue
+        
+        let weightValue = "Wt: \(playerListObject!.weight!) lbs"
+        self.weightValueLabel.text = weightValue
+        
+        let schoolClass = "Class: \(playerListObject!.schoolClass!)"
+        self.classYearLabel.text = schoolClass
+        
+        
+        if playerListObject!.scheduleUploadedIndicator! == "" {
+            self.showScheduleButton.enabled = false
+            self.showScheduleButton.userInteractionEnabled = false
+            self.showScheduleButton.hidden = true
+        }
+        else {
+            self.showScheduleButton.enabled = true
+            self.showScheduleButton.userInteractionEnabled = true
+            self.showScheduleButton.hidden = false
+        }
+        
+        var videoLink: String? = ""
+        
+        if playerListObject!.video1 != "" {
+            videoLink = playerListObject!.video1!
+        }
+        else if playerListObject!.video2 != "" {
+            videoLink = playerListObject!.video2!
+        }
+        else if playerListObject!.video3 != "" {
+            videoLink = playerListObject!.video3!
+        }
+        else if playerListObject!.video4 != "" {
+            videoLink = playerListObject!.video4!
+        }
+        else if playerListObject!.video5 != "" {
+            videoLink = playerListObject!.video5!
+        }
+        
+        if videoLink == ""  {
+            self.showVideoButton.enabled = false
+            self.showVideoButton.userInteractionEnabled = false
+            self.showVideoButton.hidden = true
+        }
+        else {
+            self.showVideoButton.enabled = true
+            self.showVideoButton.userInteractionEnabled = true
+            self.showVideoButton.hidden = false
+        }
+    }
+    
+    func votingData(votesDataArray: Array<AnyObject>) {
+        self.rowsArray = votesDataArray
+        self.tableView.reloadData()
     }
     
     //MARK: - IB action
@@ -104,18 +193,15 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.skillsArrary!.count
+        return self.rowsArray!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         self.cell = self.tableView.dequeueReusableCellWithIdentifier("CellId") as? p2sPlayerDetailsVotesCell
         
-        let skillName = self.skillsArrary![indexPath.row]
-        let rating = self.ratingsArray![indexPath.row]
-        
-        self.cell!.skillNameLabel.text = skillName
-        self.cell!.rateValueLabel.text = rating
+        let votesData: VotesDataObject? = self.rowsArray![indexPath.row] as? VotesDataObject
+        self.cell!.displayVotesData(votesData!)
         
         self.cell!.accessoryType = UITableViewCellAccessoryType.None
         self.cell!.selectionStyle = UITableViewCellSelectionStyle.None

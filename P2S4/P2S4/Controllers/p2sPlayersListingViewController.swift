@@ -112,7 +112,7 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
         self.cell!.votesRatingsLabel.text = "\(countVoteValue!) / \(averageValue!)"
         self.cell!.nameLabel.text = "\(player!.lastName!), \(player!.firstName!)"
         self.cell!.cityStateLabel.text = "\(player!.city!), \(player!.state!)"
-        self.cell!.positionLabel.text = player!.position!
+        self.cell!.positionLabel.text = player!.positionCode!
         
         var bgColor: UIColor = UIColor.whiteColor()
         if indexPath.row % 2 == 1 {
@@ -132,8 +132,11 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+        var player: PlayersListingObject? = self.rowsArray![indexPath.row] as? PlayersListingObject
+        
         let storyBoard = UIStoryboard(name: "p2sPlayerDetails", bundle: nil)
         let playerDetail: p2sPlayerDetailsViewController? = storyBoard.instantiateViewControllerWithIdentifier("playerDetails") as? p2sPlayerDetailsViewController
+        playerDetail!.playerListObject = player!
         self.navigationController!.pushViewController(playerDetail!, animated: true)
     }
     
@@ -148,16 +151,16 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
         let activityObject: ActivityIndicatorObject? = ActivityIndicatorObject()
         self.progressView = activityObject!.activityIndicator()
         
-        let tvWidth: CGFloat = self.tableView.frame.size.width
-        let tvHeight: CGFloat = self.tableView.frame.size.height
+        let width: CGFloat = self.view.frame.size.width
+        let height: CGFloat = self.view.frame.size.height
         
-        let xPosition: CGFloat = (tvWidth - self.progressView!.frame.size.width) / 2.0
-        let yPosition: CGFloat = (tvHeight - 64.0 - self.progressView!.frame.size.height) / 2.0
-        let width: CGFloat = self.progressView!.frame.size.width
-        let height: CGFloat = self.progressView!.frame.size.height
+        let xPosition: CGFloat = (width - self.progressView!.frame.size.width) / 2.0
+        let yPosition: CGFloat = (height - 64.0 - self.progressView!.frame.size.height) / 2.0
+        let pWidth: CGFloat = self.progressView!.frame.size.width
+        let pHeight: CGFloat = self.progressView!.frame.size.height
         
-        self.progressView!.frame = CGRectMake(xPosition, yPosition, width, height)
-        self.tableView.addSubview(self.progressView!)
+        self.progressView!.frame = CGRectMake(xPosition, yPosition, pWidth, pHeight)
+        self.view.addSubview(self.progressView!)
     }
     
     func hideActivityIndicator() {
@@ -170,8 +173,8 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
     
     func playersListData(data: NSData) {
         
-        //let dataText: String? = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
-        //print("data list results : \(dataText!)")
+        let dataText: String? = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
+        print("player listing : \(dataText!)")
         
         self.rowsArray!.removeAll()
         var isActivityIndicatorShowing: Bool = true
@@ -202,7 +205,7 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
                             object!.lastName = lastName
                         }
                         if let position = item["positionCode"] as? String {
-                            object!.position = position
+                            object!.positionCode = position
                         }
                         if let city = item["city"] as? String {
                             object!.city = city
