@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D130D261C5693B200FA9339 /* p2sPlayerWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D130D251C5693B200FA9339 /* p2sPlayerWebViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		9D130D281C56940800FA9339 /* p2sPlayerWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D130D271C56940800FA9339 /* p2sPlayerWeb.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9D1410391C4C7B50004EA7E5 /* ViewsAndRatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1410381C4C7B50004EA7E5 /* ViewsAndRatesManager.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E551C1C46FDF400399B03 /* Selection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551A1C46FDF400399B03 /* Selection.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		9D6E552D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
@@ -101,6 +103,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D130D251C5693B200FA9339 /* p2sPlayerWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayerWebViewController.swift; path = Controllers/p2sPlayerWebViewController.swift; sourceTree = "<group>"; };
+		9D130D271C56940800FA9339 /* p2sPlayerWeb.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sPlayerWeb.storyboard; path = Controllers/p2sPlayerWeb.storyboard; sourceTree = "<group>"; };
 		9D1410381C4C7B50004EA7E5 /* ViewsAndRatesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewsAndRatesManager.swift; path = WebServices/ViewsAndRatesManager.swift; sourceTree = "<group>"; };
 		9D6E54C21C46FB7C00399B03 /* P2S4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2S4-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D6E551B1C46FDF400399B03 /* Selection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Selection.xcdatamodel; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 			children = (
 				9DC70AC01C4AA6D000AF2F8E /* p2sSettingsViewController.swift */,
 				9DC70ABF1C4AA6D000AF2F8E /* p2sSettings.storyboard */,
+				9DC70AD31C4AF38500AF2F8E /* p2sPlayerSignUpViewController.swift */,
+				9DC70AD51C4AF39B00AF2F8E /* p2sPlayerSignUp.storyboard */,
 				9DC70AB61C4AA6D000AF2F8E /* p2sLoginViewController.swift */,
 				9DC70AB31C4AA6D000AF2F8E /* p2sLogin.storyboard */,
 				9DC70AB41C4AA6D000AF2F8E /* p2sLoginCell.swift */,
@@ -330,8 +336,6 @@
 			children = (
 				9DDF42561C46CF0E00EF11EB /* p2sSelectsViewController.swift */,
 				9DDF42581C46D08600EF11EB /* p2sSelect.storyboard */,
-				9DC70AD31C4AF38500AF2F8E /* p2sPlayerSignUpViewController.swift */,
-				9DC70AD51C4AF39B00AF2F8E /* p2sPlayerSignUp.storyboard */,
 				9DC70AD71C4AFAE800AF2F8E /* p2sSearchPlayersViewController.swift */,
 				9DC70AD91C4AFB0600AF2F8E /* p2sSearchPlayers.storyboard */,
 				9DC70ADB1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift */,
@@ -352,6 +356,8 @@
 				9D87C9D21C4ECB230019D771 /* p2sPlayerVoting.storyboard */,
 				9D87C9D41C4ECB490019D771 /* p2sPlayerVotingCell.swift */,
 				9D87C9D51C4ECB490019D771 /* p2sPlayerVotingCell.xib */,
+				9D130D251C5693B200FA9339 /* p2sPlayerWebViewController.swift */,
+				9D130D271C56940800FA9339 /* p2sPlayerWeb.storyboard */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				9DC70AC51C4AA6D000AF2F8E /* p2sRegister.storyboard in Resources */,
 				9DD1C1A21C3E0A2900389567 /* thumbs_down_icon.png in Resources */,
 				9DBB01D91C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.xib in Resources */,
+				9D130D281C56940800FA9339 /* p2sPlayerWeb.storyboard in Resources */,
 				9DB7E2951C4DE10F00300DCA /* p2sPlayersListingCell.xib in Resources */,
 				9DBB01D11C4E7A2D00E673D4 /* p2sPlayerDetails.storyboard in Resources */,
 				9DF1933E1C4C06DA007C9C84 /* p2sSearchDataInput.storyboard in Resources */,
@@ -510,6 +517,7 @@
 				9D6E55311C47011E00399B03 /* Sports+CoreDataProperties.swift in Sources */,
 				9DDF42571C46CF0E00EF11EB /* p2sSelectsViewController.swift in Sources */,
 				9D6E55391C47011E00399B03 /* Skills+CoreDataProperties.swift in Sources */,
+				9D130D261C5693B200FA9339 /* p2sPlayerWebViewController.swift in Sources */,
 				9D87C9D61C4ECB490019D771 /* p2sPlayerVotingCell.swift in Sources */,
 				9DBB01CF1C4E79FE00E673D4 /* p2sPlayerDetailsViewController.swift in Sources */,
 				9D6E55331C47011E00399B03 /* States+CoreDataProperties.swift in Sources */,

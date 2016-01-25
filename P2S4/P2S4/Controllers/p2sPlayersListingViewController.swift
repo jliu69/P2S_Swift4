@@ -52,6 +52,8 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.messageLabel.hidden = true
+        
         if self.isNew {
             self.showActivityIndicator()
         }
@@ -254,10 +256,7 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
                             self.rowsArray!.append(object!)
                             self.tableView.reloadData()
                             
-                            if self.rowsArray!.count > 0 {
-                                self.messageLabel.hidden = true
-                            }
-                            else {
+                            if self.rowsArray!.count == 0 {
                                 self.messageLabel.hidden = false
                             }
                             

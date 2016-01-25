@@ -11,6 +11,7 @@ import UIKit
 
 @objc protocol p2sPlayerDetailsCellDelegate {
     
+    optional func didShowLinks(link: String, isTwitter: Bool)
     optional func didShowVotingPage()
 }
 
@@ -111,7 +112,9 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
         let scheduleFlag = "Schedule: \(playerListObject!.scheduleUploadedIndicator!)"
         self.scheduleCodeLabel.text = scheduleFlag
         
-        let heightValue = "Ht: \(playerListObject!.height!)"
+        var heightValue = playerListObject!.height!
+        heightValue = (heightValue as NSString).stringByReplacingOccurrencesOfString("\\'", withString: "\"")
+        heightValue = "Hi: \(heightValue)'"
         self.heightValueLabel.text = heightValue
         
         let weightValue = "Wt: \(playerListObject!.weight!) lbs"
@@ -131,8 +134,6 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
             self.showScheduleButton.userInteractionEnabled = true
             self.showScheduleButton.hidden = false
         }
-        
-        //var videoLink: String? = ""
         
         if playerListObject!.video1 != "" {
             self.playerVideoLink = playerListObject!.video1!
@@ -176,7 +177,7 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
     //MARK: - IB action
     
     @IBAction func showTwitterAction(sender: AnyObject) {
-        //
+        delegate?.didShowLinks?(self.twitterLinkLabel.text!, isTwitter: true)
     }
     
     @IBAction func showScheduleAction(sender: AnyObject) {
@@ -184,15 +185,11 @@ class p2sPlayerDetailsCell: UITableViewCell, UITableViewDataSource, UITableViewD
     }
     
     @IBAction func showVideoAction(sender: AnyObject) {
-        //
+        delegate?.didShowLinks?(self.playerVideoLink!, isTwitter: false)
     }
     
     @IBAction func votePlayerAction(sender: AnyObject) {
-        //
-        
-        //playerVoting
         delegate?.didShowVotingPage?()
-        
     }
     
     //MARK: - table view source

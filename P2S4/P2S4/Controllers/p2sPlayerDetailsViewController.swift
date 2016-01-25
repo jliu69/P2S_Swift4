@@ -125,6 +125,15 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
     
     //MARK: - details cell delegate
     
+    func didShowLinks(link: String, isTwitter: Bool) {
+        
+        let storyBoard = UIStoryboard(name: "p2sPlayerWeb", bundle: nil)
+        let playerWeb: p2sPlayerWebViewController? = storyBoard.instantiateViewControllerWithIdentifier("webView") as? p2sPlayerWebViewController
+        playerWeb!.urlLink = link
+        playerWeb!.isTwitterLink = isTwitter
+        self.navigationController!.pushViewController(playerWeb!, animated: true)
+    }
+    
     func didShowVotingPage() {
         
         let storyBoard = UIStoryboard(name: "p2sPlayerVoting", bundle: nil)
