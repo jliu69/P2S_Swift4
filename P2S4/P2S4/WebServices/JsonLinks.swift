@@ -106,5 +106,12 @@ class JsonLinks: NSObject {
         return "/mobile/controller/MobileViewController/getImage"
     }
     
+    
+    //MARK: - save votes
+    
+    static func saveVotesLink() -> String {
+        return "/mobile/controller/MobileVoteController/newVote"
+    }
+    
 }
 

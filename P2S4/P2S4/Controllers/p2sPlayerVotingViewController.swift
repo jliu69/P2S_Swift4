@@ -8,17 +8,21 @@
 
 import UIKit
 
-class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sPlayerVotingCellDelegate {
+class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sPlayerVotingCellDelegate, PlayerDataManagerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveVotesButton: UIButton!
     
-    let totalRows = 6
-    var skillNamesArray: Array<String>? = [String]()
-    var pointsArray: Array<String>? = [String]()
+    var userId: String? = ""
+    var playerId: String? = ""
+    var sportId: String? = ""
     
+    var playerData: PlayerDataManager? = PlayerDataManager()
+    
+    var votingDataArray: Array<AnyObject>? = [AnyObject]()
     var cell: p2sPlayerVotingCell? = p2sPlayerVotingCell()
+    var votingDirectionary: Dictionary<String, String>? = [String: String]()
     
     
     //MARK: - init
@@ -31,16 +35,27 @@ class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UI
         let logoView: UIImageView = imageObject!.logoView()
         self.titleBarItem!.customView = logoView
         
+        self.playerData!.delegate = self
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.userId = appDele.currentUser!.personId!
+        
         self.tableView.layer.borderColor = UIColor.blackColor().CGColor
         self.tableView.layer.borderWidth = 0.5
         
         self.saveVotesButton.layer.cornerRadius = 5
         self.saveVotesButton.clipsToBounds = true
         
-        self.skillNamesArray = ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6"]
-        self.pointsArray = ["1", "2", "3", "4", "5", "1"]
-        
         self.tableView.registerNib(UINib(nibName: "p2sPlayerVotingCell", bundle: nil), forCellReuseIdentifier: "CellId")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        for i in 0..<self.votingDataArray!.count {
+            var data: VotesDataObject? = self.votingDataArray![i] as? VotesDataObject
+            self.votingDirectionary![data!.skillCode!] = "0"
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,6 +73,26 @@ class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UI
         
         //-- save voting value
         
+        //print(" ")
+        //print("... voting stars : \(self.votingDirectionary!) ")
+        
+        var skillCodeList = "\(userId!)/\(playerId!)/\(sportId!)?"
+        var count = 0
+        
+        for (kind, value) in self.votingDirectionary! {
+            if count == 0 {
+                skillCodeList = skillCodeList + "skill\(kind)=\(value)"
+            }
+            else {
+                skillCodeList = skillCodeList + "&skill\(kind)=\(value)"
+            }
+            count++
+        }
+        
+        //print(" ")
+        //print("... save voting parameters : \(skillCodeList) ")
+        
+        self.playerData!.saveVotingData(skillCodeList)
         self.navigationController!.popViewControllerAnimated(true)
     }
     
@@ -69,7 +104,7 @@ class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return totalRows
+        return self.votingDataArray!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -78,13 +113,9 @@ class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UI
         self.cell!.delegate = self
         self.cell!.rowNumber = indexPath.row
         
-        if let skillName: String? = self.skillNamesArray![indexPath.row] {
-            self.cell!.skillTitleLabel.text = skillName!
-        }
-        
-        if let skillPoint: String? = self.pointsArray![indexPath.row] {
-            self.cell!.skillPointsLabel.text = skillPoint!
-        }
+        var data: VotesDataObject? = self.votingDataArray![indexPath.row] as? VotesDataObject
+        self.cell!.skillTitleLabel.text = data!.skillCode
+        self.cell!.skillPointsLabel.text = self.votingDirectionary![data!.skillCode!]
         
         self.cell!.accessoryType = UITableViewCellAccessoryType.None
         self.cell!.selectionStyle = UITableViewCellSelectionStyle.None
@@ -101,7 +132,11 @@ class p2sPlayerVotingViewController: UIViewController, UITableViewDataSource, UI
     //MARK: - voting cell delegate
     
     func didVoteWithValues(rowNumber: Int, starNumber: Int) {
-        print("... selecting, row = \(rowNumber), star value = \(starNumber)")
+        
+        var data: VotesDataObject? = self.votingDataArray![rowNumber] as? VotesDataObject
+        self.votingDirectionary![data!.skillCode!] = String(starNumber)
+        self.tableView.reloadData()
+        
     }
     
 }

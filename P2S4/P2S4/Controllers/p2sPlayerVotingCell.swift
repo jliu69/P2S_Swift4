@@ -111,9 +111,5 @@ class p2sPlayerVotingCell: UITableViewCell {
         self.imageFourView.image = self.yellowStar
         self.imageFiveView.image = self.yellowStar
     }
-    
-    
-    
-    
 }
 

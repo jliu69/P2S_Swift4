@@ -42,7 +42,6 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
         if !self.isNew {
             return
         }
-        print(" ")
         
         let profileImageParameters = "\(self.playerListObject!.playerId!)/1"
         self.playerData!.playerProfileImage(profileImageParameters)
@@ -130,6 +129,9 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
         
         let storyBoard = UIStoryboard(name: "p2sPlayerVoting", bundle: nil)
         let playerVoting: p2sPlayerVotingViewController? = storyBoard.instantiateViewControllerWithIdentifier("playerVoting") as? p2sPlayerVotingViewController
+        playerVoting!.votingDataArray = self.votingDataArray!
+        playerVoting!.playerId = self.playerListObject!.playerId!
+        playerVoting!.sportId = self.playerListObject!.sportId!
         self.navigationController!.pushViewController(playerVoting!, animated: true)
     }
     
@@ -139,8 +141,9 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
     func playerDetailsData(data: NSData) {
         
         let dataText: String? = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
-        print("player details : \(dataText!)")
-        print(" ")
+        //print(" ")
+        //print("player details : \(dataText!)")
+        //print(" ")
         
         let range: NSRange = (dataText! as NSString).rangeOfString("-1")
         if range.location != NSNotFound {
@@ -217,9 +220,9 @@ class p2sPlayerDetailsViewController: UIViewController, UITableViewDataSource, U
     
     func playerVotingsData(data: NSData) {
         
-        let dataText: String? = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
-        print("player votings : \(dataText!)")
-        print(" ")
+        //let dataText: String? = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
+        //print("player votings : \(dataText!)")
+        //print(" ")
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         

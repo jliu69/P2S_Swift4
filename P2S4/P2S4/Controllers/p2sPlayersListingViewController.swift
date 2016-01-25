@@ -46,7 +46,7 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
         
         self.tableView.registerNib(UINib(nibName: "p2sPlayersListingCell", bundle: nil), forCellReuseIdentifier: "CellId")
         
-        print("is for search? \(self.isForSearch!), link parameters : \(self.parameters!)")
+        //print("is for search? \(self.isForSearch!), link parameters : \(self.parameters!)")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -174,7 +174,7 @@ class p2sPlayersListingViewController: UIViewController, UITableViewDataSource, 
     func playersListData(data: NSData) {
         
         let dataText: String? = NSString(data: data, encoding: NSUTF8StringEncoding) as? String
-        print("player listing : \(dataText!)")
+        //print("player listing : \(dataText!)")
         
         self.rowsArray!.removeAll()
         var isActivityIndicatorShowing: Bool = true

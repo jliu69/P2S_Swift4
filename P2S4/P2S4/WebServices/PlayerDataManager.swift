@@ -112,5 +112,23 @@ class PlayerDataManager: NSObject {
     }
     
     
+    //MARK: - save voting data
+    
+    func saveVotingData(parameters: String) {
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        let linkHeader = appDele.urlHeader!
+        
+        var linkBody = JsonLinks.saveVotesLink()
+        let imageUrl = "\(linkHeader)\(linkBody)/\(parameters)"
+        let url = NSURL(string: imageUrl)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+            //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        }
+        task.resume()
+    }
+    
+    
 }
 
