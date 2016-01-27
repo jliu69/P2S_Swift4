@@ -15,16 +15,16 @@
     <entity name="Positions" representedClassName=".Positions" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sportId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sportId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Skills" representedClassName=".Skills" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sportId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sportId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Sports" representedClassName=".Sports" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="sportId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sportId" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="States" representedClassName=".States" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,13 +35,13 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Nations" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="States" positionX="-54" positionY="9" width="128" height="75"/>
-        <element name="Sports" positionX="-36" positionY="27" width="128" height="75"/>
-        <element name="AgeRanges" positionX="-18" positionY="45" width="128" height="75"/>
-        <element name="Heights" positionX="0" positionY="63" width="128" height="75"/>
-        <element name="Weights" positionX="18" positionY="81" width="128" height="75"/>
-        <element name="Positions" positionX="36" positionY="99" width="128" height="90"/>
-        <element name="Skills" positionX="-9" positionY="63" width="128" height="90"/>
+        <element name="AgeRanges" positionX="16" positionY="-216" width="128" height="75"/>
+        <element name="Heights" positionX="-324" positionY="-99" width="128" height="75"/>
+        <element name="Nations" positionX="-171" positionY="-315" width="128" height="75"/>
+        <element name="Positions" positionX="-333" positionY="-225" width="128" height="90"/>
+        <element name="Skills" positionX="-164" positionY="-216" width="128" height="90"/>
+        <element name="Sports" positionX="-335" positionY="-318" width="128" height="73"/>
+        <element name="States" positionX="-2" positionY="-315" width="128" height="75"/>
+        <element name="Weights" positionX="-164" positionY="-102" width="128" height="75"/>
     </elements>
 </model>

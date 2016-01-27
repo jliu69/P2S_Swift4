@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Foundation
 
-class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSelectsViewControllerDelegate, ViewsAndRatesManagerDelegate {
+class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSelectsViewControllerDelegate, ViewsAndRatesManagerDelegate, SourceManagerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     
@@ -40,6 +41,8 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.checkSourceData()
         
         //-- show login
         self.showLogin()
@@ -331,6 +334,44 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         viewRateManager!.totallyViewed(userId, sportId: sportId)
     }
     
+    
+    //MARK: - source data
+    
+    func checkSourceData() {
+        
+        let sourceManager: SourceManager? = SourceManager()
+        sourceManager!.delegate = self
+        sourceManager!.checkForDataChange()
+    }
+    
+    func dataChangeStatus(data: NSData) {
+        
+        if let statusText = String(data: data, encoding: NSUTF8StringEncoding) {
+            print("data change status : '\(statusText)' ")
+            
+            if statusText == "true" {
+                let sourceManager: SourceManager? = SourceManager()
+                sourceManager!.delegate = self
+                sourceManager!.allSourceData()
+            }
+        }
+        
+//        let statusText = String(data: data, encoding: NSUTF8StringEncoding)
+//        print("data change status : '\(statusText!)' ")
+//        
+//        if statusText == "true" {
+//            let sourceManager: SourceManager? = SourceManager()
+//            sourceManager!.delegate = self
+//            sourceManager!.allSourceData()
+//        }
+        
+    }
+    
+    func dataSourceList(data: NSData) {
+        
+        let sourceManager: SourceManager? = SourceManager()
+        sourceManager!.queryResults(data)
+    }
     
 }
 

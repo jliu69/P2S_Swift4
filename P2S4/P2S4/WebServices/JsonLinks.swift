@@ -113,5 +113,17 @@ class JsonLinks: NSObject {
         return "/mobile/controller/MobileVoteController/newVote"
     }
     
+    
+    //MARK: - source, check for update
+    
+    static func checkForUpdateLink() -> String {
+        return "http://www.mysohoplace.com/php_p2s/change_flag.php"
+    }
+    
+    static func allDataSourceLink() -> String {
+        return "http://www.mysohoplace.com/php_p2s/data_source.php"
+    }
+    
+    
 }
 

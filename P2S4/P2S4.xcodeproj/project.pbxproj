@@ -11,22 +11,6 @@
 		9D130D281C56940800FA9339 /* p2sPlayerWeb.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D130D271C56940800FA9339 /* p2sPlayerWeb.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9D1410391C4C7B50004EA7E5 /* ViewsAndRatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1410381C4C7B50004EA7E5 /* ViewsAndRatesManager.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E551C1C46FDF400399B03 /* Selection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551A1C46FDF400399B03 /* Selection.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
-		9D6E552D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E552E1C47011E00399B03 /* AgeRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551E1C47011E00399B03 /* AgeRanges.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E552F1C47011E00399B03 /* Heights+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E551F1C47011E00399B03 /* Heights+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55301C47011E00399B03 /* Heights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55201C47011E00399B03 /* Heights.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55311C47011E00399B03 /* Sports+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55211C47011E00399B03 /* Sports+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55321C47011E00399B03 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55221C47011E00399B03 /* Sports.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55331C47011E00399B03 /* States+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55231C47011E00399B03 /* States+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55341C47011E00399B03 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55241C47011E00399B03 /* States.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55351C47011E00399B03 /* Weights+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55251C47011E00399B03 /* Weights+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55361C47011E00399B03 /* Weights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55261C47011E00399B03 /* Weights.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55371C47011E00399B03 /* Positions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55271C47011E00399B03 /* Positions+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55381C47011E00399B03 /* Positions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55281C47011E00399B03 /* Positions.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E55391C47011E00399B03 /* Skills+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E55291C47011E00399B03 /* Skills+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E553A1C47011E00399B03 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E552A1C47011E00399B03 /* Skills.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E553B1C47011E00399B03 /* Nations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E552B1C47011E00399B03 /* Nations+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		9D6E553C1C47011E00399B03 /* Nations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E552C1C47011E00399B03 /* Nations.swift */; settings = {ASSET_TAGS = (); }; };
 		9D6E553E1C47015100399B03 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6E553D1C47015100399B03 /* CoreData.framework */; };
 		9D87C9D11C4EC6070019D771 /* p2sPlayerVotingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D87C9D01C4EC6070019D771 /* p2sPlayerVotingViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		9D87C9D31C4ECB230019D771 /* p2sPlayerVoting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D87C9D21C4ECB230019D771 /* p2sPlayerVoting.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -69,6 +53,23 @@
 		9DC70ADD1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC70ADB1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift */; settings = {ASSET_TAGS = (); }; };
 		9DC70ADE1C4AFB3800AF2F8E /* p2sSearchPlayersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC70ADC1C4AFB3800AF2F8E /* p2sSearchPlayersCell.xib */; settings = {ASSET_TAGS = (); }; };
 		9DCB6CFB1C4FE36700998CF5 /* ActivityIndicatorObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCB6CFA1C4FE36700998CF5 /* ActivityIndicatorObject.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCCD2B71C56DB5C00B890B3 /* SourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCCD2B61C56DB5C00B890B3 /* SourceManager.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5741C57EBB300E99602 /* Sports+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5641C57EBB300E99602 /* Sports+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5751C57EBB300E99602 /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5651C57EBB300E99602 /* Sports.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5761C57EBB300E99602 /* Weights+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5661C57EBB300E99602 /* Weights+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5771C57EBB300E99602 /* Weights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5671C57EBB300E99602 /* Weights.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5781C57EBB300E99602 /* AgeRanges+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5681C57EBB300E99602 /* AgeRanges+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5791C57EBB300E99602 /* AgeRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5691C57EBB300E99602 /* AgeRanges.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC57A1C57EBB300E99602 /* Nations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC56A1C57EBB300E99602 /* Nations+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC57B1C57EBB300E99602 /* Nations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC56B1C57EBB300E99602 /* Nations.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC57C1C57EBB300E99602 /* Positions+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC56C1C57EBB300E99602 /* Positions+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC57D1C57EBB300E99602 /* Positions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC56D1C57EBB300E99602 /* Positions.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC57E1C57EBB300E99602 /* Skills+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC56E1C57EBB300E99602 /* Skills+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC57F1C57EBB300E99602 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC56F1C57EBB300E99602 /* Skills.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5801C57EBB300E99602 /* Heights+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5701C57EBB300E99602 /* Heights+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5811C57EBB300E99602 /* Heights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5711C57EBB300E99602 /* Heights.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5821C57EBB300E99602 /* States+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5721C57EBB300E99602 /* States+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		9DCFC5831C57EBB300E99602 /* States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCFC5731C57EBB300E99602 /* States.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0ADA41C458096008B60B1 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17A1C3E088700389567 /* AppDelegate.swift */; };
 		9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD1C17C1C3E088700389567 /* ViewController.swift */; };
@@ -108,22 +109,6 @@
 		9D1410381C4C7B50004EA7E5 /* ViewsAndRatesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewsAndRatesManager.swift; path = WebServices/ViewsAndRatesManager.swift; sourceTree = "<group>"; };
 		9D6E54C21C46FB7C00399B03 /* P2S4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2S4-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D6E551B1C46FDF400399B03 /* Selection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Selection.xcdatamodel; sourceTree = "<group>"; };
-		9D6E551D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AgeRanges+CoreDataProperties.swift"; path = "Core_Data/AgeRanges+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E551E1C47011E00399B03 /* AgeRanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgeRanges.swift; path = Core_Data/AgeRanges.swift; sourceTree = "<group>"; };
-		9D6E551F1C47011E00399B03 /* Heights+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Heights+CoreDataProperties.swift"; path = "Core_Data/Heights+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E55201C47011E00399B03 /* Heights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Heights.swift; path = Core_Data/Heights.swift; sourceTree = "<group>"; };
-		9D6E55211C47011E00399B03 /* Sports+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sports+CoreDataProperties.swift"; path = "Core_Data/Sports+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E55221C47011E00399B03 /* Sports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sports.swift; path = Core_Data/Sports.swift; sourceTree = "<group>"; };
-		9D6E55231C47011E00399B03 /* States+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "States+CoreDataProperties.swift"; path = "Core_Data/States+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E55241C47011E00399B03 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = States.swift; path = Core_Data/States.swift; sourceTree = "<group>"; };
-		9D6E55251C47011E00399B03 /* Weights+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Weights+CoreDataProperties.swift"; path = "Core_Data/Weights+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E55261C47011E00399B03 /* Weights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weights.swift; path = Core_Data/Weights.swift; sourceTree = "<group>"; };
-		9D6E55271C47011E00399B03 /* Positions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Positions+CoreDataProperties.swift"; path = "Core_Data/Positions+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E55281C47011E00399B03 /* Positions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Positions.swift; path = Core_Data/Positions.swift; sourceTree = "<group>"; };
-		9D6E55291C47011E00399B03 /* Skills+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Skills+CoreDataProperties.swift"; path = "Core_Data/Skills+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E552A1C47011E00399B03 /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skills.swift; path = Core_Data/Skills.swift; sourceTree = "<group>"; };
-		9D6E552B1C47011E00399B03 /* Nations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Nations+CoreDataProperties.swift"; path = "Core_Data/Nations+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9D6E552C1C47011E00399B03 /* Nations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nations.swift; path = Core_Data/Nations.swift; sourceTree = "<group>"; };
 		9D6E553D1C47015100399B03 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9D87C9D01C4EC6070019D771 /* p2sPlayerVotingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sPlayerVotingViewController.swift; path = Controllers/p2sPlayerVotingViewController.swift; sourceTree = "<group>"; };
 		9D87C9D21C4ECB230019D771 /* p2sPlayerVoting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = p2sPlayerVoting.storyboard; path = Controllers/p2sPlayerVoting.storyboard; sourceTree = "<group>"; };
@@ -166,6 +151,23 @@
 		9DC70ADB1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = p2sSearchPlayersCell.swift; path = Controllers/p2sSearchPlayersCell.swift; sourceTree = "<group>"; };
 		9DC70ADC1C4AFB3800AF2F8E /* p2sSearchPlayersCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = p2sSearchPlayersCell.xib; path = Controllers/p2sSearchPlayersCell.xib; sourceTree = "<group>"; };
 		9DCB6CFA1C4FE36700998CF5 /* ActivityIndicatorObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorObject.swift; path = Data/ActivityIndicatorObject.swift; sourceTree = "<group>"; };
+		9DCCD2B61C56DB5C00B890B3 /* SourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SourceManager.swift; path = DataSource/SourceManager.swift; sourceTree = "<group>"; };
+		9DCFC5641C57EBB300E99602 /* Sports+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sports+CoreDataProperties.swift"; path = "Core_Data/Sports+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC5651C57EBB300E99602 /* Sports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sports.swift; path = Core_Data/Sports.swift; sourceTree = "<group>"; };
+		9DCFC5661C57EBB300E99602 /* Weights+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Weights+CoreDataProperties.swift"; path = "Core_Data/Weights+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC5671C57EBB300E99602 /* Weights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weights.swift; path = Core_Data/Weights.swift; sourceTree = "<group>"; };
+		9DCFC5681C57EBB300E99602 /* AgeRanges+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AgeRanges+CoreDataProperties.swift"; path = "Core_Data/AgeRanges+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC5691C57EBB300E99602 /* AgeRanges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgeRanges.swift; path = Core_Data/AgeRanges.swift; sourceTree = "<group>"; };
+		9DCFC56A1C57EBB300E99602 /* Nations+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Nations+CoreDataProperties.swift"; path = "Core_Data/Nations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC56B1C57EBB300E99602 /* Nations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Nations.swift; path = Core_Data/Nations.swift; sourceTree = "<group>"; };
+		9DCFC56C1C57EBB300E99602 /* Positions+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Positions+CoreDataProperties.swift"; path = "Core_Data/Positions+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC56D1C57EBB300E99602 /* Positions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Positions.swift; path = Core_Data/Positions.swift; sourceTree = "<group>"; };
+		9DCFC56E1C57EBB300E99602 /* Skills+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Skills+CoreDataProperties.swift"; path = "Core_Data/Skills+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC56F1C57EBB300E99602 /* Skills.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Skills.swift; path = Core_Data/Skills.swift; sourceTree = "<group>"; };
+		9DCFC5701C57EBB300E99602 /* Heights+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Heights+CoreDataProperties.swift"; path = "Core_Data/Heights+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC5711C57EBB300E99602 /* Heights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Heights.swift; path = Core_Data/Heights.swift; sourceTree = "<group>"; };
+		9DCFC5721C57EBB300E99602 /* States+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "States+CoreDataProperties.swift"; path = "Core_Data/States+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9DCFC5731C57EBB300E99602 /* States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = States.swift; path = Core_Data/States.swift; sourceTree = "<group>"; };
 		9DD0ADA41C458096008B60B1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Data/Constants.swift; sourceTree = "<group>"; };
 		9DD1C1771C3E088700389567 /* P2S4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2S4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD1C17A1C3E088700389567 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,22 +220,22 @@
 			isa = PBXGroup;
 			children = (
 				9D6E551A1C46FDF400399B03 /* Selection.xcdatamodeld */,
-				9D6E551D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift */,
-				9D6E551E1C47011E00399B03 /* AgeRanges.swift */,
-				9D6E551F1C47011E00399B03 /* Heights+CoreDataProperties.swift */,
-				9D6E55201C47011E00399B03 /* Heights.swift */,
-				9D6E55211C47011E00399B03 /* Sports+CoreDataProperties.swift */,
-				9D6E55221C47011E00399B03 /* Sports.swift */,
-				9D6E55231C47011E00399B03 /* States+CoreDataProperties.swift */,
-				9D6E55241C47011E00399B03 /* States.swift */,
-				9D6E55251C47011E00399B03 /* Weights+CoreDataProperties.swift */,
-				9D6E55261C47011E00399B03 /* Weights.swift */,
-				9D6E55271C47011E00399B03 /* Positions+CoreDataProperties.swift */,
-				9D6E55281C47011E00399B03 /* Positions.swift */,
-				9D6E55291C47011E00399B03 /* Skills+CoreDataProperties.swift */,
-				9D6E552A1C47011E00399B03 /* Skills.swift */,
-				9D6E552B1C47011E00399B03 /* Nations+CoreDataProperties.swift */,
-				9D6E552C1C47011E00399B03 /* Nations.swift */,
+				9DCFC5641C57EBB300E99602 /* Sports+CoreDataProperties.swift */,
+				9DCFC5651C57EBB300E99602 /* Sports.swift */,
+				9DCFC5661C57EBB300E99602 /* Weights+CoreDataProperties.swift */,
+				9DCFC5671C57EBB300E99602 /* Weights.swift */,
+				9DCFC5681C57EBB300E99602 /* AgeRanges+CoreDataProperties.swift */,
+				9DCFC5691C57EBB300E99602 /* AgeRanges.swift */,
+				9DCFC56A1C57EBB300E99602 /* Nations+CoreDataProperties.swift */,
+				9DCFC56B1C57EBB300E99602 /* Nations.swift */,
+				9DCFC56C1C57EBB300E99602 /* Positions+CoreDataProperties.swift */,
+				9DCFC56D1C57EBB300E99602 /* Positions.swift */,
+				9DCFC56E1C57EBB300E99602 /* Skills+CoreDataProperties.swift */,
+				9DCFC56F1C57EBB300E99602 /* Skills.swift */,
+				9DCFC5701C57EBB300E99602 /* Heights+CoreDataProperties.swift */,
+				9DCFC5711C57EBB300E99602 /* Heights.swift */,
+				9DCFC5721C57EBB300E99602 /* States+CoreDataProperties.swift */,
+				9DCFC5731C57EBB300E99602 /* States.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -299,7 +301,7 @@
 				9DD1C18D1C3E09EB00389567 /* Controllers */,
 				9DC70AB21C4AA6B300AF2F8E /* Login Register */,
 				9D6E553F1C4707D300399B03 /* Web Service */,
-				9DD1C18F1C3E09F900389567 /* UI */,
+				9DD1C18F1C3E09F900389567 /* Data Source */,
 				9DD1C1901C3E09FE00389567 /* Helpers */,
 				9DD1C18E1C3E09F200389567 /* Data */,
 				9DD1C18C1C3E09E300389567 /* Images */,
@@ -379,11 +381,12 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		9DD1C18F1C3E09F900389567 /* UI */ = {
+		9DD1C18F1C3E09F900389567 /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
+				9DCCD2B61C56DB5C00B890B3 /* SourceManager.swift */,
 			);
-			name = UI;
+			name = "Data Source";
 			sourceTree = "<group>";
 		};
 		9DD1C1901C3E09FE00389567 /* Helpers */ = {
@@ -499,61 +502,62 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DC70ADD1C4AFB3800AF2F8E /* p2sSearchPlayersCell.swift in Sources */,
+				9DCFC5771C57EBB300E99602 /* Weights.swift in Sources */,
 				9DD390C01C3F5B5F0052DE2D /* EmailsHelper.swift in Sources */,
-				9D6E55351C47011E00399B03 /* Weights+CoreDataProperties.swift in Sources */,
-				9D6E553B1C47011E00399B03 /* Nations+CoreDataProperties.swift in Sources */,
-				9D6E553A1C47011E00399B03 /* Skills.swift in Sources */,
+				9DCCD2B71C56DB5C00B890B3 /* SourceManager.swift in Sources */,
 				9DC70ACC1C4AA6D000AF2F8E /* p2sRegSaveViewController.swift in Sources */,
 				9DBB01D81C4E9D3D00E673D4 /* p2sPlayerDetailsVotesCell.swift in Sources */,
 				9DD484671C4086D2003EB57A /* CurrentUserObject.swift in Sources */,
-				9D6E55361C47011E00399B03 /* Weights.swift in Sources */,
+				9DCFC5791C57EBB300E99602 /* AgeRanges.swift in Sources */,
+				9DCFC57B1C57EBB300E99602 /* Nations.swift in Sources */,
+				9DCFC57E1C57EBB300E99602 /* Skills+CoreDataProperties.swift in Sources */,
 				9DC70AC41C4AA6D000AF2F8E /* p2sLoginViewController.swift in Sources */,
 				9DB7900A1C5441B200AA4DF5 /* VotesDataObject.swift in Sources */,
-				9D6E553C1C47011E00399B03 /* Nations.swift in Sources */,
 				9D1410391C4C7B50004EA7E5 /* ViewsAndRatesManager.swift in Sources */,
+				9DCFC57F1C57EBB300E99602 /* Skills.swift in Sources */,
 				9DC70AD81C4AFAE800AF2F8E /* p2sSearchPlayersViewController.swift in Sources */,
 				9DE9747E1C47ED0D00D7AFA0 /* JsonLinks.swift in Sources */,
-				9D6E55301C47011E00399B03 /* Heights.swift in Sources */,
-				9D6E55311C47011E00399B03 /* Sports+CoreDataProperties.swift in Sources */,
 				9DDF42571C46CF0E00EF11EB /* p2sSelectsViewController.swift in Sources */,
-				9D6E55391C47011E00399B03 /* Skills+CoreDataProperties.swift in Sources */,
 				9D130D261C5693B200FA9339 /* p2sPlayerWebViewController.swift in Sources */,
 				9D87C9D61C4ECB490019D771 /* p2sPlayerVotingCell.swift in Sources */,
 				9DBB01CF1C4E79FE00E673D4 /* p2sPlayerDetailsViewController.swift in Sources */,
-				9D6E55331C47011E00399B03 /* States+CoreDataProperties.swift in Sources */,
+				9DCFC5741C57EBB300E99602 /* Sports+CoreDataProperties.swift in Sources */,
 				9DC70ACE1C4AA6D000AF2F8E /* p2sSettingsViewController.swift in Sources */,
 				9DD390BF1C3F5B5F0052DE2D /* AlertsHelper.swift in Sources */,
+				9DCFC5831C57EBB300E99602 /* States.swift in Sources */,
 				9DCB6CFB1C4FE36700998CF5 /* ActivityIndicatorObject.swift in Sources */,
-				9D6E55321C47011E00399B03 /* Sports.swift in Sources */,
 				9DD1C17D1C3E088700389567 /* ViewController.swift in Sources */,
+				9DCFC5801C57EBB300E99602 /* Heights+CoreDataProperties.swift in Sources */,
 				9DB7E2971C4DE78400300DCA /* PlayersListingObject.swift in Sources */,
 				9DB7E2941C4DE10F00300DCA /* p2sPlayersListingCell.swift in Sources */,
+				9DCFC5811C57EBB300E99602 /* Heights.swift in Sources */,
 				9D87C9D11C4EC6070019D771 /* p2sPlayerVotingViewController.swift in Sources */,
 				9DC70ACA1C4AA6D000AF2F8E /* p2sRegSaveCell.swift in Sources */,
+				9DCFC57C1C57EBB300E99602 /* Positions+CoreDataProperties.swift in Sources */,
 				9DD484661C4086D2003EB57A /* CommonDataObject.swift in Sources */,
 				9DB7E28D1C4DC40300300DCA /* p2sPlayersListingViewController.swift in Sources */,
 				9D6E551C1C46FDF400399B03 /* Selection.xcdatamodeld in Sources */,
 				9DD4846A1C4086D2003EB57A /* StaticData.swift in Sources */,
 				9DD1C17B1C3E088700389567 /* AppDelegate.swift in Sources */,
-				9D6E55381C47011E00399B03 /* Positions.swift in Sources */,
+				9DCFC5821C57EBB300E99602 /* States+CoreDataProperties.swift in Sources */,
+				9DCFC57A1C57EBB300E99602 /* Nations+CoreDataProperties.swift in Sources */,
 				9DD1C1A61C3E15CC00389567 /* ColorsHelper.swift in Sources */,
 				9DB7E2911C4DD65900300DCA /* TitleViewObject.swift in Sources */,
 				9DB7E28B1C4DAF2600300DCA /* SearchPlayerObject.swift in Sources */,
 				9DC70AC81C4AA6D000AF2F8E /* p2sRegisterViewController.swift in Sources */,
+				9DCFC5781C57EBB300E99602 /* AgeRanges+CoreDataProperties.swift in Sources */,
 				9DE974801C47ED2E00D7AFA0 /* DataManager.swift in Sources */,
-				9D6E552F1C47011E00399B03 /* Heights+CoreDataProperties.swift in Sources */,
 				9DBCCAA81C493EC600896966 /* LoginRegisterManager.swift in Sources */,
-				9D6E552D1C47011E00399B03 /* AgeRanges+CoreDataProperties.swift in Sources */,
-				9D6E55341C47011E00399B03 /* States.swift in Sources */,
+				9DCFC5761C57EBB300E99602 /* Weights+CoreDataProperties.swift in Sources */,
 				9DC70AD41C4AF38500AF2F8E /* p2sPlayerSignUpViewController.swift in Sources */,
 				9DF1933C1C4C06B9007C9C84 /* p2sSearchDataInputViewController.swift in Sources */,
 				9DC70AC21C4AA6D000AF2F8E /* p2sLoginCell.swift in Sources */,
-				9D6E55371C47011E00399B03 /* Positions+CoreDataProperties.swift in Sources */,
+				9DCFC5751C57EBB300E99602 /* Sports.swift in Sources */,
+				9DCFC57D1C57EBB300E99602 /* Positions.swift in Sources */,
 				9DD484691C4086D2003EB57A /* LogoImageObject.swift in Sources */,
 				9DD0ADA51C458096008B60B1 /* Constants.swift in Sources */,
 				9DBB01D41C4E7A5400E673D4 /* p2sPlayerDetailsCell.swift in Sources */,
 				9DC70AC61C4AA6D000AF2F8E /* p2sRegisterCell.swift in Sources */,
-				9D6E552E1C47011E00399B03 /* AgeRanges.swift in Sources */,
 				9DED36A71C50654400FB9621 /* PlayerDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
