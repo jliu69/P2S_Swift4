@@ -339,9 +339,14 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     
     func checkSourceData() {
         
-        let sourceManager: SourceManager? = SourceManager()
-        sourceManager!.delegate = self
-        sourceManager!.checkForDataChange()
+        var isAppInstalled: Bool = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaultKeys.isAppInstalled)
+        print("is app installed? \(isAppInstalled)")
+        
+        if !isAppInstalled {
+            let sourceManager: SourceManager? = SourceManager()
+            sourceManager!.delegate = self
+            sourceManager!.checkForDataChange()
+        }
     }
     
     func dataChangeStatus(data: NSData) {
@@ -349,26 +354,15 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         if let statusText = String(data: data, encoding: NSUTF8StringEncoding) {
             print("data change status : '\(statusText)' ")
             
-            if statusText == "true" {
+            if statusText == "1" {
                 let sourceManager: SourceManager? = SourceManager()
                 sourceManager!.delegate = self
                 sourceManager!.allSourceData()
             }
         }
-        
-//        let statusText = String(data: data, encoding: NSUTF8StringEncoding)
-//        print("data change status : '\(statusText!)' ")
-//        
-//        if statusText == "true" {
-//            let sourceManager: SourceManager? = SourceManager()
-//            sourceManager!.delegate = self
-//            sourceManager!.allSourceData()
-//        }
-        
     }
     
     func dataSourceList(data: NSData) {
-        
         let sourceManager: SourceManager? = SourceManager()
         sourceManager!.queryResults(data)
     }

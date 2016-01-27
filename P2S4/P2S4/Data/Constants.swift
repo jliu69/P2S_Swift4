@@ -21,6 +21,7 @@ struct SelectionType {
     static let height = "height"
     static let weight = "weight"
     static let position = "position"
+    static let skill = "skill"
     static let playerName = "playerName"
     static let schoolName = "schoolName"
 }
@@ -28,11 +29,11 @@ struct SelectionType {
 struct UserDefaultKeys {
     static let savedUserEmail = "SavedUserEmail"
     static let savedUserPassword = "SavedUserPassword"
+    static let isAppInstalled = "IsAppInstalled"
 }
 
 
 class Constants: NSObject {
-    //
     
     class func selectionTitle(type: String) -> String {
         

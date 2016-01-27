@@ -15,7 +15,7 @@ import UIKit
 }
 
 
-class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DataManagerDelegate {
+class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DataManagerDelegate, DataQueryManagerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
     @IBOutlet weak var pageTitleLabel: UILabel!
@@ -88,6 +88,30 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         
         let date = NSDate()
         beginTimeInterval = date.timeIntervalSince1970
+        
+        
+        //-- from core data
+        if type == nil || type == "" {
+            return
+        }
+        
+        let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
+        let sportId = appDele.currentUser!.sportId!
+        
+        let dataQuery: DataQueryManager? = DataQueryManager()
+        dataQuery!.delegate = self
+        dataQuery!.selectDataWithType(self.type!, sportId: sportId)
+        
+        
+        //-- get from core data
+//        var dataQuery: DataQueryManager? = DataQueryManager()
+//        var dataList: Array<AnyObject> = dataQuery!.allStatesData()
+//        
+//        for item in dataList {
+//            var data = item as! CommonDataObject
+//            print("code = '\(data.code!)', name = '\(data.name!)' ")
+//        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -181,7 +205,18 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
             catch {
                 print("error serializing JSON: \(error)")
             }
-            
+        }
+    }
+    
+    
+    //MARK: - data query delegate
+    
+    func selectionData(type: String, data: Array<AnyObject>) {
+        
+        print("type = '\(type)', data content :")
+        for item in data {
+            let dataObject = item as! CommonDataObject
+            print("sport = '\(dataObject.sport!)', code = '\(dataObject.code!)', name = '\(dataObject.name!)' ")
         }
     }
     
