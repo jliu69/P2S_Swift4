@@ -53,7 +53,6 @@ class DataQueryManager: NSObject {
         default:
             break
         }
-        
     }
     
     //MARK: - full selections
@@ -71,9 +70,6 @@ class DataQueryManager: NSObject {
                 
                 let fetchRequest = NSFetchRequest()
                 fetchRequest.entity = entity!
-                
-                var sortDescriptor = NSSortDescriptor(key: "sportId", ascending: true)
-                fetchRequest.sortDescriptors = [sortDescriptor]
                 
                 let queryResults = try context.executeFetchRequest(fetchRequest)
                 if queryResults.count > 0 {
@@ -147,9 +143,6 @@ class DataQueryManager: NSObject {
                 
                 let fetchRequest = NSFetchRequest()
                 fetchRequest.entity = entity!
-                
-                var sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-                fetchRequest.sortDescriptors = [sortDescriptor]
                 
                 let queryResults = try context.executeFetchRequest(fetchRequest)
                 if queryResults.count > 0 {

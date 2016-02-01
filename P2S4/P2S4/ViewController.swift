@@ -9,9 +9,10 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSelectsViewControllerDelegate, ViewsAndRatesManagerDelegate, SourceManagerDelegate {
+class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSelectsViewControllerDelegate, ViewsAndRatesManagerDelegate, SourceManagerDelegate, p2sLoginViewControllerDelegate {
     
     @IBOutlet weak var titleBarItem: UIBarButtonItem!
+    @IBOutlet weak var settingsBarItem: UIBarButtonItem!
     
     @IBOutlet weak var selectSportButton: UIButton!
     @IBOutlet weak var selectStateButton: UIButton!
@@ -21,6 +22,8 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     
     @IBOutlet weak var totalViewedLabel: UILabel!
     @IBOutlet weak var totalRatedLabel: UILabel!
+    
+    @IBOutlet weak var innerView: UIView!
     
     let enableColor = UIColor.blackColor()
     let disableColor = UIColor.grayColor()
@@ -33,8 +36,8 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     var totallyRatedValue: String? = ""
     var totallyViewedValue: String? = ""
     
-    //-- testing
-    var isShowing: Bool = false
+    var isLogin: Bool = false
+    var isDataChanged: Bool = false
     
     
     //MARK: - init
@@ -43,8 +46,6 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         super.viewDidLoad()
         
         self.checkSourceData()
-        
-        //-- show login
         self.showLogin()
         
         //-- logo
@@ -68,9 +69,37 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         self.searchPlayersButton.layer.cornerRadius = 5
         self.searchPlayersButton.clipsToBounds = true
         
+        self.innerView.layer.cornerRadius = 10
+        self.innerView.clipsToBounds = true
+        
         //-- clear data
-        isShowing = false
+        self.disableSportsAndSettings()
         self.hidePage()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.innerView.hidden = true
+        self.view.sendSubviewToBack(self.innerView)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !self.isLogin {
+            return
+        }
+        
+        if self.isDataChanged {
+            self.view.bringSubviewToFront(self.innerView)
+            self.innerView.hidden = false
+            
+            //self.disableSportsAndSettings()
+        }
+        else {
+            self.enableSportsAndSettings()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -143,6 +172,17 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     }
     
     
+    //MARK: - login methods
+    
+    func showLogin() {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sLogin", bundle: nil)
+        let login: p2sLoginViewController? = storyBoard.instantiateViewControllerWithIdentifier("login") as? p2sLoginViewController
+        login!.delegate = self
+        self.presentViewController(login!, animated: true, completion: nil)
+    }
+    
+    
     //MARK: - settings delegate
     
     func didLogout() {
@@ -171,13 +211,10 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     }
     
     
-    //MARK: - login methods
+    //MARK: - login delegate
     
-    func showLogin() {
-        
-        let storyBoard: UIStoryboard = UIStoryboard(name: "p2sLogin", bundle: nil)
-        let login = storyBoard.instantiateViewControllerWithIdentifier("login") as? p2sLoginViewController
-        self.presentViewController(login!, animated: true, completion: nil)
+    func completeLoginOrRegister() {
+        self.isLogin = true
     }
     
     
@@ -198,7 +235,7 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         self.showPage()
     }
     
-    //MARK: - show/hide page data
+    //MARK: - show/hide data
     
     func hidePage() {
         
@@ -236,7 +273,6 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         self.searchPlayersButton.setTitleColor(disableColor, forState: UIControlState.Highlighted)
         self.searchPlayersButton.enabled = false
         self.searchPlayersButton.userInteractionEnabled = false
-        
     }
     
     func showPage() {
@@ -263,6 +299,26 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
         self.searchPlayersButton.setTitleColor(enableColor, forState: UIControlState.Highlighted)
         self.searchPlayersButton.enabled = true
         self.searchPlayersButton.userInteractionEnabled = true
+    }
+    
+    func disableSportsAndSettings() {
+        
+        self.settingsBarItem.enabled = false
+        
+        self.selectSportButton.setTitleColor(disableColor, forState: UIControlState.Normal)
+        self.selectSportButton.setTitleColor(disableColor, forState: UIControlState.Highlighted)
+        self.selectSportButton.enabled = false
+        self.selectSportButton.userInteractionEnabled = false
+    }
+    
+    func enableSportsAndSettings() {
+        
+        self.settingsBarItem.enabled = true
+        
+        self.selectSportButton.setTitleColor(enableColor, forState: UIControlState.Normal)
+        self.selectSportButton.setTitleColor(enableColor, forState: UIControlState.Highlighted)
+        self.selectSportButton.enabled = true
+        self.selectSportButton.userInteractionEnabled = true
     }
     
     
@@ -338,23 +394,22 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     //MARK: - source data
     
     func checkSourceData() {
-        
-        var isAppInstalled: Bool = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaultKeys.isAppInstalled)
-        print("is app installed? \(isAppInstalled)")
-        
-        if !isAppInstalled {
-            let sourceManager: SourceManager? = SourceManager()
-            sourceManager!.delegate = self
-            sourceManager!.checkForDataChange()
-        }
+        let sourceManager: SourceManager? = SourceManager()
+        sourceManager!.delegate = self
+        sourceManager!.checkForDataChange()
     }
     
     func dataChangeStatus(data: NSData) {
         
         if let statusText = String(data: data, encoding: NSUTF8StringEncoding) {
-            print("data change status : '\(statusText)' ")
+            let isAppInstalled: Bool = NSUserDefaults.standardUserDefaults().boolForKey(UserDefaultKeys.isAppInstalled)
             
-            if statusText == "1" {
+            if true || !isAppInstalled || statusText == "1" {
+                self.isDataChanged = true
+                
+                if !isAppInstalled {
+                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: UserDefaultKeys.isAppInstalled)
+                }
                 let sourceManager: SourceManager? = SourceManager()
                 sourceManager!.delegate = self
                 sourceManager!.allSourceData()
@@ -364,7 +419,16 @@ class ViewController: UIViewController, p2sSettingsViewControllerDelegate, p2sSe
     
     func dataSourceList(data: NSData) {
         let sourceManager: SourceManager? = SourceManager()
+        sourceManager!.delegate = self
         sourceManager!.queryResults(data)
+    }
+    
+    func updateFinished() {
+        self.isDataChanged =  false
+        self.innerView.hidden = true
+        self.view.sendSubviewToBack(self.innerView)
+        
+        self.enableSportsAndSettings()
     }
     
 }

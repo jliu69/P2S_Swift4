@@ -82,12 +82,12 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidAppear(animated)
         
         //-- data
-        let dataManager: DataManager? = DataManager()
-        dataManager!.delegate = self
-        dataManager!.dataWithSelectTypeAndParameters(type!, parameters: parameters!)
-        
-        let date = NSDate()
-        beginTimeInterval = date.timeIntervalSince1970
+//        let dataManager: DataManager? = DataManager()
+//        dataManager!.delegate = self
+//        dataManager!.dataWithSelectTypeAndParameters(type!, parameters: parameters!)
+//        
+//        let date = NSDate()
+//        beginTimeInterval = date.timeIntervalSince1970
         
         
         //-- from core data
@@ -101,17 +101,6 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
         let dataQuery: DataQueryManager? = DataQueryManager()
         dataQuery!.delegate = self
         dataQuery!.selectDataWithType(self.type!, sportId: sportId)
-        
-        
-        //-- get from core data
-//        var dataQuery: DataQueryManager? = DataQueryManager()
-//        var dataList: Array<AnyObject> = dataQuery!.allStatesData()
-//        
-//        for item in dataList {
-//            var data = item as! CommonDataObject
-//            print("code = '\(data.code!)', name = '\(data.name!)' ")
-//        }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -212,11 +201,22 @@ class p2sSelectsViewController: UIViewController, UITableViewDataSource, UITable
     //MARK: - data query delegate
     
     func selectionData(type: String, data: Array<AnyObject>) {
+        var count: Int = 0
+        var isActivityIndicatorShowing: Bool = true
         
         print("type = '\(type)', data content :")
         for item in data {
             let dataObject = item as! CommonDataObject
             print("sport = '\(dataObject.sport!)', code = '\(dataObject.code!)', name = '\(dataObject.name!)' ")
+            
+            self.rowsArray!.append(dataObject)
+            self.tableView.reloadData()
+            
+            if count >= 10 {
+                self.view.sendSubviewToBack(self.activityIndicator)
+                isActivityIndicatorShowing = false
+            }
+            
         }
     }
     

@@ -14,12 +14,14 @@ import CoreData
     
     optional func dataChangeStatus(data: NSData)
     optional func dataSourceList(data: NSData)
+    optional func updateFinished()
 }
 
 
 class SourceManager: NSObject {
     
     var delegate: SourceManagerDelegate! = nil
+    
     
     //MARK: - check for changes
     
@@ -29,7 +31,6 @@ class SourceManager: NSObject {
         var url: NSURL? = NSURL(string: link)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
             self.dataChangeStatus(data!)
         }
         task.resume()
@@ -39,6 +40,7 @@ class SourceManager: NSObject {
         delegate?.dataChangeStatus?(data)
     }
     
+    
     //MARK: - get source data
     
     func allSourceData() {
@@ -47,7 +49,6 @@ class SourceManager: NSObject {
         var url: NSURL? = NSURL(string: link)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
-            //print(NSString(data: data!, encoding: NSUTF8StringEncoding))
             self.sourceDataList(data!)
         }
         task.resume()
@@ -58,11 +59,10 @@ class SourceManager: NSObject {
     }
     
     
-    //MARK: - update core data
+    //MARK: - insert new data
     
     func queryResults(data: NSData) {
         
-        print(" ")
         print(" ")
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         
@@ -118,8 +118,15 @@ class SourceManager: NSObject {
             catch {
                 print("error serializing JSON: \(error)")
             }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                delegate?.updateFinished?()
+            }
         }
     }
+    
+    
+    //MARK: - update core data
     
     func updateSports(data: Array<AnyObject>, context: NSManagedObjectContext) {
         
@@ -142,14 +149,13 @@ class SourceManager: NSObject {
             for item in data {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
-                print("Sports ... code = '\(code!)', name = '\(name!)' ")
+                print("Sports, code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
                 newItem.setValue(code!, forKey: "sportId")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {
@@ -179,14 +185,13 @@ class SourceManager: NSObject {
             for item in data {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
-                print("Nations ... code = '\(code!)', name = '\(name!)' ")
+                print("Nations, code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
                 newItem.setValue(code!, forKey: "code")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {
@@ -216,14 +221,13 @@ class SourceManager: NSObject {
             for item in data {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
-                print("States ... code = '\(code!)', name = '\(name!)' ")
+                print("States, code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
                 newItem.setValue(code!, forKey: "code")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {
@@ -254,7 +258,7 @@ class SourceManager: NSObject {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
                 let sportId: String? = item["sport"] as! NSString as String
-                print("Positions ... sport ID = '\(sportId!)', code = '\(code!)', name = '\(name!)' ")
+                print("Positions, sport ID = '\(sportId!)', code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
@@ -262,7 +266,6 @@ class SourceManager: NSObject {
                 newItem.setValue(sportId!, forKey: "sportId")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {
@@ -293,7 +296,7 @@ class SourceManager: NSObject {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
                 let sportId: String? = item["sport"] as! NSString as String
-                print("Skills ... sport ID = '\(sportId!)', code = '\(code!)', name = '\(name!)' ")
+                print("Skills, sport ID = '\(sportId!)', code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
@@ -301,7 +304,6 @@ class SourceManager: NSObject {
                 newItem.setValue(sportId!, forKey: "sportId")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {
@@ -331,14 +333,13 @@ class SourceManager: NSObject {
             for item in data {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
-                print("Heights ... code = '\(code!)', name = '\(name!)' ")
+                print("Heights, code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
                 newItem.setValue(code!, forKey: "code")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {
@@ -368,14 +369,13 @@ class SourceManager: NSObject {
             for item in data {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
-                print("Weights ... code = '\(code!)', name = '\(name!)' ")
+                print("Weights, code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
                 newItem.setValue(code!, forKey: "code")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {
@@ -405,14 +405,13 @@ class SourceManager: NSObject {
             for item in data {
                 let name: String? = item["name"] as! NSString as String
                 let code: String? = item["code"] as! NSString as String
-                print("Age Ranges ... code = '\(code!)', name = '\(name!)' ")
+                print("Age Ranges, code = '\(code!)', name = '\(name!)' ")
                 
                 let newItem = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context)
                 newItem.setValue(name!, forKey: "name")
                 newItem.setValue(code!, forKey: "code")
                 try context.save()
             }
-            print(" ")
             print(" ")
         }
         catch {

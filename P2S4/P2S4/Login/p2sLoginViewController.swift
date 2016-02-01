@@ -9,9 +9,16 @@
 import UIKit
 
 
+@objc protocol p2sLoginViewControllerDelegate {
+    optional func completeLoginOrRegister()
+}
+
+
 class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, p2sLoginCellDelegate, LoginRegisterManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var delegate: p2sLoginViewControllerDelegate! = nil
     
     let screenHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
     let movingSpace: CGFloat = 15.0
@@ -187,6 +194,7 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if successFlag {
             self.dismissViewControllerAnimated(true, completion: {})
+            delegate?.completeLoginOrRegister?()
         }
         else {
             self.hideActivityIndicator()
@@ -204,6 +212,7 @@ class p2sLoginViewController: UIViewController, UITableViewDataSource, UITableVi
         self.presentingViewController?.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
         self.dismissViewControllerAnimated(true, completion: {})
+        delegate?.completeLoginOrRegister?()
         
         //-- get persone Id, first name, last name
         let appDele = UIApplication.sharedApplication().delegate as! AppDelegate
